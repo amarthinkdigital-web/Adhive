@@ -6,8 +6,10 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { LayoutTemplate, Sparkles, Zap, Shield, ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function ProductPage() {
+  const router = useRouter();
   return (
     <main className="min-h-screen bg-background selection:bg-primary/30">
       <Navbar />
@@ -32,7 +34,7 @@ export default function ProductPage() {
               Adhive combines an AI-powered page builder, real-time visitor identification, and automated workflows into a single, unified platform.
             </p>
             <div className="flex gap-4">
-              <Button variant="primary" size="lg">Start Building</Button>
+              <Button variant="primary" size="lg" onClick={() => router.push('/contact')}>Get Started</Button>
               <Button variant="outline" size="lg">View Docs</Button>
             </div>
           </motion.div>
@@ -132,7 +134,7 @@ export default function ProductPage() {
             <Shield className="w-12 h-12 text-primary mx-auto mb-6" />
             <h2 className="text-4xl font-bold mb-4">Ready to build?</h2>
             <p className="text-xl text-muted-foreground mb-8">Join the platform that growth teams rely on.</p>
-            <Button variant="primary" size="lg">Start Free Trial</Button>
+            <Button variant="primary" size="lg" onClick={() => router.push('/contact')}>Get Started</Button>
           </motion.div>
         </div>
       </section>

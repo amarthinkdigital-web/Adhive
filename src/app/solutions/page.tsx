@@ -6,8 +6,10 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Building2, Rocket, Briefcase, ArrowRight, TrendingUp, ShieldCheck, Gauge, Handshake, CheckCircle2, Quote, Sparkles } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function SolutionsPage() {
+  const router = useRouter();
   return (
     <main className="min-h-screen bg-background selection:bg-primary/30">
       <Navbar />
@@ -224,8 +226,8 @@ export default function SolutionsPage() {
               Whether you're a two-person startup or a thousand-person enterprise, Adhive meets you where you are.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button className="bg-white text-black hover:bg-zinc-200" size="lg">
-                Start Free
+              <Button className="bg-white text-black hover:bg-zinc-200" size="lg" onClick={() => router.push('/contact')}>
+                Get Started
               </Button>
               <Button className="bg-zinc-900 border border-zinc-800 text-white hover:bg-zinc-800" size="lg">
                 Talk to Sales

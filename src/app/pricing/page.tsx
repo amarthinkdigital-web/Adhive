@@ -6,14 +6,14 @@ import { Footer } from "@/components/layout/Footer";
 import { Button } from "@/components/ui/Button";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Check, HelpCircle, ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const plans = [
   {
     name: "Free",
     description: "With generous usage limits.",
-    price: "$0",
     period: "/mo",
-    cta: "Start Free",
+    cta: "Get Started",
     ctaVariant: "outline" as const,
     subtitle: "800 credits / day (2,000 max)",
     features: [
@@ -84,6 +84,7 @@ const plans = [
 ];
 
 export default function PricingPage() {
+  const router = useRouter();
   return (
     <main className="min-h-screen bg-background selection:bg-primary/30">
       <Navbar />
@@ -112,7 +113,7 @@ export default function PricingPage() {
             transition={{ delay: 0.2 }}
             className="flex flex-col sm:flex-row justify-center gap-4"
           >
-            <Button variant="primary" size="lg">Start Free</Button>
+            <Button variant="primary" size="lg" onClick={() => router.push('/contact')}>Get Started</Button>
             <Button variant="glass" size="lg">Talk to sales</Button>
           </motion.div>
         </div>
@@ -141,7 +142,7 @@ export default function PricingPage() {
                   <span className="text-4xl font-bold">{plan.price}</span>
                   <span className="text-muted-foreground">{plan.period}</span>
                 </div>
-                <Button variant={plan.ctaVariant} className="w-full mb-8">{plan.cta}</Button>
+                <Button variant={plan.ctaVariant} className="w-full mb-8" onClick={() => router.push('/contact')}>{plan.cta}</Button>
                 
                 <div className="text-sm font-medium mb-4 pb-4 border-b border-border">
                   {plan.subtitle}
@@ -213,7 +214,7 @@ export default function PricingPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Every plan, side by side.</h2>
-            <p className="text-lg text-muted-foreground">Start free, upgrade when you outgrow it.</p>
+            <p className="text-lg text-muted-foreground">Get started, upgrade when you outgrow it.</p>
           </div>
           
           <div className="overflow-x-auto">
@@ -268,11 +269,11 @@ export default function PricingPage() {
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Ship your site.</h2>
             <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Start free in minutes — no card required. Bring your brand, and Adhive builds the rest.
+              Get started in minutes — no card required. Bring your brand, and Adhive builds the rest.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button variant="primary" size="lg" className="gap-2 group">
-                Start Free
+              <Button variant="primary" size="lg" className="gap-2 group" onClick={() => router.push('/contact')}>
+                Get Started
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button variant="glass" size="lg">Talk to sales</Button>

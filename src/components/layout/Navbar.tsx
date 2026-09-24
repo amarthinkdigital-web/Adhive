@@ -5,16 +5,16 @@ import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-
 import { Button } from "@/components/ui/Button";
 import { Menu, X, ChevronDown, Zap } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const navItems = [
   {
     name: "Product",
     href: "/product",
     dropdown: [
-      { name: "AI Website Builder", href: "/product#builder", desc: "Generate landing pages in seconds.", icon: "⚡" },
-      { name: "Visitor Identification", href: "/product#visitor", desc: "Unmask anonymous traffic.", icon: "👤" },
-      { name: "Real-time Analytics", href: "/product#analytics", desc: "Privacy-first insights.", icon: "📊" },
-      { name: "Automated Workflows", href: "/product#workflows", desc: "Trigger personalized outreach.", icon: "🔁" },
+      { name: "Visitor Identification", href: "/product/visitor-identification", desc: "Unmask anonymous traffic.", icon: "👤" },
+      { name: "Real-time Analytics", href: "/product/analytics", desc: "Privacy-first insights.", icon: "📊" },
+      { name: "Automated Workflows", href: "/product/workflows", desc: "Trigger personalized outreach.", icon: "🔁" },
     ]
   },
   {
@@ -39,10 +39,15 @@ const navItems = [
   {
     name: "Pricing",
     href: "/pricing",
+  },
+  {
+    name: "Contact",
+    href: "/contact",
   }
 ];
 
 export const Navbar = () => {
+  const router = useRouter();
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -168,7 +173,7 @@ export const Navbar = () => {
           >
             Log in
           </Link>
-          <Button variant="primary" size="sm" className="rounded-lg text-sm px-4 py-2 font-semibold shadow-sm">
+          <Button variant="primary" size="sm" className="rounded-lg text-sm px-4 py-2 font-semibold shadow-sm" onClick={() => router.push('/contact')}>
             Get Started
           </Button>
         </div>
@@ -222,7 +227,7 @@ export const Navbar = () => {
               ))}
               <div className="h-px w-full bg-zinc-100 my-2" />
               <Button variant="outline" className="w-full justify-center rounded-lg">Log in</Button>
-              <Button variant="primary" className="w-full justify-center rounded-lg mt-1">Get Started</Button>
+              <Button variant="primary" className="w-full justify-center rounded-lg mt-1" onClick={() => router.push('/contact')}>Get Started</Button>
             </div>
           </motion.div>
         )}

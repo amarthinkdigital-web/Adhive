@@ -43,72 +43,90 @@ export default function Home() {
 
 
 
-      {/* How it works */}
-      <section className="py-24 border-b border-border">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-zinc-50 text-xs font-semibold text-zinc-600 mb-6">
-              <Workflow className="w-3.5 h-3.5 text-primary" />
-              How it works
+      {/* How it works - Redesigned */}
+      <section className="py-32 bg-zinc-950 text-white relative overflow-hidden">
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-6 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-24"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs font-semibold text-blue-400 mb-6 backdrop-blur-sm">
+              <Workflow className="w-3.5 h-3.5" />
+              Deployment Pipeline
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">From repository to live site in minutes.</h2>
-            <p className="text-lg text-muted-foreground">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">From repository to live in minutes.</h2>
+            <p className="text-lg text-zinc-400 max-w-2xl mx-auto">
               Connect your stack, compose pages with reusable components, and deploy straight to the edge. No build queues, no waiting rooms.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+          <div className="relative">
+            {/* Connecting Line (Desktop only) */}
+            <div className="hidden lg:block absolute top-[120px] left-0 w-full h-px bg-white/10" />
+            
+            {/* Animated glowing line */}
+            <motion.div 
+              initial={{ width: "0%" }}
+              whileInView={{ width: "100%" }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <img
-                src="/images/home_how_it_works.png"
-                alt="How Adhive works"
-                className="w-full rounded-2xl border border-border shadow-xl"
-              />
-            </motion.div>
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="hidden lg:block absolute top-[120px] left-0 h-[2px] bg-gradient-to-r from-blue-500 via-purple-500 to-emerald-500 shadow-[0_0_15px_rgba(168,85,247,0.5)] z-0" 
+            />
 
-            <div className="space-y-8">
+            <div className="grid lg:grid-cols-3 gap-8 relative z-10">
               {[
                 {
                   icon: GitBranch,
-                  title: "Connect your repository",
+                  title: "Connect",
                   desc: "Link your GitHub or GitLab repo. Adhive reads your components, tokens, and config to understand your design system instantly.",
+                  color: "text-blue-400",
+                  bg: "bg-blue-500/10",
+                  borderColor: "border-blue-500/30",
+                  img: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?q=80&w=2000&auto=format&fit=crop"
                 },
                 {
                   icon: LayoutTemplate,
-                  title: "Compose pages visually",
-                  desc: "Drag, nest, and configure primitives in the dashboard. Every change maps directly to clean React and Tailwind output committed to your branch.",
+                  title: "Compose",
+                  desc: "Drag, nest, and configure primitives in the dashboard. Every change maps directly to clean React and Tailwind output.",
+                  color: "text-purple-400",
+                  bg: "bg-purple-500/10",
+                  borderColor: "border-purple-500/30",
+                  img: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2000&auto=format&fit=crop"
                 },
                 {
                   icon: Rocket,
-                  title: "Deploy to the edge",
+                  title: "Deploy",
                   desc: "Merge and hit deploy. Adhive triggers a Vercel build and serves your site globally with preview URLs for every pull request.",
+                  color: "text-emerald-400",
+                  bg: "bg-emerald-500/10",
+                  borderColor: "border-emerald-500/30",
+                  img: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop"
                 },
               ].map((step, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="flex gap-5"
+                  transition={{ duration: 0.6, delay: i * 0.2 }}
+                  className="relative group bg-[#09090b] border border-white/10 rounded-3xl p-6 backdrop-blur-md hover:bg-white/5 transition-all hover:-translate-y-2 shadow-2xl"
                 >
-                  <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 rounded-xl bg-zinc-100 border border-border flex items-center justify-center shrink-0">
-                      <step.icon className="w-5 h-5 text-zinc-700" />
+                  <div className="aspect-video rounded-2xl overflow-hidden mb-8 relative border border-white/5">
+                    <img src={step.img} alt={step.title} className="w-full h-full object-cover opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#09090b] via-[#09090b]/40 to-transparent" />
+                    <div className={`absolute -bottom-6 left-1/2 -translate-x-1/2 w-14 h-14 rounded-2xl ${step.bg} ${step.borderColor} border flex items-center justify-center backdrop-blur-xl shadow-lg shadow-black/50 group-hover:scale-110 transition-transform`}>
+                      <step.icon className={`w-6 h-6 ${step.color}`} />
                     </div>
-                    {i < 2 && <div className="w-px flex-1 bg-border my-2" />}
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-1">
-                      <span className="text-muted-foreground font-mono text-xs mr-2">0{i + 1}</span>
-                      {step.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed max-w-md">{step.desc}</p>
+                  <div className="text-center mt-8">
+                    <div className="text-xs font-bold text-zinc-500 tracking-widest uppercase mb-2">Step 0{i + 1}</div>
+                    <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-zinc-400 transition-all">{step.title}</h3>
+                    <p className="text-zinc-400 text-sm leading-relaxed">{step.desc}</p>
                   </div>
                 </motion.div>
               ))}

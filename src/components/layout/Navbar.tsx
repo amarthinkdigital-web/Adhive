@@ -21,19 +21,19 @@ const navItems = [
     name: "Solutions",
     href: "/solutions",
     dropdown: [
-      { name: "For Startups", href: "/solutions#startups", desc: "Scale faster with limited resources.", icon: "🚀" },
-      { name: "For Enterprises", href: "/solutions#enterprise", desc: "Security, control, and volume.", icon: "🏢" },
-      { name: "For Marketing Agencies", href: "/solutions#agencies", desc: "Deliver ROI to clients faster.", icon: "💼" },
+      { name: "For Startups", href: "/solutions/startups", desc: "Scale faster with limited resources.", icon: "🚀" },
+      { name: "For Enterprises", href: "/solutions/enterprise", desc: "Security, control, and volume.", icon: "🏢" },
+      { name: "For Marketing Agencies", href: "/solutions/agencies", desc: "Deliver ROI to clients faster.", icon: "💼" },
     ]
   },
   {
     name: "Resources",
     href: "/resources",
     dropdown: [
-      { name: "Blog & News", href: "/resources#blog", desc: "Latest updates and growth tips.", icon: "📝" },
-      { name: "Documentation", href: "/resources#docs", desc: "Technical guides and API references.", icon: "📖" },
-      { name: "Case Studies", href: "/resources#case-studies", desc: "How companies grow with Adhive.", icon: "📈" },
-      { name: "Community Forum", href: "/resources#community", desc: "Connect with other builders.", icon: "💬" },
+      { name: "Blog & News", href: "/resources", desc: "Latest updates and growth tips.", icon: "📝" },
+      { name: "Documentation", href: "/resources/docs", desc: "Technical guides and API references.", icon: "📖" },
+      { name: "Case Studies", href: "/resources/case-studies", desc: "How companies grow with Adhive.", icon: "📈" },
+      { name: "Community Forum", href: "/resources/community", desc: "Connect with other builders.", icon: "💬" },
     ]
   },
   {

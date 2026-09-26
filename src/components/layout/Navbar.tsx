@@ -80,11 +80,8 @@ export const Navbar = () => {
       <nav className="w-full max-w-7xl flex items-center justify-between px-6 py-4 mx-auto relative">
         
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 z-10 group" onClick={() => setActiveDropdown(null)}>
-          <div className="w-8 h-8 rounded-lg bg-zinc-900 flex items-center justify-center shadow-sm group-hover:bg-zinc-700 transition-colors">
-            <Zap className="w-4 h-4 text-white" strokeWidth={2.5} />
-          </div>
-          <span className="font-bold text-lg tracking-tight text-zinc-900">Adhive</span>
+        <Link href="/" className="flex items-center z-10 group" onClick={() => setActiveDropdown(null)}>
+          <img src="/images/adhive_F.svg" alt="Adhive Logo" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop Nav Links — centered */}

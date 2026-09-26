@@ -22,20 +22,20 @@ export default function ProductPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-strong mb-6">
-              <Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm font-medium text-foreground/80">Platform Overview</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sky-200 bg-sky-50 mb-6">
+              <Sparkles className="w-4 h-4 text-sky-500" />
+              <span className="text-sm font-medium text-sky-700">Platform Overview</span>
             </div>
             <h1 className="text-5xl md:text-6xl font-bold tracking-tight mb-6">
               The engine behind <br className="hidden md:block" />
-              <span className="text-gradient-primary">your next website.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-amber-500">your next website.</span>
             </h1>
-            <p className="text-lg text-muted-foreground mb-8">
-              Adhive combines an AI-powered page builder, real-time visitor identification, and automated workflows into a single, unified platform.
+            <p className="text-lg text-zinc-600 mb-8">
+              A unified platform to build, identify visitors, and automate workflows.
             </p>
             <div className="flex gap-4">
-              <Button variant="primary" size="lg" onClick={() => router.push('/contact')}>Get Started</Button>
-              <Button variant="outline" size="lg">View Docs</Button>
+              <Button variant="primary" size="lg" className="bg-sky-500 hover:bg-sky-600 border-none text-white shadow-[0_8px_32px_rgba(14,165,233,0.3)]" onClick={() => router.push('/contact')}>Get Started</Button>
+              <Button variant="outline" size="lg" className="border-sky-200 text-sky-700 hover:bg-sky-50">View Docs</Button>
             </div>
           </motion.div>
 
@@ -45,7 +45,7 @@ export default function ProductPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="relative"
           >
-            <div className="absolute inset-0 bg-primary/20 blur-[100px] rounded-full pointer-events-none" />
+            <div className="absolute inset-0 bg-sky-500/20 blur-[100px] rounded-full pointer-events-none" />
             <img 
               src="/images/product_hero.png" 
               alt="Adhive Platform Interface" 
@@ -56,7 +56,7 @@ export default function ProductPage() {
       </section>
 
       {/* Features Deep Dive */}
-      <section className="py-24 bg-black/5">
+      <section className="py-40 bg-zinc-50 border-t border-zinc-200">
         <div className="max-w-6xl mx-auto px-6 space-y-32">
           {/* Feature 1 */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -66,21 +66,14 @@ export default function ProductPage() {
               viewport={{ once: true }}
               className="order-2 md:order-1"
             >
-              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-6">
-                <LayoutTemplate className="text-primary w-6 h-6" />
+              <div className="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center mb-6">
+                <LayoutTemplate className="text-sky-500 w-6 h-6" />
               </div>
               <h2 className="text-3xl font-bold mb-4">AI Website Builder</h2>
-              <p className="text-muted-foreground text-lg mb-6">
-                Don't start from scratch. Our AI engine generates structure, copy, and layout based on your brand guidelines. Edit visually or dive into the code.
+              <p className="text-zinc-600 text-lg mb-6">
+                Generate structure, copy, and layout based on your brand guidelines.
               </p>
-              <ul className="space-y-3">
-                {["Deterministic generation (no hallucinations)", "React & Tailwind CSS output", "Full code ownership"].map(f => (
-                  <li key={f} className="flex items-center gap-2 text-foreground/80">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
+              {/* Removed list for simpler look */}
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -107,14 +100,14 @@ export default function ProductPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <div className="w-12 h-12 bg-accent/10 rounded-xl flex items-center justify-center mb-6">
-                <Zap className="text-accent w-6 h-6" />
+              <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center mb-6">
+                <Zap className="text-amber-500 w-6 h-6" />
               </div>
               <h2 className="text-3xl font-bold mb-4">Visitor Identification</h2>
-              <p className="text-muted-foreground text-lg mb-6">
-                Turn anonymous traffic into actionable pipelines. Identify visiting companies, enrich data automatically, and route alerts to your sales team in real-time.
+              <p className="text-zinc-600 text-lg mb-6">
+                Turn anonymous traffic into actionable pipelines in real-time.
               </p>
-              <Button variant="glass" className="gap-2 group">
+              <Button variant="outline" className="gap-2 group border-amber-200 text-amber-700 hover:bg-amber-50">
                 Explore Analytics <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </motion.div>
@@ -123,18 +116,19 @@ export default function ProductPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-40 relative overflow-hidden bg-white">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sky-500/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="glass-strong rounded-3xl p-10 md:p-16 border border-primary/20"
+            className="rounded-3xl p-10 md:p-16 border border-sky-100 bg-sky-50/50 backdrop-blur-sm"
           >
-            <Shield className="w-12 h-12 text-primary mx-auto mb-6" />
-            <h2 className="text-4xl font-bold mb-4">Ready to build?</h2>
-            <p className="text-xl text-muted-foreground mb-8">Join the platform that growth teams rely on.</p>
-            <Button variant="primary" size="lg" onClick={() => router.push('/contact')}>Get Started</Button>
+            <Shield className="w-12 h-12 text-sky-500 mx-auto mb-6" />
+            <h2 className="text-4xl font-bold mb-4 text-zinc-900">Ready to build?</h2>
+            <p className="text-xl text-zinc-600 mb-8">Join the platform that growth teams rely on.</p>
+            <Button variant="primary" size="lg" className="bg-sky-500 hover:bg-sky-600 border-none text-white shadow-lg shadow-sky-500/30" onClick={() => router.push('/contact')}>Get Started</Button>
           </motion.div>
         </div>
       </section>

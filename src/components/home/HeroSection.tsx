@@ -110,7 +110,7 @@ export const HeroSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center overflow-hidden bg-[#fafafa] border-b border-[#e4e4e7] pt-0"
+      className="relative min-h-screen flex items-center overflow-hidden bg-[#fafafa] border-b border-[#e4e4e7] pt-20"
     >
       {/* ── Animated grid background ── */}
       <div
@@ -149,43 +149,43 @@ export const HeroSection = () => {
       />
 
       {/* ── Main content ── */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-16 pb-12 grid lg:grid-cols-[1fr_480px] gap-20 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-16 pb-16 grid lg:grid-cols-[1fr_480px] gap-20 items-center">
         {/* LEFT: Text content */}
         <div className="flex flex-col items-start max-w-2xl">
           {/* Badge */}
           <div
             ref={badgeRef}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-violet-200 bg-violet-50 text-xs font-semibold text-violet-700 mb-8 shadow-sm"
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-200 bg-amber-50 text-xs font-semibold text-amber-700 mb-8 shadow-sm"
           >
             <Sparkles className="w-3.5 h-3.5" />
-            Adhive 2.0 is now available
-            <span className="w-1.5 h-1.5 rounded-full bg-violet-500 animate-pulse" />
+            The #1 Influencer Marketing Platform
+            <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
           </div>
 
           {/* Headline */}
           <h1
             ref={headlineRef}
-            className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-[-0.03em] leading-[1.05] text-[#09090b] mb-6"
+            className="text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.03em] leading-[1.05] text-[#09090b] mb-6"
           >
-            Ship marketing{" "}
+            Connect brands with{" "}
             <span
               className="animate-[gradient-shift_4s_ease_infinite]"
               style={{
                 backgroundImage:
-                  "linear-gradient(135deg, #7c3aed 0%, #2563eb 50%, #7c3aed 100%)",
+                  "linear-gradient(135deg, #fd9c01 0%, #ffce00 50%, #fc7f03 100%)",
                 backgroundClip: "text",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundSize: "200% auto",
               }}
             >
-              sites
+              influencers
             </span>
             <br />
-            with engineering
+            that actually
             <br className="hidden md:block" />
             <span className="relative inline-block">
-              precision.
+              convert.
               {/* Underline accent */}
               <svg
                 className="absolute -bottom-2 left-0 w-full"
@@ -202,38 +202,28 @@ export const HeroSection = () => {
                 />
                 <defs>
                   <linearGradient id="underlineGrad" x1="0" y1="0" x2="300" y2="0">
-                    <stop offset="0%" stopColor="#7c3aed" />
-                    <stop offset="100%" stopColor="#2563eb" />
+                    <stop offset="0%" stopColor="#ffce00" />
+                    <stop offset="100%" stopColor="#fc7f03" />
                   </linearGradient>
                 </defs>
               </svg>
             </span>
           </h1>
 
-          {/* Sub */}
-          <p
-            ref={subRef}
-            className="text-lg md:text-xl text-[#71717a] max-w-xl leading-relaxed mb-10"
-          >
-            Adhive gives your team the building blocks to create, iterate, and
-            analyze marketing websites — without sacrificing code quality or
-            relying on templates.
-          </p>
-
           {/* CTA row */}
-          <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 mb-14">
+          <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 mt-12 mb-14">
             <Button
               variant="primary"
               size="lg"
               className="gap-2 group"
               onClick={() => router.push('/contact')}
               style={{
-                background: "linear-gradient(135deg, #7c3aed, #2563eb)",
+                background: "linear-gradient(135deg, #fd9c01, #fc7f03)",
                 border: "none",
-                boxShadow: "0 8px 32px rgba(124,58,237,0.30)",
+                boxShadow: "0 8px 32px rgba(253,156,1,0.30)",
               }}
             >
-              Get Started
+              Start a Campaign
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Button>
             <Button
@@ -241,30 +231,11 @@ export const HeroSection = () => {
               size="lg"
               className="gap-2 hover:border-violet-300 hover:text-violet-700 transition-colors"
             >
-              Read the Docs
+              Explore Influencers
             </Button>
           </div>
 
-          {/* Stats row */}
-          <div
-            ref={statsRef}
-            className="flex flex-wrap items-center gap-8"
-          >
-            {[
-              { value: "10k+", label: "Sites deployed" },
-              { value: "99.9%", label: "Uptime SLA" },
-              { value: "< 50ms", label: "Edge latency" },
-            ].map((stat) => (
-              <div key={stat.label} className="flex flex-col">
-                <span className="text-2xl font-bold text-[#09090b] tracking-tight">
-                  {stat.value}
-                </span>
-                <span className="text-xs text-[#71717a] font-medium mt-0.5">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
+          {/* Stats removed for minimalist look */}
         </div>
 
         {/* RIGHT: 2-Image Flip/Parallax Layout */}
@@ -298,9 +269,9 @@ export const HeroSection = () => {
           <div
             className="absolute top-4 -right-8 px-4 py-2 rounded-2xl text-xs font-bold shadow-xl z-30 animate-bounce"
             style={{
-              background: "linear-gradient(135deg, #7c3aed, #2563eb)",
+              background: "linear-gradient(135deg, #fd9c01, #fc7f03)",
               color: "#fff",
-              boxShadow: "0 8px 24px rgba(124,58,237,0.5)",
+              boxShadow: "0 8px 24px rgba(253,156,1,0.5)",
               animationDuration: "3s"
             }}
           >

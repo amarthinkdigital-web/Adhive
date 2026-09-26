@@ -97,7 +97,7 @@ export default function PricingPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
           >
-            Pay for what <br /> <span className="text-gradient-primary">you build.</span>
+            Pay for what <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-amber-500">you build.</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -105,7 +105,7 @@ export default function PricingPage() {
             transition={{ delay: 0.1 }}
             className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
           >
-            Start free. Upgrade for more credits, visitor enrichment, or integrations.
+            Start free. Upgrade as you grow.
           </motion.p>
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -113,14 +113,14 @@ export default function PricingPage() {
             transition={{ delay: 0.2 }}
             className="flex flex-col sm:flex-row justify-center gap-4"
           >
-            <Button variant="primary" size="lg" onClick={() => router.push('/contact')}>Get Started</Button>
-            <Button variant="glass" size="lg">Talk to sales</Button>
+            <Button variant="primary" size="lg" className="bg-sky-500 hover:bg-sky-600 border-none text-white shadow-[0_8px_32px_rgba(14,165,233,0.3)]" onClick={() => router.push('/contact')}>Get Started</Button>
+            <Button variant="outline" size="lg" className="border-sky-200 text-sky-700 hover:bg-sky-50">Talk to sales</Button>
           </motion.div>
         </div>
       </section>
 
       {/* Pricing Cards */}
-      <section className="py-10 max-w-7xl mx-auto px-6">
+      <section className="py-20 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {plans.map((plan, i) => (
             <motion.div
@@ -130,9 +130,9 @@ export default function PricingPage() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <GlassCard className={`h-full flex flex-col ${plan.badge ? 'border-primary/50 shadow-[0_0_30px_rgba(37,99,235,0.1)] ring-1 ring-primary/20' : ''}`}>
+              <GlassCard className={`h-full flex flex-col ${plan.badge ? 'border-sky-300 shadow-[0_0_30px_rgba(14,165,233,0.1)] ring-1 ring-sky-200' : ''}`}>
                 {plan.badge && (
-                  <span className="bg-primary/10 text-primary text-xs font-bold px-3 py-1 rounded-full w-fit mb-4">
+                  <span className="bg-amber-100 text-amber-600 text-xs font-bold px-3 py-1 rounded-full w-fit mb-4">
                     {plan.badge}
                   </span>
                 )}
@@ -151,7 +151,7 @@ export default function PricingPage() {
                 <ul className="flex flex-col gap-3 mt-auto">
                   {plan.features.map((feat) => (
                     <li key={feat} className="flex items-start gap-2 text-sm text-foreground/80">
-                      <Check className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-sky-500 shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </li>
                   ))}
@@ -163,11 +163,11 @@ export default function PricingPage() {
       </section>
 
       {/* How Credits Work */}
-      <section className="py-24 max-w-4xl mx-auto px-6">
+      <section className="py-40 max-w-4xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">How credits work</h2>
           <p className="text-lg text-muted-foreground">
-            Credits are the fuel for the work Adhive does. They're spent while Adhive is actively building or editing — a workspace that's just live and serving traffic uses next to nothing.
+            Credits are the fuel for the work Adhive does. Active workspaces use credits, live sites don't.
           </p>
         </div>
         
@@ -175,19 +175,11 @@ export default function PricingPage() {
           {[
             {
               title: "Professional websites cost more to build",
-              desc: "Adhive may consume more credits while building a polished, AI website builder for marketing teams. The work is real engineering and design — not a template fill — so heavier builds draw more."
-            },
-            {
-              title: "A slurp extracts your brand, then credits make it real",
-              desc: "A slurp isn't a 100% clone. It's a best-effort, deterministic (no-AI) pass that pulls your brand's soul — structure, identity, design tokens. Credits then turn that into professional-grade code and populate your design system — work that costs thousands of dollars with a development team."
+              desc: "Building a polished AI website takes real engineering and design."
             },
             {
               title: "One balance, unified across everything",
-              desc: "Image generation, code generation, document generation, planning, and visitor enrichment all draw from the same credit balance. No separate meters to track."
-            },
-            {
-              title: "Built to get radically more efficient",
-              desc: "We're building Adhive to be 100× more time- and cost-efficient than the old way of shipping marketing sites — and we're constantly improving credit efficiency as the platform gets smarter."
+              desc: "Image generation, code generation, and visitor enrichment draw from the same balance."
             }
           ].map((item, i) => (
             <motion.div 
@@ -197,7 +189,7 @@ export default function PricingPage() {
               viewport={{ once: true }}
               className="flex gap-4"
             >
-              <div className="mt-1 bg-primary/10 p-2 rounded-lg h-fit text-primary">
+              <div className="mt-1 bg-amber-100 p-2 rounded-lg h-fit text-amber-500">
                 <HelpCircle className="w-5 h-5" />
               </div>
               <div>
@@ -210,7 +202,7 @@ export default function PricingPage() {
       </section>
 
       {/* Comparison Table */}
-      <section className="py-24 bg-black/5 border-y border-border">
+      <section className="py-40 bg-zinc-50 border-y border-zinc-200">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">Every plan, side by side.</h2>
@@ -244,7 +236,7 @@ export default function PricingPage() {
                     {row.values.map((val, idx) => (
                       <td key={idx} className="p-4">
                         {typeof val === 'boolean' ? (
-                          val ? <Check className="w-5 h-5 text-primary" /> : <span className="text-muted-foreground">-</span>
+                          val ? <Check className="w-5 h-5 text-sky-500" /> : <span className="text-zinc-400">-</span>
                         ) : (
                           <span className="text-foreground/80">{val}</span>
                         )}
@@ -259,7 +251,8 @@ export default function PricingPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-40 relative overflow-hidden bg-white">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sky-500/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -267,16 +260,16 @@ export default function PricingPage() {
             viewport={{ once: true }}
             className="glass-strong rounded-3xl p-10 md:p-16 border border-primary/20"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Ship your site.</h2>
-            <p className="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto">
-              Get started in minutes — no card required. Bring your brand, and Adhive builds the rest.
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-zinc-900">Ship your site.</h2>
+            <p className="text-xl text-zinc-600 mb-10 max-w-2xl mx-auto">
+              Get started in minutes. Bring your brand, and Adhive builds the rest.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button variant="primary" size="lg" className="gap-2 group" onClick={() => router.push('/contact')}>
+              <Button variant="primary" size="lg" className="gap-2 group bg-sky-500 hover:bg-sky-600 text-white border-none shadow-[0_8px_32px_rgba(14,165,233,0.3)]" onClick={() => router.push('/contact')}>
                 Get Started
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="glass" size="lg">Talk to sales</Button>
+              <Button variant="outline" size="lg" className="border-sky-200 text-sky-700 hover:bg-sky-50">Talk to sales</Button>
             </div>
           </motion.div>
         </div>

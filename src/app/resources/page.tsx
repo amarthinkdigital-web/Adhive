@@ -59,7 +59,7 @@ const articles = [
 
 export default function ResourcesPage() {
   return (
-    <main className="min-h-screen bg-background selection:bg-zinc-200">
+    <main className="min-h-screen bg-white selection:bg-sky-500/30">
       <Navbar />
 
       {/* Hero Section */}
@@ -109,21 +109,20 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      {/* NEW: Bento Grid Masterclasses (Replaces Horizontal Scroll) */}
-      <section className="py-24 bg-zinc-950 text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 pointer-events-none" />
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/10 blur-[120px] rounded-full pointer-events-none" />
+      {/* NEW: Bento Grid Masterclasses */}
+      <section className="py-24 bg-sky-50 text-zinc-900 relative overflow-hidden border-t border-sky-100">
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-sky-500/10 blur-[120px] rounded-full pointer-events-none" />
         
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-800 bg-zinc-900 text-xs font-semibold text-zinc-300 mb-6">
-                  <PlayCircle className="w-3.5 h-3.5 text-blue-400" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-sky-200 bg-white text-xs font-semibold text-sky-600 mb-6">
+                  <PlayCircle className="w-3.5 h-3.5 text-sky-500" />
                   Featured Masterclasses
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Learn from the best.</h2>
-                <p className="text-zinc-400 text-lg max-w-xl">
+                <p className="text-zinc-600 text-lg max-w-xl">
                   Exclusive insights, webinars, and growth tactics from industry leaders.
                 </p>
               </motion.div>
@@ -132,7 +131,7 @@ export default function ResourcesPage() {
               initial={{ opacity: 0, x: 20 }} 
               whileInView={{ opacity: 1, x: 0 }} 
               viewport={{ once: true }}
-              className="group flex items-center gap-2 text-sm font-semibold text-white bg-white/5 hover:bg-white/10 border border-white/10 px-5 py-2.5 rounded-lg transition-all"
+              className="group flex items-center gap-2 text-sm font-semibold text-sky-700 bg-white hover:bg-sky-50 border border-sky-200 px-5 py-2.5 rounded-lg transition-all"
             >
               Browse Library <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </motion.button>
@@ -145,10 +144,10 @@ export default function ResourcesPage() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="md:col-span-2 md:row-span-2 relative group rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-900 min-h-[400px] md:min-h-0"
+              className="md:col-span-2 md:row-span-2 relative group rounded-3xl overflow-hidden border border-sky-200 bg-white min-h-[400px] md:min-h-0"
             >
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" alt="Main Masterclass" className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 group-hover:opacity-60 transition-all duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" alt="Main Masterclass" className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 group-hover:opacity-40 transition-all duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-sky-100 via-sky-50/80 to-transparent" />
               <div className="absolute inset-0 p-8 flex flex-col justify-between z-10">
                 <div className="flex justify-between items-start">
                   <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">New Series</span>
@@ -157,11 +156,11 @@ export default function ResourcesPage() {
                   </div>
                 </div>
                 <div className="max-w-md">
-                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-3 leading-tight">B2B Growth Tactics for 2026</h3>
-                  <p className="text-zinc-300 mb-5 text-sm md:text-base line-clamp-2">Elena V. shares how Acme scaled from $1M to $10M ARR in 18 months using intent data and automated outreach.</p>
+                  <h3 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-3 leading-tight">B2B Growth Tactics for 2026</h3>
+                  <p className="text-zinc-700 mb-5 text-sm md:text-base line-clamp-2">Elena V. shares how Acme scaled from $1M to $10M ARR in 18 months using intent data and automated outreach.</p>
                   <div className="flex items-center gap-4">
-                    <span className="text-sm font-semibold text-zinc-400 flex items-center gap-1.5"><Clock className="w-4 h-4"/> 45 Mins</span>
-                    <span className="text-sm font-semibold text-zinc-400">By Elena V.</span>
+                    <span className="text-sm font-semibold text-sky-700 flex items-center gap-1.5"><Clock className="w-4 h-4"/> 45 Mins</span>
+                    <span className="text-sm font-semibold text-sky-700">By Elena V.</span>
                   </div>
                 </div>
               </div>
@@ -173,16 +172,16 @@ export default function ResourcesPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1, duration: 0.5 }}
-              className="relative group rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-900 min-h-[250px] md:min-h-0"
+              className="relative group rounded-3xl overflow-hidden border border-sky-200 bg-white min-h-[250px] md:min-h-0"
             >
-              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="Small 1" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="Small 1" className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-sky-100 via-sky-50/90 to-transparent" />
               <div className="absolute inset-0 p-6 flex flex-col justify-end z-10">
-                 <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center group-hover:scale-110 group-hover:bg-white/20 transition-all cursor-pointer border border-white/10">
-                    <PlayCircle className="w-5 h-5 text-white" />
+                 <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white backdrop-blur-md flex items-center justify-center group-hover:scale-110 group-hover:bg-sky-50 transition-all cursor-pointer border border-sky-200">
+                    <PlayCircle className="w-5 h-5 text-sky-600" />
                   </div>
-                <h3 className="text-xl font-bold text-white mb-2 leading-snug">Conversion Optimization</h3>
-                <p className="text-sm text-zinc-400">By David M. • 32 Mins</p>
+                <h3 className="text-xl font-bold text-zinc-900 mb-2 leading-snug">Conversion Optimization</h3>
+                <p className="text-sm text-sky-700">By David M. • 32 Mins</p>
               </div>
             </motion.div>
 
@@ -192,16 +191,16 @@ export default function ResourcesPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="relative group rounded-3xl overflow-hidden border border-zinc-800 bg-zinc-900 min-h-[250px] md:min-h-0"
+              className="relative group rounded-3xl overflow-hidden border border-sky-200 bg-white min-h-[250px] md:min-h-0"
             >
-              <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop" alt="Small 2" className="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:scale-110 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent" />
+              <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop" alt="Small 2" className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" />
+              <div className="absolute inset-0 bg-gradient-to-t from-sky-100 via-sky-50/90 to-transparent" />
               <div className="absolute inset-0 p-6 flex flex-col justify-end z-10">
-                <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center group-hover:scale-110 group-hover:bg-white/20 transition-all cursor-pointer border border-white/10">
-                    <PlayCircle className="w-5 h-5 text-white" />
+                <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white backdrop-blur-md flex items-center justify-center group-hover:scale-110 group-hover:bg-sky-50 transition-all cursor-pointer border border-sky-200">
+                    <PlayCircle className="w-5 h-5 text-sky-600" />
                   </div>
-                <h3 className="text-xl font-bold text-white mb-2 leading-snug">Sales Pipelines that Scale</h3>
-                <p className="text-sm text-zinc-400">By Sarah J. • 55 Mins</p>
+                <h3 className="text-xl font-bold text-zinc-900 mb-2 leading-snug">Sales Pipelines that Scale</h3>
+                <p className="text-sm text-sky-700">By Sarah J. • 55 Mins</p>
               </div>
             </motion.div>
           </div>
@@ -209,10 +208,10 @@ export default function ResourcesPage() {
       </section>
 
       {/* Latest Articles */}
-      <section className="py-24 bg-zinc-50 relative overflow-hidden">
+      <section className="py-24 bg-white relative overflow-hidden">
         {/* Abstract background blobs for aesthetics */}
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-purple-500/5 blur-[100px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute -top-40 -left-40 w-96 h-96 bg-amber-500/5 blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-sky-500/5 blur-[120px] rounded-full pointer-events-none" />
         
         <div className="max-w-5xl mx-auto px-6 relative z-10">
           <div className="flex items-center justify-between mb-12">
@@ -292,17 +291,17 @@ export default function ResourcesPage() {
       </section>
 
       {/* Interactive Newsletter / Community Section */}
-      <section className="py-32 relative overflow-hidden bg-zinc-900 text-white">
+      <section className="py-32 relative overflow-hidden bg-sky-50 text-zinc-900 border-t border-sky-100">
         {/* Animated background elements */}
         <motion.div 
           animate={{ rotate: 360 }} 
           transition={{ duration: 150, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-[500px] -right-[500px] w-[1000px] h-[1000px] rounded-full border border-white/5 border-dashed pointer-events-none"
+          className="absolute -top-[500px] -right-[500px] w-[1000px] h-[1000px] rounded-full border border-sky-200 border-dashed pointer-events-none"
         />
         <motion.div 
           animate={{ rotate: -360 }} 
           transition={{ duration: 200, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-[600px] -right-[600px] w-[1200px] h-[1200px] rounded-full border border-white/5 border-dashed pointer-events-none"
+          className="absolute -top-[600px] -right-[600px] w-[1200px] h-[1200px] rounded-full border border-amber-200 border-dashed pointer-events-none"
         />
         
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
@@ -311,27 +310,27 @@ export default function ResourcesPage() {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white/5 border border-white/10 backdrop-blur-xl rounded-3xl p-10 md:p-16 shadow-2xl"
+            className="bg-white border border-sky-200 backdrop-blur-xl rounded-3xl p-10 md:p-16 shadow-2xl shadow-sky-100"
           >
-            <div className="w-16 h-16 rounded-2xl bg-blue-500/20 text-blue-400 flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 rounded-2xl bg-sky-100 text-sky-500 flex items-center justify-center mx-auto mb-6">
               <Send className="w-8 h-8" />
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Stay ahead of the curve.</h2>
-            <p className="text-lg text-zinc-400 mb-10 max-w-xl mx-auto">
-              Join 50,000+ marketers and founders who receive our weekly insights on growth, engineering, and design.
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-zinc-900">Stay ahead of the curve.</h2>
+            <p className="text-lg text-zinc-600 mb-10 max-w-xl mx-auto">
+              Join 50,000+ marketers and founders who receive our weekly insights.
             </p>
             
             <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
               <input 
                 type="email" 
                 placeholder="Enter your work email" 
-                className="flex-1 bg-black/50 border border-white/10 rounded-xl px-5 py-4 text-white placeholder:text-zinc-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 transition-all"
+                className="flex-1 bg-white border border-sky-200 rounded-xl px-5 py-4 text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500/50 focus:border-sky-500 transition-all shadow-sm"
               />
-              <button className="bg-blue-600 hover:bg-blue-500 text-white font-semibold rounded-xl px-8 py-4 transition-colors shadow-[0_0_20px_rgba(37,99,235,0.3)]">
+              <button className="bg-sky-500 hover:bg-sky-600 text-white font-semibold rounded-xl px-8 py-4 transition-colors shadow-lg shadow-sky-500/30">
                 Subscribe
               </button>
             </form>
-            <p className="text-xs text-zinc-500 mt-4">
+            <p className="text-xs text-zinc-400 mt-4">
               No spam. Unsubscribe anytime.
             </p>
           </motion.div>

@@ -67,25 +67,24 @@ export const FeaturedWork = () => {
   return (
     <section 
       ref={sectionRef} 
-      className="relative py-24 md:py-32 lg:py-48 bg-[#09090b] overflow-hidden border-b border-[#27272a]"
+      className="relative py-32 md:py-40 lg:py-56 bg-zinc-50 overflow-hidden border-b border-zinc-200"
     >
       {/* Background radial glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-[#09090b] to-[#09090b] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-amber-500/10 via-zinc-50 to-zinc-50 pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 relative z-30 mb-10 text-center flex flex-col items-center">
         <div ref={titleRef}>
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-blue-400 mb-4">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-amber-600 mb-4">
             --- Featured Work
           </p>
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-white">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-zinc-900">
             Sites shipped with
             <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">
               engineering precision.
             </span>
           </h2>
-          <p className="mt-6 text-zinc-400 max-w-xl mx-auto text-lg">
-            Experience lightning-fast deployments and pixel-perfect UI. 
+          <p className="mt-6 text-zinc-600 max-w-xl mx-auto text-lg">
             Drag, drop, and publish world-class digital experiences.
           </p>
         </div>
@@ -99,7 +98,7 @@ export const FeaturedWork = () => {
           ref={leftImageRef}
           className="absolute left-0 md:left-10 top-10 md:top-20 w-[60%] md:w-[45%] h-[280px] md:h-[450px] z-20"
         >
-          <div className="w-full h-full relative group rounded-3xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.6)] border border-white/10">
+          <div className="w-full h-full relative group rounded-3xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.15)] border border-zinc-200">
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 transition-opacity group-hover:opacity-60 duration-500" />
             <img 
               src="/images/featured_left_1790228521492.png" 
@@ -109,7 +108,7 @@ export const FeaturedWork = () => {
             <div className="absolute bottom-6 left-6 z-20">
               <h3 className="text-white text-2xl font-bold mb-1">Nebula SaaS</h3>
               <p className="text-zinc-300 text-sm flex items-center gap-2">
-                Marketing Site <ArrowUpRight className="w-4 h-4 text-blue-400" />
+                Marketing Site <ArrowUpRight className="w-4 h-4 text-amber-400" />
               </p>
             </div>
           </div>
@@ -120,7 +119,7 @@ export const FeaturedWork = () => {
           ref={rightImageRef}
           className="absolute right-0 md:right-10 top-0 w-[60%] md:w-[45%] h-[280px] md:h-[450px] z-10"
         >
-          <div className="w-full h-full relative group rounded-3xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.6)] border border-white/10">
+          <div className="w-full h-full relative group rounded-3xl overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.15)] border border-zinc-200">
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 transition-opacity group-hover:opacity-60 duration-500" />
             <img 
               src="/images/featured_right_1790228583759.png" 
@@ -130,7 +129,7 @@ export const FeaturedWork = () => {
             <div className="absolute bottom-6 right-6 z-20 text-right">
               <h3 className="text-white text-2xl font-bold mb-1">Orbital Flow</h3>
               <p className="text-zinc-300 text-sm flex items-center justify-end gap-2">
-                Commerce Landing <ArrowUpRight className="w-4 h-4 text-purple-400" />
+                Commerce Landing <ArrowUpRight className="w-4 h-4 text-orange-400" />
               </p>
             </div>
           </div>

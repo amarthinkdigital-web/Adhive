@@ -10,18 +10,18 @@ export const TalkToUs = () => {
   const router = useRouter();
 
   return (
-    <section className="py-32 lg:py-40 relative overflow-hidden bg-zinc-950 text-white">
+    <section className="py-40 lg:py-48 relative overflow-hidden bg-white text-zinc-900">
       <div
         className="absolute top-[-120px] left-1/2 -translate-x-1/2 w-[720px] h-[720px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(124,58,237,0.18) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(253,156,1,0.18) 0%, transparent 65%)",
           filter: "blur(30px)",
         }}
       />
       <div
         className="absolute bottom-[-140px] right-[-120px] w-[560px] h-[560px] rounded-full pointer-events-none"
         style={{
-          background: "radial-gradient(circle, rgba(37,99,235,0.14) 0%, transparent 65%)",
+          background: "radial-gradient(circle, rgba(255,206,0,0.14) 0%, transparent 65%)",
           filter: "blur(40px)",
         }}
       />
@@ -33,39 +33,38 @@ export const TalkToUs = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-zinc-500 mb-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-amber-600 mb-8">
             --- Let&apos;s talk
           </p>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-8">
-            Let&apos;s talk about it.
+            Launch your next influencer campaign.
           </h2>
-          <p className="text-lg md:text-xl text-zinc-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            We will collaborate to find the right answer and bring progress to
-            your business and to the world — starting with a site that ships in hours.
+          <p className="text-lg md:text-xl text-zinc-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+            Let's find the right creators for your brand and start driving real results from day one.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4 mb-14">
             <Button
               size="lg"
-              className="gap-2 group bg-white text-black hover:bg-zinc-200"
+              className="gap-2 group bg-amber-500 text-white hover:bg-amber-600 shadow-[0_8px_32px_rgba(253,156,1,0.30)] border-none"
               onClick={() => router.push('/contact')}
             >
-              Get Started
+              Start a Campaign
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Button>
             <Button
               size="lg"
-              className="bg-zinc-900 border border-zinc-800 text-white hover:bg-zinc-800"
+              className="bg-white border border-sky-200 text-sky-700 hover:bg-sky-50"
             >
-              View Documentation
+              Find Influencers
             </Button>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm font-mono text-zinc-500">
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm font-mono text-amber-700">
             <span>hello@adhive.app</span>
-            <span className="hidden sm:inline text-zinc-800">/</span>
+            <span className="hidden sm:inline text-amber-200">/</span>
             <span>+1 (415) 555-0138</span>
-            <span className="hidden sm:inline text-zinc-800">/</span>
+            <span className="hidden sm:inline text-amber-200">/</span>
             <span>San Francisco, CA</span>
           </div>
         </motion.div>

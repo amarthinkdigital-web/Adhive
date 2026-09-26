@@ -9,11 +9,8 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-16">
           <div className="col-span-2 lg:col-span-2">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-primary to-accent flex items-center justify-center">
-                <span className="text-white font-bold text-lg leading-none">A</span>
-              </div>
-              <span className="font-bold text-2xl tracking-tight">Adhive</span>
+            <div className="flex items-center mb-6">
+              <img src="/images/adhive_F.svg" alt="Adhive Logo" className="h-14 w-auto" />
             </div>
             <p className="text-muted-foreground mb-8 max-w-sm">
               The AI marketing platform for website growth. Build on-brand pages, identify visitors, and automate SEO.

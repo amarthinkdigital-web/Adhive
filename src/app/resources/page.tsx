@@ -59,7 +59,7 @@ const articles = [
 
 export default function ResourcesPage() {
   return (
-    <main className="min-h-screen bg-white selection:bg-sky-500/30">
+    <main className="min-h-screen bg-white selection:bg-orange-500/30">
       <Navbar />
 
       {/* Hero Section */}
@@ -110,15 +110,15 @@ export default function ResourcesPage() {
       </section>
 
       {/* NEW: Bento Grid Masterclasses */}
-      <section className="py-24 bg-sky-50 text-zinc-900 relative overflow-hidden border-t border-sky-100">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-sky-500/10 blur-[120px] rounded-full pointer-events-none" />
+      <section className="py-24 bg-orange-50 text-zinc-900 relative overflow-hidden border-t border-orange-100">
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-orange-500/10 blur-[120px] rounded-full pointer-events-none" />
         
         <div className="max-w-6xl mx-auto px-6 relative z-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-sky-200 bg-white text-xs font-semibold text-sky-600 mb-6">
-                  <PlayCircle className="w-3.5 h-3.5 text-sky-500" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-orange-200 bg-white text-xs font-semibold text-orange-600 mb-6">
+                  <PlayCircle className="w-3.5 h-3.5 text-orange-500" />
                   Featured Masterclasses
                 </div>
                 <h2 className="text-4xl md:text-5xl font-bold mb-4 tracking-tight">Learn from the best.</h2>
@@ -131,7 +131,7 @@ export default function ResourcesPage() {
               initial={{ opacity: 0, x: 20 }} 
               whileInView={{ opacity: 1, x: 0 }} 
               viewport={{ once: true }}
-              className="group flex items-center gap-2 text-sm font-semibold text-sky-700 bg-white hover:bg-sky-50 border border-sky-200 px-5 py-2.5 rounded-lg transition-all"
+              className="group flex items-center gap-2 text-sm font-semibold text-orange-700 bg-white hover:bg-orange-50 border border-orange-200 px-5 py-2.5 rounded-lg transition-all"
             >
               Browse Library <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
             </motion.button>
@@ -144,10 +144,10 @@ export default function ResourcesPage() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="md:col-span-2 md:row-span-2 relative group rounded-3xl overflow-hidden border border-sky-200 bg-white min-h-[400px] md:min-h-0"
+              className="md:col-span-2 md:row-span-2 relative group rounded-3xl overflow-hidden border border-orange-200 bg-white min-h-[400px] md:min-h-0"
             >
               <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop" alt="Main Masterclass" className="absolute inset-0 w-full h-full object-cover opacity-30 group-hover:scale-105 group-hover:opacity-40 transition-all duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-sky-100 via-sky-50/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-orange-100 via-orange-50/80 to-transparent" />
               <div className="absolute inset-0 p-8 flex flex-col justify-between z-10">
                 <div className="flex justify-between items-start">
                   <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg">New Series</span>
@@ -159,8 +159,8 @@ export default function ResourcesPage() {
                   <h3 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-3 leading-tight">B2B Growth Tactics for 2026</h3>
                   <p className="text-zinc-700 mb-5 text-sm md:text-base line-clamp-2">Elena V. shares how Acme scaled from $1M to $10M ARR in 18 months using intent data and automated outreach.</p>
                   <div className="flex items-center gap-4">
-                    <span className="text-sm font-semibold text-sky-700 flex items-center gap-1.5"><Clock className="w-4 h-4"/> 45 Mins</span>
-                    <span className="text-sm font-semibold text-sky-700">By Elena V.</span>
+                    <span className="text-sm font-semibold text-orange-700 flex items-center gap-1.5"><Clock className="w-4 h-4"/> 45 Mins</span>
+                    <span className="text-sm font-semibold text-orange-700">By Elena V.</span>
                   </div>
                 </div>
               </div>
@@ -172,16 +172,16 @@ export default function ResourcesPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1, duration: 0.5 }}
-              className="relative group rounded-3xl overflow-hidden border border-sky-200 bg-white min-h-[250px] md:min-h-0"
+              className="relative group rounded-3xl overflow-hidden border border-orange-200 bg-white min-h-[250px] md:min-h-0"
             >
               <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070&auto=format&fit=crop" alt="Small 1" className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-sky-100 via-sky-50/90 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-orange-100 via-orange-50/90 to-transparent" />
               <div className="absolute inset-0 p-6 flex flex-col justify-end z-10">
-                 <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white backdrop-blur-md flex items-center justify-center group-hover:scale-110 group-hover:bg-sky-50 transition-all cursor-pointer border border-sky-200">
-                    <PlayCircle className="w-5 h-5 text-sky-600" />
+                 <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white backdrop-blur-md flex items-center justify-center group-hover:scale-110 group-hover:bg-orange-50 transition-all cursor-pointer border border-orange-200">
+                    <PlayCircle className="w-5 h-5 text-orange-600" />
                   </div>
                 <h3 className="text-xl font-bold text-zinc-900 mb-2 leading-snug">Conversion Optimization</h3>
-                <p className="text-sm text-sky-700">By David M. • 32 Mins</p>
+                <p className="text-sm text-orange-700">By David M. • 32 Mins</p>
               </div>
             </motion.div>
 
@@ -191,16 +191,16 @@ export default function ResourcesPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.5 }}
-              className="relative group rounded-3xl overflow-hidden border border-sky-200 bg-white min-h-[250px] md:min-h-0"
+              className="relative group rounded-3xl overflow-hidden border border-orange-200 bg-white min-h-[250px] md:min-h-0"
             >
               <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop" alt="Small 2" className="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:scale-110 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-sky-100 via-sky-50/90 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-orange-100 via-orange-50/90 to-transparent" />
               <div className="absolute inset-0 p-6 flex flex-col justify-end z-10">
-                <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white backdrop-blur-md flex items-center justify-center group-hover:scale-110 group-hover:bg-sky-50 transition-all cursor-pointer border border-sky-200">
-                    <PlayCircle className="w-5 h-5 text-sky-600" />
+                <div className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white backdrop-blur-md flex items-center justify-center group-hover:scale-110 group-hover:bg-orange-50 transition-all cursor-pointer border border-orange-200">
+                    <PlayCircle className="w-5 h-5 text-orange-600" />
                   </div>
                 <h3 className="text-xl font-bold text-zinc-900 mb-2 leading-snug">Sales Pipelines that Scale</h3>
-                <p className="text-sm text-sky-700">By Sarah J. • 55 Mins</p>
+                <p className="text-sm text-orange-700">By Sarah J. • 55 Mins</p>
               </div>
             </motion.div>
           </div>
@@ -211,7 +211,7 @@ export default function ResourcesPage() {
       <section className="py-24 bg-white relative overflow-hidden">
         {/* Abstract background blobs for aesthetics */}
         <div className="absolute -top-40 -left-40 w-96 h-96 bg-amber-500/5 blur-[100px] rounded-full pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-sky-500/5 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-orange-500/5 blur-[120px] rounded-full pointer-events-none" />
         
         <div className="max-w-5xl mx-auto px-6 relative z-10">
           <div className="flex items-center justify-between mb-12">
@@ -291,12 +291,12 @@ export default function ResourcesPage() {
       </section>
 
       {/* Interactive Newsletter / Community Section */}
-      <section className="py-32 relative overflow-hidden bg-sky-50 text-zinc-900 border-t border-sky-100">
+      <section className="py-32 relative overflow-hidden bg-orange-50 text-zinc-900 border-t border-orange-100">
         {/* Animated background elements */}
         <motion.div 
           animate={{ rotate: 360 }} 
           transition={{ duration: 150, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-[500px] -right-[500px] w-[1000px] h-[1000px] rounded-full border border-sky-200 border-dashed pointer-events-none"
+          className="absolute -top-[500px] -right-[500px] w-[1000px] h-[1000px] rounded-full border border-orange-200 border-dashed pointer-events-none"
         />
         <motion.div 
           animate={{ rotate: -360 }} 
@@ -310,9 +310,9 @@ export default function ResourcesPage() {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white border border-sky-200 backdrop-blur-xl rounded-3xl p-10 md:p-16 shadow-2xl shadow-sky-100"
+            className="bg-white border border-orange-200 backdrop-blur-xl rounded-3xl p-10 md:p-16 shadow-2xl shadow-orange-100"
           >
-            <div className="w-16 h-16 rounded-2xl bg-sky-100 text-sky-500 flex items-center justify-center mx-auto mb-6">
+            <div className="w-16 h-16 rounded-2xl bg-orange-100 text-orange-500 flex items-center justify-center mx-auto mb-6">
               <Send className="w-8 h-8" />
             </div>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-zinc-900">Stay ahead of the curve.</h2>
@@ -324,9 +324,9 @@ export default function ResourcesPage() {
               <input 
                 type="email" 
                 placeholder="Enter your work email" 
-                className="flex-1 bg-white border border-sky-200 rounded-xl px-5 py-4 text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500/50 focus:border-sky-500 transition-all shadow-sm"
+                className="flex-1 bg-white border border-orange-200 rounded-xl px-5 py-4 text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-orange-500/50 focus:border-orange-500 transition-all shadow-sm"
               />
-              <button className="bg-sky-500 hover:bg-sky-600 text-white font-semibold rounded-xl px-8 py-4 transition-colors shadow-lg shadow-sky-500/30">
+              <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl px-8 py-4 transition-colors shadow-lg shadow-orange-500/30">
                 Subscribe
               </button>
             </form>

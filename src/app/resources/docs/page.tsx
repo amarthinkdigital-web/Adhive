@@ -16,7 +16,7 @@ export default function DocsPage() {
   };
 
   return (
-    <main className="min-h-screen bg-white text-foreground selection:bg-sky-500/30">
+    <main className="min-h-screen bg-white text-foreground selection:bg-orange-500/30">
       <Navbar />
 
       {/* Hero Section */}

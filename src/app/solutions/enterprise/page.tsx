@@ -20,17 +20,17 @@ export default function EnterprisePage() {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-65%"]);
 
   return (
-    <main className="min-h-screen bg-white selection:bg-sky-500/30">
+    <main className="min-h-screen bg-white selection:bg-orange-500/30">
       <Navbar />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 md:pt-48 md:pb-32 relative overflow-hidden bg-sky-50 text-zinc-900">
-        <div className="absolute inset-0 bg-sky-500/5 pointer-events-none" />
+      <section className="pt-32 pb-20 md:pt-48 md:pb-32 relative overflow-hidden bg-orange-50 text-zinc-900">
+        <div className="absolute inset-0 bg-orange-500/5 pointer-events-none" />
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-sky-200 bg-white text-xs font-semibold text-sky-600 mb-6 shadow-sm"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-orange-200 bg-white text-xs font-semibold text-orange-600 mb-6 shadow-sm"
           >
             <Building2 className="w-3.5 h-3.5" />
             Adhive for Enterprise
@@ -40,7 +40,7 @@ export default function EnterprisePage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
           >
-            Uncompromising <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-amber-500">security</span>, unlimited scale.
+            Uncompromising <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">security</span>, unlimited scale.
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -56,10 +56,10 @@ export default function EnterprisePage() {
             transition={{ delay: 0.2 }}
             className="flex flex-col sm:flex-row justify-center gap-4"
           >
-            <Button size="lg" className="bg-sky-500 text-white hover:bg-sky-600 px-8 shadow-[0_8px_32px_rgba(14,165,233,0.3)] border-none" onClick={() => router.push('/contact')}>
+            <Button size="lg" className="bg-orange-500 text-white hover:bg-orange-600 px-8 shadow-[0_8px_32px_rgba(14,165,233,0.3)] border-none" onClick={() => router.push('/contact')}>
               Contact Sales
             </Button>
-            <Button size="lg" variant="outline" className="border-sky-200 text-sky-700 hover:bg-sky-100 px-8 bg-white">
+            <Button size="lg" variant="outline" className="border-orange-200 text-orange-700 hover:bg-orange-100 px-8 bg-white">
               Read Security Whitepaper
             </Button>
           </motion.div>
@@ -68,14 +68,14 @@ export default function EnterprisePage() {
 
       {/* Horizontal Scroll Showcase */}
       <section ref={targetRef} className="relative h-[300vh] bg-white">
-        <div className="sticky top-0 flex h-screen items-center overflow-hidden border-t border-sky-100">
-          <div className="absolute inset-0 bg-gradient-to-r from-sky-50/50 to-transparent pointer-events-none z-0" />
+        <div className="sticky top-0 flex h-screen items-center overflow-hidden border-t border-orange-100">
+          <div className="absolute inset-0 bg-gradient-to-r from-orange-50/50 to-transparent pointer-events-none z-0" />
           
           <div className="w-full max-w-7xl mx-auto px-6 relative z-10 flex items-center">
             {/* Title fixed on the left */}
             <div className="w-1/3 shrink-0 pr-8">
               <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-4">Enterprise Grade.</h2>
-              <p className="text-sky-700/70 text-lg">
+              <p className="text-orange-700/70 text-lg">
                 Engineered for maximum reliability and control. Scroll to explore our architecture.
               </p>
             </div>
@@ -100,7 +100,7 @@ export default function EnterprisePage() {
                 }
               ].map((item, idx) => (
                 <div key={idx} className="w-[600px] shrink-0 group">
-                  <div className="relative overflow-hidden rounded-2xl border border-sky-200 bg-sky-50/50 p-2 backdrop-blur-sm transition-colors hover:border-sky-400">
+                  <div className="relative overflow-hidden rounded-2xl border border-orange-200 bg-orange-50/50 p-2 backdrop-blur-sm transition-colors hover:border-orange-400">
                     <div className="aspect-video overflow-hidden rounded-xl bg-zinc-100">
                       <img src={item.img} alt={item.title} className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0 opacity-90 group-hover:opacity-100" />
                     </div>
@@ -131,9 +131,9 @@ export default function EnterprisePage() {
               { icon: Globe2, title: "Data Residency", desc: "Choose where your data lives. Support for EU and US data residency requirements." }
             ].map((feature, idx) => (
               <motion.div key={idx} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }}>
-                <GlassCard className="h-full relative overflow-hidden group border-sky-100 bg-sky-50/30">
-                  <div className="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center mb-6">
-                    <feature.icon className="w-6 h-6 text-sky-500" />
+                <GlassCard className="h-full relative overflow-hidden group border-orange-100 bg-orange-50/30">
+                  <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
+                    <feature.icon className="w-6 h-6 text-orange-500" />
                   </div>
                   <h3 className="text-xl font-bold mb-3">{feature.title}</h3>
                   <p className="text-zinc-600">{feature.desc}</p>
@@ -145,11 +145,11 @@ export default function EnterprisePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-sky-50 text-zinc-900 text-center border-t border-sky-100">
+      <section className="py-24 bg-orange-50 text-zinc-900 text-center border-t border-orange-100">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-4xl font-bold mb-6">Upgrade to Enterprise</h2>
-          <p className="text-sky-700/70 text-lg mb-10">Get the security, reliability, and support your organization requires.</p>
-          <Button size="lg" className="bg-sky-500 text-white hover:bg-sky-600 border-none shadow-[0_8px_32px_rgba(14,165,233,0.3)] px-8" onClick={() => router.push('/contact')}>
+          <p className="text-orange-700/70 text-lg mb-10">Get the security, reliability, and support your organization requires.</p>
+          <Button size="lg" className="bg-orange-500 text-white hover:bg-orange-600 border-none shadow-[0_8px_32px_rgba(14,165,233,0.3)] px-8" onClick={() => router.push('/contact')}>
             Contact our Sales Team
           </Button>
         </div>

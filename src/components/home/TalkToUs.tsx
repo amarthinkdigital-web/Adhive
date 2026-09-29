@@ -54,7 +54,7 @@ export const TalkToUs = () => {
             </Button>
             <Button
               size="lg"
-              className="bg-white border border-sky-200 text-sky-700 hover:bg-sky-50"
+              className="bg-white border border-orange-200 text-orange-700 hover:bg-orange-50"
             >
               Find Influencers
             </Button>

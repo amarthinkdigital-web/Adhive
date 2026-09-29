@@ -23,7 +23,7 @@ export default function SolutionsPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
           >
-            Solutions for <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-amber-500">every scale.</span>
+            Solutions for <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">every scale.</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -53,8 +53,8 @@ export default function SolutionsPage() {
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-3 gap-6">
             <GlassCard className="flex flex-col h-full" id="startups">
-              <div className="w-12 h-12 bg-sky-100 rounded-xl flex items-center justify-center mb-6">
-                <Rocket className="text-sky-500 w-6 h-6" />
+              <div className="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center mb-6">
+                <Rocket className="text-orange-500 w-6 h-6" />
               </div>
               <h3 className="text-2xl font-bold mb-3">For Startups</h3>
               <p className="text-zinc-600 mb-8">
@@ -166,7 +166,7 @@ export default function SolutionsPage() {
       {/* Quote removed for minimalism */}
 
       {/* CTA */}
-      <section className="py-40 relative overflow-hidden bg-sky-50 text-zinc-900 border-t border-sky-100">
+      <section className="py-40 relative overflow-hidden bg-orange-50 text-zinc-900 border-t border-orange-100">
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -178,10 +178,10 @@ export default function SolutionsPage() {
               Whether you're a startup or enterprise, Adhive meets you where you are.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button className="bg-sky-500 text-white hover:bg-sky-600 border-none shadow-[0_8px_32px_rgba(14,165,233,0.3)]" size="lg" onClick={() => router.push('/contact')}>
+              <Button className="bg-orange-500 text-white hover:bg-orange-600 border-none shadow-[0_8px_32px_rgba(14,165,233,0.3)]" size="lg" onClick={() => router.push('/contact')}>
                 Get Started
               </Button>
-              <Button className="bg-white border border-sky-200 text-sky-700 hover:bg-sky-50" size="lg">
+              <Button className="bg-white border border-orange-200 text-orange-700 hover:bg-orange-50" size="lg">
                 Talk to Sales
               </Button>
             </div>

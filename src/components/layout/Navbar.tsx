@@ -9,23 +9,27 @@ import { useRouter } from "next/navigation";
 
 const navItems = [
   {
-    name: "Product",
-    href: "/product",
-    dropdown: [
-      { name: "Visitor Identification", href: "/product/visitor-identification", desc: "Unmask anonymous traffic.", icon: "👤" },
-      { name: "Real-time Analytics", href: "/product/analytics", desc: "Privacy-first insights.", icon: "📊" },
-      { name: "Automated Workflows", href: "/product/workflows", desc: "Trigger personalized outreach.", icon: "🔁" },
-    ]
+    name: "Home",
+    href: "/",
   },
-  {
-    name: "Solutions",
-    href: "/solutions",
-    dropdown: [
-      { name: "For Startups", href: "/solutions/startups", desc: "Scale faster with limited resources.", icon: "🚀" },
-      { name: "For Enterprises", href: "/solutions/enterprise", desc: "Security, control, and volume.", icon: "🏢" },
-      { name: "For Marketing Agencies", href: "/solutions/agencies", desc: "Deliver ROI to clients faster.", icon: "💼" },
-    ]
-  },
+  // {
+  //   name: "Product",
+  //   href: "/product",
+  //   dropdown: [
+  //     { name: "Visitor Identification", href: "/product/visitor-identification", desc: "Unmask anonymous traffic.", icon: "👤" },
+  //     { name: "Real-time Analytics", href: "/product/analytics", desc: "Privacy-first insights.", icon: "📊" },
+  //     { name: "Automated Workflows", href: "/product/workflows", desc: "Trigger personalized outreach.", icon: "🔁" },
+  //   ]
+  // },
+  // {
+  //   name: "Solutions",
+  //   href: "/solutions",
+  //   dropdown: [
+  //     { name: "For Startups", href: "/solutions/startups", desc: "Scale faster with limited resources.", icon: "🚀" },
+  //     { name: "For Enterprises", href: "/solutions/enterprise", desc: "Security, control, and volume.", icon: "🏢" },
+  //     { name: "For Marketing Agencies", href: "/solutions/agencies", desc: "Deliver ROI to clients faster.", icon: "💼" },
+  //   ]
+  // },
   {
     name: "Resources",
     href: "/resources",
@@ -34,6 +38,15 @@ const navItems = [
       { name: "Documentation", href: "/resources/docs", desc: "Technical guides and API references.", icon: "📖" },
       { name: "Case Studies", href: "/resources/case-studies", desc: "How companies grow with Adhive.", icon: "📈" },
       { name: "Community Forum", href: "/resources/community", desc: "Connect with other builders.", icon: "💬" },
+    ]
+  },
+  {
+    name: "Company",
+    href: "/company",
+    dropdown: [
+      { name: "About Us", href: "/about", desc: "Our story, mission, and team.", icon: "🏠" },
+      { name: "Company", href: "/company", desc: "Offices, investors, and press.", icon: "🏢" },
+      // { name: "Careers", href: "/contact", desc: "Join the Adhive team.", icon: "💼" },
     ]
   },
   {
@@ -81,7 +94,7 @@ export const Navbar = () => {
         
         {/* Logo */}
         <Link href="/" className="flex items-center z-10 group" onClick={() => setActiveDropdown(null)}>
-          <img src="/images/adhive_F.svg" alt="Adhive Logo" className="h-12 w-auto" />
+          <img src="/images/adhivelogo.png" alt="Adhive Logo" className="h-8 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav Links — centered */}

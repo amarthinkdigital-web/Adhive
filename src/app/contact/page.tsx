@@ -39,7 +39,7 @@ export default function ContactPage() {
       <section className="flex-1 relative overflow-hidden pt-32 pb-24 flex items-center">
         {/* Background Effects */}
         <div className="floating-orb absolute top-20 left-10 w-96 h-96 bg-violet-600/10 rounded-full blur-[120px] pointer-events-none" />
-        <div className="floating-orb absolute bottom-0 right-10 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[150px] pointer-events-none" style={{ animationDelay: '-2s' }} />
+        <div className="floating-orb absolute bottom-0 right-10 w-[500px] h-[500px] bg-orange-600/10 rounded-full blur-[150px] pointer-events-none" style={{ animationDelay: '-2s' }} />
 
         <div className="max-w-7xl mx-auto px-6 w-full relative z-10 grid lg:grid-cols-2 gap-16 items-center">
           
@@ -49,7 +49,7 @@ export default function ContactPage() {
               Contact Us
             </div>
             <h1 className="animate-item text-5xl md:text-6xl font-bold tracking-tight mb-6 text-zinc-900">
-              Let's build something <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-blue-600">amazing.</span>
+              Let's build something <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-orange-600">amazing.</span>
             </h1>
             <p className="animate-item text-lg text-zinc-600 mb-12">
               Have a project in mind? We'd love to hear about it. Reach out to us and let's turn your vision into a reality with engineering precision.
@@ -67,8 +67,8 @@ export default function ContactPage() {
               </div>
 
               <div className="animate-item flex items-center gap-4 group">
-                <div className="w-12 h-12 rounded-xl bg-white border border-zinc-200 shadow-sm flex items-center justify-center group-hover:border-blue-300 group-hover:bg-blue-50 transition-colors">
-                  <MapPin className="w-5 h-5 text-blue-600" />
+                <div className="w-12 h-12 rounded-xl bg-white border border-zinc-200 shadow-sm flex items-center justify-center group-hover:border-orange-300 group-hover:bg-orange-50 transition-colors">
+                  <MapPin className="w-5 h-5 text-orange-600" />
                 </div>
                 <div>
                   <p className="text-sm text-zinc-500 font-medium">Visit Us</p>

@@ -10,7 +10,7 @@ export const Footer = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-10 mb-16">
           <div className="col-span-2 lg:col-span-2">
             <div className="flex items-center mb-6">
-              <img src="/images/adhive_F.svg" alt="Adhive Logo" className="h-14 w-auto" />
+              <img src="/images/adhivelogo.png" alt="Adhive Logo" className="h-10 w-auto object-contain" />
             </div>
             <p className="text-muted-foreground mb-8 max-w-sm">
               The AI marketing platform for website growth. Build on-brand pages, identify visitors, and automate SEO.
@@ -46,9 +46,9 @@ export const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4 text-foreground">Company</h4>
             <ul className="flex flex-col gap-3">
-              {["About Us", "Careers", "Contact", "Partners"].map((item) => (
-                <li key={item}><a href="#" className="text-muted-foreground hover:text-foreground transition-colors">{item}</a></li>
-              ))}
+              <li><a href="/about" className="text-muted-foreground hover:text-foreground transition-colors">About Us</a></li>
+              <li><a href="/company" className="text-muted-foreground hover:text-foreground transition-colors">Company</a></li>
+              <li><a href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">Partners</a></li>
             </ul>
           </div>
         </div>

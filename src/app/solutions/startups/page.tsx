@@ -20,7 +20,7 @@ export default function StartupsPage() {
   const x = useTransform(scrollYProgress, [0, 1], ["0%", "-65%"]);
 
   return (
-    <main className="min-h-screen bg-white selection:bg-sky-500/30">
+    <main className="min-h-screen bg-white selection:bg-orange-500/30">
       <Navbar />
 
       {/* Hero Section */}
@@ -31,7 +31,7 @@ export default function StartupsPage() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-sky-200 bg-sky-50 text-xs font-semibold text-sky-600 mb-6"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-orange-200 bg-orange-50 text-xs font-semibold text-orange-600 mb-6"
           >
             <Rocket className="w-3.5 h-3.5" />
             Adhive for Startups
@@ -41,7 +41,7 @@ export default function StartupsPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
           >
-            Scale faster with <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-amber-500">limited resources.</span>
+            Scale faster with <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">limited resources.</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -68,15 +68,15 @@ export default function StartupsPage() {
       </section>
 
       {/* Horizontal Scroll Showcase */}
-      <section ref={targetRef} className="relative h-[300vh] bg-sky-50">
+      <section ref={targetRef} className="relative h-[300vh] bg-orange-50">
         <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-          <div className="absolute inset-0 bg-sky-100/30 pointer-events-none" />
+          <div className="absolute inset-0 bg-orange-100/30 pointer-events-none" />
           
           <div className="w-full max-w-7xl mx-auto px-6 relative z-10 flex items-center">
             {/* Title fixed on the left */}
             <div className="w-1/3 shrink-0 pr-8">
               <h2 className="text-4xl md:text-5xl font-bold text-zinc-900 mb-4">The Growth Engine.</h2>
-              <p className="text-sky-700/70 text-lg">
+              <p className="text-orange-700/70 text-lg">
                 See how Adhive transforms your startup's workflow from day one to series A and beyond.
               </p>
             </div>
@@ -101,7 +101,7 @@ export default function StartupsPage() {
                 }
               ].map((item, idx) => (
                 <div key={idx} className="w-[600px] shrink-0 group">
-                  <div className="relative overflow-hidden rounded-2xl border border-sky-200 bg-white/50 p-2 backdrop-blur-sm transition-colors hover:border-sky-400">
+                  <div className="relative overflow-hidden rounded-2xl border border-orange-200 bg-white/50 p-2 backdrop-blur-sm transition-colors hover:border-orange-400">
                     <div className="aspect-video overflow-hidden rounded-xl bg-zinc-100">
                       <img src={item.img} alt={item.title} className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100" />
                     </div>
@@ -147,11 +147,11 @@ export default function StartupsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-sky-500 text-white text-center">
+      <section className="py-24 bg-orange-500 text-white text-center">
         <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-4xl font-bold mb-6">Ready to accelerate your startup?</h2>
-          <p className="text-sky-50 text-lg mb-10">Join thousands of founders who use Adhive to build their marketing engine from day one.</p>
-          <Button size="lg" className="bg-white text-sky-600 hover:bg-zinc-50 px-8" onClick={() => router.push('/contact')}>
+          <p className="text-orange-50 text-lg mb-10">Join thousands of founders who use Adhive to build their marketing engine from day one.</p>
+          <Button size="lg" className="bg-white text-orange-600 hover:bg-zinc-50 px-8" onClick={() => router.push('/contact')}>
             Start For Free Today
           </Button>
         </div>

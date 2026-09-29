@@ -43,9 +43,9 @@ export default function Home() {
 
 
 
-      {/* How it works - Redesigned */}
-      <section className="py-40 bg-sky-50/60 text-zinc-900 relative overflow-hidden">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-sky-400/15 rounded-full blur-[120px] pointer-events-none" />
+      {/* How it works - Redesigned */} 
+      {/* <section className="py-40 bg-orange-50/60 text-zinc-900 relative overflow-hidden">
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-orange-400/15 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[120px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -55,7 +55,7 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-32"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-sky-200 bg-sky-50 text-xs font-semibold text-sky-600 mb-6 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-200 bg-orange-50 text-xs font-semibold text-orange-600 mb-6 backdrop-blur-sm">
               <Workflow className="w-3.5 h-3.5" />
               Deployment Pipeline
             </div>
@@ -66,16 +66,14 @@ export default function Home() {
           </motion.div>
 
           <div className="relative">
-            {/* Connecting Line (Desktop only) */}
             <div className="hidden lg:block absolute top-[120px] left-0 w-full h-px bg-white/10" />
             
-            {/* Animated glowing line */}
             <motion.div 
               initial={{ width: "0%" }}
               whileInView={{ width: "100%" }}
               viewport={{ once: true }}
               transition={{ duration: 1.5, ease: "easeInOut" }}
-              className="hidden lg:block absolute top-[120px] left-0 h-[2px] bg-gradient-to-r from-sky-400 via-amber-400 to-sky-400 shadow-[0_0_15px_rgba(14,165,233,0.4)] z-0" 
+              className="hidden lg:block absolute top-[120px] left-0 h-[2px] bg-gradient-to-r from-orange-400 via-amber-400 to-orange-400 shadow-[0_0_15px_rgba(14,165,233,0.4)] z-0" 
             />
 
             <div className="grid lg:grid-cols-3 gap-8 relative z-10">
@@ -84,9 +82,9 @@ export default function Home() {
                   icon: GitBranch,
                   title: "Discover",
                   desc: "Find the perfect influencer from our database of 10M+ creators. Filter by niche, audience size, engagement rate, and location.",
-                  color: "text-sky-500",
-                  bg: "bg-sky-500/10",
-                  borderColor: "border-sky-300",
+                  color: "text-orange-500",
+                  bg: "bg-orange-500/10",
+                  borderColor: "border-orange-300",
                   img: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2000&auto=format&fit=crop"
                 },
                 {
@@ -124,8 +122,8 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="text-center mt-10">
-                    <div className="text-xs font-bold text-sky-500 tracking-widest uppercase mb-3">Step 0{i + 1}</div>
-                    <h3 className="text-2xl font-bold mb-4 text-zinc-900 group-hover:text-sky-600 transition-colors">{step.title}</h3>
+                    <div className="text-xs font-bold text-orange-500 tracking-widest uppercase mb-3">Step 0{i + 1}</div>
+                    <h3 className="text-2xl font-bold mb-4 text-zinc-900 group-hover:text-orange-600 transition-colors">{step.title}</h3>
                     <p className="text-zinc-600 text-sm leading-relaxed">{step.desc}</p>
                   </div>
                 </motion.div>
@@ -133,7 +131,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Featured Work */}
       <FeaturedWork />
@@ -147,14 +145,12 @@ export default function Home() {
       <Approach />
 
       {/* Testimonials - Redesigned */}
-      <section className="relative py-40 overflow-hidden bg-white">
-        {/* Background ambient glows */}
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-sky-400/10 rounded-full blur-[120px] pointer-events-none" />
+      {/* <section className="relative py-40 overflow-hidden bg-white">
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-orange-400/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] bg-amber-500/10 rounded-full blur-[100px] pointer-events-none" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
 
-          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -162,7 +158,7 @@ export default function Home() {
             transition={{ duration: 0.7 }}
             className="text-center mb-28"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-sky-200 bg-sky-50 text-xs font-semibold text-sky-600 mb-6 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-200 bg-orange-50 text-xs font-semibold text-orange-600 mb-6 backdrop-blur-sm">
               <MessageSquare className="w-3.5 h-3.5" />
               Testimonials
             </div>
@@ -177,7 +173,6 @@ export default function Home() {
             </p>
           </motion.div>
 
-          {/* Testimonials Grid */}
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
@@ -221,24 +216,20 @@ export default function Home() {
                     : "bg-white border-zinc-200 hover:bg-zinc-50 hover:border-zinc-300 shadow-sm"
                 }`}
               >
-                {/* Decorative quote mark */}
                 <div className={`absolute top-6 right-6 text-8xl font-serif leading-none bg-gradient-to-br ${t.gradient} bg-clip-text text-transparent opacity-10 select-none pointer-events-none`}>
                   &ldquo;
                 </div>
 
-                {/* Stars */}
                 <div className="flex gap-1 mb-6">
                   {Array.from({ length: t.stars }).map((_, s) => (
                     <Star key={s} className="w-4 h-4 fill-current text-amber-400" />
                   ))}
                 </div>
 
-                {/* Quote */}
                 <p className="text-zinc-700 leading-relaxed text-[16px] flex-1 mb-8">
                   &ldquo;{t.quote}&rdquo;
                 </p>
 
-                {/* Author */}
                 <div className="flex items-center gap-4">
                   <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-white text-sm font-bold shadow-md shrink-0`}>
                     {t.name.split(" ").map((w: string) => w[0]).join("")}
@@ -251,13 +242,11 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-
-          {/* Stats removed for a cleaner look */}
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
-      <TalkToUs />
+      {/* <TalkToUs /> */}
 
       <Footer />
     </main>

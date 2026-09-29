@@ -97,7 +97,7 @@ export default function PricingPage() {
             animate={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-7xl font-bold tracking-tight mb-6"
           >
-            Pay for what <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-500 to-amber-500">you build.</span>
+            Pay for what <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">you build.</span>
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -113,8 +113,8 @@ export default function PricingPage() {
             transition={{ delay: 0.2 }}
             className="flex flex-col sm:flex-row justify-center gap-4"
           >
-            <Button variant="primary" size="lg" className="bg-sky-500 hover:bg-sky-600 border-none text-white shadow-[0_8px_32px_rgba(14,165,233,0.3)]" onClick={() => router.push('/contact')}>Get Started</Button>
-            <Button variant="outline" size="lg" className="border-sky-200 text-sky-700 hover:bg-sky-50">Talk to sales</Button>
+            <Button variant="primary" size="lg" className="bg-orange-500 hover:bg-orange-600 border-none text-white shadow-[0_8px_32px_rgba(14,165,233,0.3)]" onClick={() => router.push('/contact')}>Get Started</Button>
+            <Button variant="outline" size="lg" className="border-orange-200 text-orange-700 hover:bg-orange-50">Talk to sales</Button>
           </motion.div>
         </div>
       </section>
@@ -130,7 +130,7 @@ export default function PricingPage() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
             >
-              <GlassCard className={`h-full flex flex-col ${plan.badge ? 'border-sky-300 shadow-[0_0_30px_rgba(14,165,233,0.1)] ring-1 ring-sky-200' : ''}`}>
+              <GlassCard className={`h-full flex flex-col ${plan.badge ? 'border-orange-300 shadow-[0_0_30px_rgba(14,165,233,0.1)] ring-1 ring-orange-200' : ''}`}>
                 {plan.badge && (
                   <span className="bg-amber-100 text-amber-600 text-xs font-bold px-3 py-1 rounded-full w-fit mb-4">
                     {plan.badge}
@@ -151,7 +151,7 @@ export default function PricingPage() {
                 <ul className="flex flex-col gap-3 mt-auto">
                   {plan.features.map((feat) => (
                     <li key={feat} className="flex items-start gap-2 text-sm text-foreground/80">
-                      <Check className="w-4 h-4 text-sky-500 shrink-0 mt-0.5" />
+                      <Check className="w-4 h-4 text-orange-500 shrink-0 mt-0.5" />
                       <span>{feat}</span>
                     </li>
                   ))}
@@ -236,7 +236,7 @@ export default function PricingPage() {
                     {row.values.map((val, idx) => (
                       <td key={idx} className="p-4">
                         {typeof val === 'boolean' ? (
-                          val ? <Check className="w-5 h-5 text-sky-500" /> : <span className="text-zinc-400">-</span>
+                          val ? <Check className="w-5 h-5 text-orange-500" /> : <span className="text-zinc-400">-</span>
                         ) : (
                           <span className="text-foreground/80">{val}</span>
                         )}
@@ -252,7 +252,7 @@ export default function PricingPage() {
 
       {/* CTA */}
       <section className="py-40 relative overflow-hidden bg-white">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-sky-500/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-orange-500/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -265,11 +265,11 @@ export default function PricingPage() {
               Get started in minutes. Bring your brand, and Adhive builds the rest.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Button variant="primary" size="lg" className="gap-2 group bg-sky-500 hover:bg-sky-600 text-white border-none shadow-[0_8px_32px_rgba(14,165,233,0.3)]" onClick={() => router.push('/contact')}>
+              <Button variant="primary" size="lg" className="gap-2 group bg-orange-500 hover:bg-orange-600 text-white border-none shadow-[0_8px_32px_rgba(14,165,233,0.3)]" onClick={() => router.push('/contact')}>
                 Get Started
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="outline" size="lg" className="border-sky-200 text-sky-700 hover:bg-sky-50">Talk to sales</Button>
+              <Button variant="outline" size="lg" className="border-orange-200 text-orange-700 hover:bg-orange-50">Talk to sales</Button>
             </div>
           </motion.div>
         </div>

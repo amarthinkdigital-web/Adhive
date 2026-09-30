@@ -1,29 +1,40 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({ 
   subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const outfit = Outfit({ 
   subsets: ["latin"],
+  variable: "--font-outfit",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Adhive | AI Marketing Platform for Website Growth",
-  description: "Adhive is an AI marketing platform for website growth. Build on-brand pages, identify visitors, automate SEO, and improve conversion.",
+  title: "adhive | Hyperlocal Marketing",
+  description: "Hyperlocal Marketing. Without Burning Your Wallet. adhive helps businesses promote their products and services through real people in their local community.",
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col bg-background text-foreground antialiased">{children}</body>
+    <html lang="en" className={`scroll-smooth ${inter.variable} ${outfit.variable}`}>
+      <body className="antialiased font-sans flex flex-col min-h-screen">
+        {/* Top Banner */}
+        <div className="bg-zinc-900 text-white text-center py-2 px-4 text-sm font-medium z-[60] relative flex items-center justify-center gap-2">
+          <span className="bg-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Coming Soon</span>
+          <span>The smarter way to reach your local audience. Launching soon on Android & iOS.</span>
+        </div>
+        
+        {children}
+      </body>
     </html>
   );
 }

@@ -9,14 +9,16 @@ export function Footer() {
   return (
     <footer className="bg-zinc-950 text-zinc-300 py-16 border-t border-zinc-900">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 items-start text-center">
           
-          <div className="col-span-1 md:col-span-2">
+          <div className="flex flex-col items-center">
             <Link href="/" className="inline-block mb-6">
               <img src="/images/adhivelogo.png" alt="adhive Logo" className="h-10 w-auto object-contain brightness-0 invert" />
             </Link>
             <p className="text-zinc-400 text-lg mb-6 max-w-sm">
-              Hyperlocal Marketing. Without Burning Your Wallet.
+              Hyperlocal Marketing.
+              <br />
+              Without Burning Your Wallet.
             </p>
             <Link
               href="/contact"
@@ -34,7 +36,7 @@ export function Footer() {
             </div>
           </div>
 
-          <div>
+          <div className="flex flex-col items-center">
             <h4 className="text-white font-semibold mb-6">Company</h4>
             <ul className="space-y-3">
               <li>
@@ -65,7 +67,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="flex flex-col items-center">
             <h4 className="text-white font-semibold mb-6">Legal</h4>
             <ul className="space-y-3">
               <li>
@@ -93,7 +95,7 @@ export function Footer() {
 
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-zinc-800/50 gap-6">
+        <div className="flex flex-col md:flex-row items-center justify-center pt-8 border-t border-zinc-800/50 gap-6">
           <div className="flex flex-wrap gap-4">
             <button className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-lg text-sm text-zinc-400 cursor-not-allowed hover:bg-zinc-800 transition-colors">
               <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-5 opacity-50" />
@@ -104,7 +106,7 @@ export function Footer() {
               <span>Coming Soon</span>
             </button>
           </div>
-          <p className="text-xs text-zinc-500 text-center md:text-right">
+          <p className="text-xs text-zinc-500 text-center">
             © 2026 adhive. All rights reserved.
           </p>
         </div>

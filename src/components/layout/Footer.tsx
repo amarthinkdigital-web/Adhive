@@ -7,15 +7,15 @@ export function Footer() {
   // Brief states © 2026 adhive, but we can use dynamic or hardcoded 2026. Let's use 2026.
 
   return (
-    <footer className="bg-zinc-950 text-zinc-300 py-16 border-t border-zinc-900">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 items-start text-center">
+    <footer className="bg-zinc-950 text-zinc-300 py-12 sm:py-16 border-t border-zinc-900">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 mb-10 sm:mb-12 items-start text-center">
           
           <div className="flex flex-col items-center">
             <Link href="/" className="inline-block mb-6">
               <img src="/images/adhivelogo.png" alt="adhive Logo" className="h-10 w-auto object-contain brightness-0 invert" />
             </Link>
-            <p className="text-zinc-400 text-lg mb-6 max-w-sm">
+            <p className="text-zinc-400 text-base sm:text-lg mb-6 max-w-sm">
               Hyperlocal Marketing.
               <br />
               Without Burning Your Wallet.
@@ -95,13 +95,13 @@ export function Footer() {
 
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-center pt-8 border-t border-zinc-800/50 gap-6">
-          <div className="flex flex-wrap gap-4">
-            <button className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-lg text-sm text-zinc-400 cursor-not-allowed hover:bg-zinc-800 transition-colors">
+        <div className="flex flex-col items-center justify-center pt-8 border-t border-zinc-800/50 gap-5 sm:gap-6">
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+            <button className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm text-zinc-400 cursor-not-allowed hover:bg-zinc-800 transition-colors">
               <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-5 opacity-50" />
               <span>Coming Soon</span>
             </button>
-            <button className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-lg text-sm text-zinc-400 cursor-not-allowed hover:bg-zinc-800 transition-colors">
+            <button className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm text-zinc-400 cursor-not-allowed hover:bg-zinc-800 transition-colors">
               <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-5 opacity-50" />
               <span>Coming Soon</span>
             </button>

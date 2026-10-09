@@ -20,7 +20,7 @@ export default function ContactPage() {
     <main className="min-h-screen bg-white">
       <Navbar />
 
-      <section className="pt-32 pb-12 bg-orange-50/50">
+      <section className="pt-28 sm:pt-32 pb-10 sm:pb-12 bg-orange-50/50">
         {/* <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.h1
             initial="hidden"
@@ -43,9 +43,9 @@ export default function ContactPage() {
         </div> */}
       </section>
 
-      <section className="py-14">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-10">
+      <section className="py-10 sm:py-14">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6">
+          <div className="grid md:grid-cols-2 gap-8 sm:gap-10">
             
             <motion.div
               initial="hidden"
@@ -55,35 +55,35 @@ export default function ContactPage() {
               variants={fadeUp}
               className="space-y-6"
             >
-              <h2 className="text-2xl font-bold text-zinc-900 mb-4">Get in Touch</h2>
+              <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 mb-4">Get in Touch</h2>
               
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center text-orange-600 shrink-0">
-                  <HelpCircle className="w-6 h-6" />
+                <div className="w-11 h-11 sm:w-12 sm:h-12 bg-orange-50 rounded-xl flex items-center justify-center text-orange-600 shrink-0">
+                  <HelpCircle className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <div>
-                  <h3 className="font-semibold text-zinc-900 mb-1">General Enquiries & Support</h3>
-                  <a href="mailto:support@adhive.io" className="text-zinc-600 hover:text-orange-500">support@adhive.io</a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 shrink-0">
-                  <Briefcase className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-zinc-900 mb-1">Business Enquiries</h3>
-                  <a href="mailto:business@adhive.io" className="text-zinc-600 hover:text-orange-500">business@adhive.io</a>
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-zinc-900 mb-1 text-[15px] sm:text-base">General Enquiries &amp; Support</h3>
+                  <a href="mailto:support@adhive.io" className="text-zinc-600 hover:text-orange-500 break-all">support@adhive.io</a>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 shrink-0">
-                  <Handshake className="w-6 h-6" />
+                <div className="w-11 h-11 sm:w-12 sm:h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 shrink-0">
+                  <Briefcase className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <div>
-                  <h3 className="font-semibold text-zinc-900 mb-1">Partnerships</h3>
-                  <a href="mailto:partnerships@adhive.io" className="text-zinc-600 hover:text-orange-500">partnerships@adhive.io</a>
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-zinc-900 mb-1 text-[15px] sm:text-base">Business Enquiries</h3>
+                  <a href="mailto:business@adhive.io" className="text-zinc-600 hover:text-orange-500 break-all">business@adhive.io</a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-11 h-11 sm:w-12 sm:h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 shrink-0">
+                  <Handshake className="w-5 h-5 sm:w-6 sm:h-6" />
+                </div>
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-zinc-900 mb-1 text-[15px] sm:text-base">Partnerships</h3>
+                  <a href="mailto:partnerships@adhive.io" className="text-zinc-600 hover:text-orange-500 break-all">partnerships@adhive.io</a>
                 </div>
               </div>
 
@@ -95,9 +95,9 @@ export default function ContactPage() {
               viewport={{ once: true }}
               custom={3}
               variants={fadeUp}
-              className="bg-zinc-50 border border-zinc-200 rounded-3xl p-7"
+              className="bg-zinc-50 border border-zinc-200 rounded-3xl p-5 sm:p-7"
             >
-              <h2 className="text-xl font-bold text-zinc-900 mb-6 flex items-center gap-2">
+              <h2 className="text-lg sm:text-xl font-bold text-zinc-900 mb-6 flex items-center gap-2">
                 <Building2 className="w-5 h-5 text-zinc-400" />
                 Company Information
               </h2>

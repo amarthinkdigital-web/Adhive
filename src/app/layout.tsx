@@ -28,9 +28,9 @@ export default function RootLayout({
     <html lang="en" className={`scroll-smooth ${inter.variable} ${outfit.variable}`}>
       <body className="antialiased font-sans flex flex-col min-h-screen">
         {/* Top Banner */}
-        <div className="bg-zinc-900 text-white text-center py-2 px-4 text-sm font-medium z-[60] relative flex items-center justify-center gap-2">
-          <span className="bg-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Coming Soon</span>
-          <span>The smarter way to reach your local audience. Launching soon on Android & iOS.</span>
+        <div className="bg-zinc-900 text-white text-center py-2 px-4 text-xs sm:text-sm font-medium z-[60] relative flex flex-wrap items-center justify-center gap-x-2 gap-y-1 leading-snug">
+          <span className="bg-orange-500 text-white text-[9px] sm:text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Coming Soon</span>
+          <span>The smarter way to reach your local audience. Launching soon on Android &amp; iOS.</span>
         </div>
         
         {children}

@@ -9,8 +9,8 @@
   --color-muted-foreground: #71717a; /* Zinc-500 */
   --color-border: #e4e4e7; /* Zinc-200 */
   
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-outfit), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   
   --animate-marquee: marquee 20s linear infinite;
   --animate-gradient-shift: gradient-shift 4s ease infinite;
@@ -34,9 +34,10 @@
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
-  font-family: var(--font-sans), sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* Clean Card Utilities */

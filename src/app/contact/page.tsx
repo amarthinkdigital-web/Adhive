@@ -4,6 +4,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { Reveal } from "@/components/animated/Reveal";
+import { TextScramble } from "@/components/animated/TextScramble";
 import { Mail, Phone, MapPin, Building2, HelpCircle, Briefcase, Handshake } from "lucide-react";
 
 export default function ContactPage() {
@@ -20,32 +22,24 @@ export default function ContactPage() {
     <main className="min-h-screen bg-white">
       <Navbar />
 
-      <section className="pt-28 sm:pt-32 pb-10 sm:pb-12 bg-orange-50/50">
-        {/* <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.h1
-            initial="hidden"
-            animate="visible"
-            custom={0}
-            variants={fadeUp}
-            className="text-3xl md:text-4xl font-bold text-zinc-900 mb-3"
-          >
-            Contact adhive
-          </motion.h1>
-          <motion.p
-            initial="hidden"
-            animate="visible"
-            custom={1}
-            variants={fadeUp}
-            className="text-base md:text-lg text-zinc-600 max-w-2xl mx-auto"
-          >
-            Have a question, partnership opportunity or need help? We&apos;d love to hear from you.
-          </motion.p>
-        </div> */}
+      <section className="pt-32 pb-12 bg-orange-50/50">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <Reveal>
+            <h1 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-3">
+              <TextScramble text="Contact adhive" />
+            </h1>
+          </Reveal>
+          <Reveal delay={0.12}>
+            <p className="text-base md:text-lg text-zinc-600 max-w-2xl mx-auto">
+              Have a question, partnership opportunity or need help? We&apos;d love to hear from you.
+            </p>
+          </Reveal>
+        </div>
       </section>
 
-      <section className="py-10 sm:py-14">
-        <div className="max-w-6xl mx-auto px-5 sm:px-6">
-          <div className="grid md:grid-cols-2 gap-8 sm:gap-10">
+      <section className="py-14">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-10">
             
             <motion.div
               initial="hidden"
@@ -55,35 +49,35 @@ export default function ContactPage() {
               variants={fadeUp}
               className="space-y-6"
             >
-              <h2 className="text-xl sm:text-2xl font-bold text-zinc-900 mb-4">Get in Touch</h2>
+              <h2 className="text-2xl font-bold text-zinc-900 mb-4">Get in Touch</h2>
               
               <div className="flex items-start gap-4">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 bg-orange-50 rounded-xl flex items-center justify-center text-orange-600 shrink-0">
-                  <HelpCircle className="w-5 h-5 sm:w-6 sm:h-6" />
+                <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center text-orange-600 shrink-0">
+                  <HelpCircle className="w-6 h-6" />
                 </div>
-                <div className="min-w-0">
-                  <h3 className="font-semibold text-zinc-900 mb-1 text-[15px] sm:text-base">General Enquiries &amp; Support</h3>
-                  <a href="mailto:support@adhive.io" className="text-zinc-600 hover:text-orange-500 break-all">support@adhive.io</a>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-4">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 shrink-0">
-                  <Briefcase className="w-5 h-5 sm:w-6 sm:h-6" />
-                </div>
-                <div className="min-w-0">
-                  <h3 className="font-semibold text-zinc-900 mb-1 text-[15px] sm:text-base">Business Enquiries</h3>
-                  <a href="mailto:business@adhive.io" className="text-zinc-600 hover:text-orange-500 break-all">business@adhive.io</a>
+                <div>
+                  <h3 className="font-semibold text-zinc-900 mb-1">General Enquiries & Support</h3>
+                  <a href="mailto:support@adhive.io" className="text-zinc-600 hover:text-orange-500">support@adhive.io</a>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="w-11 h-11 sm:w-12 sm:h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 shrink-0">
-                  <Handshake className="w-5 h-5 sm:w-6 sm:h-6" />
+                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 shrink-0">
+                  <Briefcase className="w-6 h-6" />
                 </div>
-                <div className="min-w-0">
-                  <h3 className="font-semibold text-zinc-900 mb-1 text-[15px] sm:text-base">Partnerships</h3>
-                  <a href="mailto:partnerships@adhive.io" className="text-zinc-600 hover:text-orange-500 break-all">partnerships@adhive.io</a>
+                <div>
+                  <h3 className="font-semibold text-zinc-900 mb-1">Business Enquiries</h3>
+                  <a href="mailto:business@adhive.io" className="text-zinc-600 hover:text-orange-500">business@adhive.io</a>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center text-emerald-600 shrink-0">
+                  <Handshake className="w-6 h-6" />
+                </div>
+                <div>
+                  <h3 className="font-semibold text-zinc-900 mb-1">Partnerships</h3>
+                  <a href="mailto:partnerships@adhive.io" className="text-zinc-600 hover:text-orange-500">partnerships@adhive.io</a>
                 </div>
               </div>
 
@@ -95,9 +89,9 @@ export default function ContactPage() {
               viewport={{ once: true }}
               custom={3}
               variants={fadeUp}
-              className="bg-zinc-50 border border-zinc-200 rounded-3xl p-5 sm:p-7"
+              className="bg-zinc-50 border border-zinc-200 rounded-3xl p-7"
             >
-              <h2 className="text-lg sm:text-xl font-bold text-zinc-900 mb-6 flex items-center gap-2">
+              <h2 className="text-xl font-bold text-zinc-900 mb-6 flex items-center gap-2">
                 <Building2 className="w-5 h-5 text-zinc-400" />
                 Company Information
               </h2>

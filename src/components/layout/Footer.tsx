@@ -2,20 +2,32 @@ import React from "react";
 import Link from "next/link";
 import { Mail, Globe } from "lucide-react";
 
+function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className="group relative inline-block text-sm text-zinc-400 hover:text-orange-500 transition-colors"
+    >
+      {children}
+      <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-orange-500 transition-all duration-300 group-hover:w-full" />
+    </Link>
+  );
+}
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
   // Brief states © 2026 adhive, but we can use dynamic or hardcoded 2026. Let's use 2026.
 
   return (
-    <footer className="bg-zinc-950 text-zinc-300 py-12 sm:py-16 border-t border-zinc-900">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12 mb-10 sm:mb-12 items-start text-center">
+    <footer className="bg-zinc-950 text-zinc-300 py-16 border-t border-zinc-900">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 items-start text-center">
           
           <div className="flex flex-col items-center">
             <Link href="/" className="inline-block mb-6">
               <img src="/images/adhivelogo.png" alt="adhive Logo" className="h-10 w-auto object-contain brightness-0 invert" />
             </Link>
-            <p className="text-zinc-400 text-base sm:text-lg mb-6 max-w-sm">
+            <p className="text-zinc-400 text-lg mb-6 max-w-sm">
               Hyperlocal Marketing.
               <br />
               Without Burning Your Wallet.
@@ -40,29 +52,19 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-6">Company</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/" className="text-sm text-zinc-400 hover:text-orange-500 transition-colors">
-                  Home
-                </Link>
+                <FooterLink href="/">Home</FooterLink>
               </li>
               <li>
-                <Link href="/#what-is-adhive" className="text-sm text-zinc-400 hover:text-orange-500 transition-colors">
-                  About adhive
-                </Link>
+                <FooterLink href="/#what-is-adhive">About adhive</FooterLink>
               </li>
               <li>
-                <Link href="/#how-it-works" className="text-sm text-zinc-400 hover:text-orange-500 transition-colors">
-                  How it Works
-                </Link>
+                <FooterLink href="/#how-it-works">How it Works</FooterLink>
               </li>
               <li>
-                <Link href="/#why-adhive" className="text-sm text-zinc-400 hover:text-orange-500 transition-colors">
-                  Why adhive
-                </Link>
+                <FooterLink href="/#why-adhive">Why adhive</FooterLink>
               </li>
               <li>
-                <Link href="/contact" className="text-sm text-zinc-400 hover:text-orange-500 transition-colors">
-                  Contact Us
-                </Link>
+                <FooterLink href="/contact">Contact Us</FooterLink>
               </li>
             </ul>
           </div>
@@ -71,37 +73,29 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-6">Legal</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/terms" className="text-sm text-zinc-400 hover:text-orange-500 transition-colors">
-                  Terms of Service
-                </Link>
+                <FooterLink href="/terms">Terms of Service</FooterLink>
               </li>
               <li>
-                <Link href="/privacy" className="text-sm text-zinc-400 hover:text-orange-500 transition-colors">
-                  Privacy Policy
-                </Link>
+                <FooterLink href="/privacy">Privacy Policy</FooterLink>
               </li>
               <li>
-                <Link href="/refund" className="text-sm text-zinc-400 hover:text-orange-500 transition-colors">
-                  Refund & Cancellation Policy
-                </Link>
+                <FooterLink href="/refund">Refund &amp; Cancellation Policy</FooterLink>
               </li>
               <li>
-                <Link href="/community-guidelines" className="text-sm text-zinc-400 hover:text-orange-500 transition-colors">
-                  Community Guidelines
-                </Link>
+                <FooterLink href="/community-guidelines">Community Guidelines</FooterLink>
               </li>
             </ul>
           </div>
 
         </div>
 
-        <div className="flex flex-col items-center justify-center pt-8 border-t border-zinc-800/50 gap-5 sm:gap-6">
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
-            <button className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm text-zinc-400 cursor-not-allowed hover:bg-zinc-800 transition-colors">
+        <div className="flex flex-col md:flex-row items-center justify-center pt-8 border-t border-zinc-800/50 gap-6">
+          <div className="flex flex-wrap gap-4">
+            <button className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-lg text-sm text-zinc-400 cursor-not-allowed hover:bg-zinc-800 transition-colors">
               <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-5 opacity-50" />
               <span>Coming Soon</span>
             </button>
-            <button className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm text-zinc-400 cursor-not-allowed hover:bg-zinc-800 transition-colors">
+            <button className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-lg text-sm text-zinc-400 cursor-not-allowed hover:bg-zinc-800 transition-colors">
               <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-5 opacity-50" />
               <span>Coming Soon</span>
             </button>

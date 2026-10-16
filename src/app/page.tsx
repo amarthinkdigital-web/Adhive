@@ -109,7 +109,7 @@ function WelcomeScreenSVG() {
         <image href="/images/welcome_boys_sticker.png" x="121" y="136" width="118" height="104" preserveAspectRatio="xMidYMid meet" />
       </motion.g>
 
-      <text x="180" y="272" textAnchor="middle" fill="#18181b" fontSize="15" fontWeight="800">Welcome to adhive</text>
+      <text x="180" y="272" textAnchor="middle" fill="#18181b" fontSize="15" fontWeight="800">Welcome to adHive</text>
       <text x="180" y="292" textAnchor="middle" fill="#71717a" fontSize="9.5" fontWeight="600">Hyperlocal marketing, made simple.</text>
       <text x="180" y="305" textAnchor="middle" fill="#71717a" fontSize="9.5" fontWeight="600">Reach locals. Earn by sharing.</text>
 
@@ -468,7 +468,7 @@ function WhatIsAdhiveSVG() {
             ))}
 
             {/* Wordmark */}
-            <text x="180" y="214" textAnchor="middle" fontFamily={uiFont} fontSize="34" fontWeight="900" letterSpacing="-0.5" fill="#18181b">adhive</text>
+            <text x="180" y="214" textAnchor="middle" fontFamily={uiFont} fontSize="34" fontWeight="900" letterSpacing="-0.5" fill="#18181b">adHive</text>
 
             {/* Tagline */}
             <text x="180" y="234" textAnchor="middle" fontFamily={uiFont} fontSize="11" fontWeight="500" fill="#78716c">Hyperlocal ads, powered by people</text>
@@ -736,7 +736,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
             className="text-xl md:text-2xl text-zinc-600 mb-10 leading-relaxed font-medium">
-            adhive helps businesses promote their products and services through real people in their local community — while giving social media users a simple way to earn by sharing promotional content.
+            adHive helps businesses promote their products and services through real people in their local community — while giving social media users a simple way to earn by sharing promotional content.
           </motion.p>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="flex justify-center">
             <Link href="/contact" className="inline-flex items-center gap-2 bg-orange-500 text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-orange-600 transition-all shadow-[0_8px_32px_rgba(249,115,22,0.30)] group">
@@ -778,19 +778,19 @@ export default function Home() {
                 Platform Overview
               </motion.div>
               <AnimatedHeading tag="h2" delay={0.1} className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
-                What is{" "}<ShimmerText>adhive?</ShimmerText>
+                What is{" "}<ShimmerText>adHive?</ShimmerText>
               </AnimatedHeading>
               <motion.p
                 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, delay: 0.2 }}
                 className="text-xl text-zinc-300 mb-4 font-medium"
               >
-                adhive is a people-powered, hyperlocal advertising platform.
+                adHive is a people-powered, hyperlocal advertising platform.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, delay: 0.3 }}
                 className="text-zinc-500 text-lg leading-relaxed mb-10"
               >
-                Traditional digital advertising puts your business in front of thousands who may never become customers. adhive takes a more local approach — reaching real people through real community members.
+                Traditional digital advertising puts your business in front of thousands who may never become customers. adHive takes a more local approach — reaching real people through real community members.
               </motion.p>
 
               <div className="space-y-4">
@@ -828,7 +828,7 @@ export default function Home() {
               <motion.span variants={wordAnim} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 text-orange-600 text-sm font-semibold mb-5 border border-orange-100">
                 <TrendingUp className="w-3.5 h-3.5" /> Simple Process
               </motion.span>
-              <AnimatedHeading tag="h2" delay={0.1} className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-900 mb-4">How adhive Works</AnimatedHeading>
+              <AnimatedHeading tag="h2" delay={0.1} className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-900 mb-4">How adHive Works</AnimatedHeading>
               <motion.p
                 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3, duration: 0.55 }}
                 className="text-xl text-zinc-500 max-w-2xl mx-auto"
@@ -933,7 +933,7 @@ export default function Home() {
                 <Star className="w-3.5 h-3.5" /> Our Advantage
               </motion.span>
               <AnimatedHeading tag="h2" delay={0.1} className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-4">
-                Why{" "}<ShimmerText>adhive</ShimmerText>?
+                Why{" "}<ShimmerText>adHive</ShimmerText>?
               </AnimatedHeading>
               <motion.p
                 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3, duration: 0.55 }}
@@ -1039,7 +1039,7 @@ export default function Home() {
                 </div>
               </motion.div>
               <p className="text-xl text-zinc-600 mb-10 leading-relaxed">
-                Whether you&apos;re a restaurant, café, salon, gym, retail store, real-estate business, local service provider, coaching institute, event organizer, startup or D2C brand, adhive helps you create campaigns designed around where your customers are.
+                Whether you&apos;re a restaurant, café, salon, gym, retail store, real-estate business, local service provider, coaching institute, event organizer, startup or D2C brand, adHive helps you create campaigns designed around where your customers are.
               </p>
               <div className="flex items-center gap-4">
                 <Link href="/contact" className="inline-flex items-center gap-2 bg-orange-500 text-white px-8 py-3.5 rounded-full font-bold hover:bg-orange-600 transition-all shadow-[0_8px_24px_rgba(249,115,22,0.25)] group">
@@ -1105,7 +1105,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }}
                 className="text-zinc-500 mb-8 leading-relaxed"
               >
-                With adhive, eligible users can discover promotional opportunities from businesses looking to reach people in their area. Choose campaigns that interest you, complete the required activity and earn when the campaign requirements are successfully fulfilled and validated.
+                With adHive, eligible users can discover promotional opportunities from businesses looking to reach people in their area. Choose campaigns that interest you, complete the required activity and earn when the campaign requirements are successfully fulfilled and validated.
               </motion.p>
 
               <div className="grid gap-4">
@@ -1155,7 +1155,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3, duration: 0.55 }}
               className="text-lg text-zinc-500 mb-12 leading-relaxed max-w-2xl mx-auto"
             >
-              adhive is designed with campaign validation at its core. The platform tracks what was requested, who participated, and what was successfully completed.
+              adHive is designed with campaign validation at its core. The platform tracks what was requested, who participated, and what was successfully completed.
             </motion.p>
 
             <div className="grid sm:grid-cols-2 gap-x-10 gap-y-4 text-left max-w-2xl mx-auto">
@@ -1178,7 +1178,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.div variants={wordAnim} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 text-orange-600 text-sm font-bold mb-8 border border-orange-100">
-              <Sparkles className="w-4 h-4" /> adhive Is Coming Soon
+              <Sparkles className="w-4 h-4" /> adHive Is Coming Soon
             </motion.div>
             <AnimatedHeading tag="h2" delay={0.15} className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-900 mb-6 leading-tight">
               We{"'"}re Building a Simpler Way for Businesses and{" "}<ShimmerText>Local Communities to Connect.</ShimmerText>
@@ -1209,7 +1209,7 @@ export default function Home() {
               </div>
             </div>
 
-            <p className="text-xs text-zinc-400">adhive will be available for download on Android and iOS. App availability may vary by region.</p>
+            <p className="text-xs text-zinc-400">adHive will be available for download on Android and iOS. App availability may vary by region.</p>
           </motion.div>
         </div>
       </section>

@@ -16,7 +16,7 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  // Brief states © 2026 adhive, but we can use dynamic or hardcoded 2026. Let's use 2026.
+  // Brief states © 2026 adHive, but we can use dynamic or hardcoded 2026. Let's use 2026.
 
   return (
     <footer className="bg-zinc-950 text-zinc-300 py-16 border-t border-zinc-900">
@@ -25,7 +25,7 @@ export function Footer() {
           
           <div className="flex flex-col items-center">
             <Link href="/" className="inline-block mb-6">
-              <img src="/images/adhivelogo.png" alt="adhive Logo" className="h-10 w-auto object-contain brightness-0 invert" />
+              <img src="/images/adhivelogo.png" alt="adHive Logo" className="h-10 w-auto object-contain brightness-0 invert" />
             </Link>
             <p className="text-zinc-400 text-lg mb-6 max-w-sm">
               Hyperlocal Marketing.
@@ -55,13 +55,13 @@ export function Footer() {
                 <FooterLink href="/">Home</FooterLink>
               </li>
               <li>
-                <FooterLink href="/#what-is-adhive">About adhive</FooterLink>
+                <FooterLink href="/#what-is-adhive">About adHive</FooterLink>
               </li>
               <li>
                 <FooterLink href="/#how-it-works">How it Works</FooterLink>
               </li>
               <li>
-                <FooterLink href="/#why-adhive">Why adhive</FooterLink>
+                <FooterLink href="/#why-adhive">Why adHive</FooterLink>
               </li>
               <li>
                 <FooterLink href="/contact">Contact Us</FooterLink>
@@ -101,7 +101,7 @@ export function Footer() {
             </button>
           </div>
           <p className="text-xs text-zinc-500 text-center">
-            © 2026 adhive. All rights reserved.
+            © 2026 adHive. All rights reserved.
           </p>
         </div>
       </div>

@@ -38,15 +38,15 @@ export function Navbar() {
         scrolled ? "bg-white/85 backdrop-blur-xl border border-zinc-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] py-3" : "bg-transparent py-4"
       }`}>
         <Link href="/" className="flex items-center z-10">
-          <img src="/images/adhivelogo.png" alt="adhive Logo" className="h-8 w-auto object-contain" />
+          <img src="/images/adhivelogo.png" alt="adHive Logo" className="h-8 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center gap-10">
           <NavLink href="/">Home</NavLink>
-          <NavLink href="/#what-is-adhive">About adhive</NavLink>
+          <NavLink href="/#what-is-adhive">About adHive</NavLink>
           <NavLink href="/#how-it-works">How it Works</NavLink>
-          <NavLink href="/#why-adhive">Why adhive</NavLink>
+          <NavLink href="/#why-adhive">Why adHive</NavLink>
           <NavLink href="/contact">Contact Us</NavLink>
         </div>
 
@@ -83,7 +83,7 @@ export function Navbar() {
               className="text-base font-semibold text-zinc-900 py-2 border-b border-zinc-100"
               onClick={() => setMobileMenuOpen(false)}
             >
-              About adhive
+              About adHive
             </Link>
             <Link
               href="/#how-it-works"
@@ -97,7 +97,7 @@ export function Navbar() {
               className="text-base font-semibold text-zinc-900 py-2 border-b border-zinc-100"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Why adhive
+              Why adHive
             </Link>
             <Link
               href="/contact"

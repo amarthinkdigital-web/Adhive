@@ -13,9 +13,9 @@ export default function PrivacyPage() {
           <p className="text-sm text-zinc-500 mb-10">Effective Date: [DD/MM/YYYY] | Last Updated: [DD/MM/YYYY]</p>
         </Reveal>
         
-        <div className="prose prose-zinc max-w-none text-zinc-600 space-y-6">
+        <div className="max-w-none text-zinc-600 space-y-6">
 
-          <p>[Placeholder for Privacy Policy content. To be updated by legal counsel.]</p>
+          <p className="text-base leading-relaxed">[Placeholder for Privacy Policy content. To be updated by legal counsel.]</p>
         </div>
       </section>
       <Footer />

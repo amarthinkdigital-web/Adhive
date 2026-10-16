@@ -2,6 +2,18 @@ import React from "react";
 import Link from "next/link";
 import { Mail, Globe } from "lucide-react";
 
+function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className="group relative inline-block text-sm text-zinc-400 hover:text-orange-500 transition-colors"
+    >
+      {children}
+      <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-orange-500 transition-all duration-300 group-hover:w-full" />
+    </Link>
+  );
+}
+
 export function Footer() {
   const currentYear = new Date().getFullYear();
   // Brief states © 2026 adhive, but we can use dynamic or hardcoded 2026. Let's use 2026.
@@ -40,29 +52,19 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-6">Company</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/" className="text-sm text-zinc-400 hover:text-orange-500 transition-colors">
-                  Home
-                </Link>
+                <FooterLink href="/">Home</FooterLink>
               </li>
               <li>
-                <Link href="/#what-is-adhive" className="text-sm text-zinc-400 hover:text-orange-500 transition-colors">
-                  About adhive
-                </Link>
+                <FooterLink href="/#what-is-adhive">About adhive</FooterLink>
               </li>
               <li>
-                <Link href="/#how-it-works" className="text-sm text-zinc-400 hover:text-orange-500 transition-colors">
-                  How it Works
-                </Link>
+                <FooterLink href="/#how-it-works">How it Works</FooterLink>
               </li>
               <li>
-                <Link href="/#why-adhive" className="text-sm text-zinc-400 hover:text-orange-500 transition-colors">
-                  Why adhive
-                </Link>
+                <FooterLink href="/#why-adhive">Why adhive</FooterLink>
               </li>
               <li>
-                <Link href="/contact" className="text-sm text-zinc-400 hover:text-orange-500 transition-colors">
-                  Contact Us
-                </Link>
+                <FooterLink href="/contact">Contact Us</FooterLink>
               </li>
             </ul>
           </div>
@@ -71,24 +73,16 @@ export function Footer() {
             <h4 className="text-white font-semibold mb-6">Legal</h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/terms" className="text-sm text-zinc-400 hover:text-orange-500 transition-colors">
-                  Terms of Service
-                </Link>
+                <FooterLink href="/terms">Terms of Service</FooterLink>
               </li>
               <li>
-                <Link href="/privacy" className="text-sm text-zinc-400 hover:text-orange-500 transition-colors">
-                  Privacy Policy
-                </Link>
+                <FooterLink href="/privacy">Privacy Policy</FooterLink>
               </li>
               <li>
-                <Link href="/refund" className="text-sm text-zinc-400 hover:text-orange-500 transition-colors">
-                  Refund & Cancellation Policy
-                </Link>
+                <FooterLink href="/refund">Refund &amp; Cancellation Policy</FooterLink>
               </li>
               <li>
-                <Link href="/community-guidelines" className="text-sm text-zinc-400 hover:text-orange-500 transition-colors">
-                  Community Guidelines
-                </Link>
+                <FooterLink href="/community-guidelines">Community Guidelines</FooterLink>
               </li>
             </ul>
           </div>

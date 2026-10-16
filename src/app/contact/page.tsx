@@ -4,6 +4,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { Reveal } from "@/components/animated/Reveal";
+import { TextScramble } from "@/components/animated/TextScramble";
 import { Mail, Phone, MapPin, Building2, HelpCircle, Briefcase, Handshake } from "lucide-react";
 
 export default function ContactPage() {
@@ -21,26 +23,18 @@ export default function ContactPage() {
       <Navbar />
 
       <section className="pt-32 pb-12 bg-orange-50/50">
-        {/* <div className="max-w-4xl mx-auto px-6 text-center">
-          <motion.h1
-            initial="hidden"
-            animate="visible"
-            custom={0}
-            variants={fadeUp}
-            className="text-3xl md:text-4xl font-bold text-zinc-900 mb-3"
-          >
-            Contact adhive
-          </motion.h1>
-          <motion.p
-            initial="hidden"
-            animate="visible"
-            custom={1}
-            variants={fadeUp}
-            className="text-base md:text-lg text-zinc-600 max-w-2xl mx-auto"
-          >
-            Have a question, partnership opportunity or need help? We&apos;d love to hear from you.
-          </motion.p>
-        </div> */}
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <Reveal>
+            <h1 className="text-3xl md:text-4xl font-bold text-zinc-900 mb-3">
+              <TextScramble text="Contact adhive" />
+            </h1>
+          </Reveal>
+          <Reveal delay={0.12}>
+            <p className="text-base md:text-lg text-zinc-600 max-w-2xl mx-auto">
+              Have a question, partnership opportunity or need help? We&apos;d love to hear from you.
+            </p>
+          </Reveal>
+        </div>
       </section>
 
       <section className="py-14">

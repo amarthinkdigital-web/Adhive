@@ -4,6 +4,18 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
+function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className="group relative text-[15px] font-semibold text-zinc-600 hover:text-orange-500 transition-colors tracking-wide"
+    >
+      {children}
+      <span className="absolute -bottom-1 left-0 h-[2px] w-0 rounded-full bg-orange-500 transition-all duration-300 group-hover:w-full" />
+    </Link>
+  );
+}
+
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -31,21 +43,11 @@ export function Navbar() {
 
         {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center gap-10">
-          <Link href="/" className="text-[15px] font-semibold text-zinc-600 hover:text-orange-500 transition-colors tracking-wide">
-            Home
-          </Link>
-          <Link href="/#what-is-adhive" className="text-[15px] font-semibold text-zinc-600 hover:text-orange-500 transition-colors tracking-wide">
-            About adhive
-          </Link>
-          <Link href="/#how-it-works" className="text-[15px] font-semibold text-zinc-600 hover:text-orange-500 transition-colors tracking-wide">
-            How it Works
-          </Link>
-          <Link href="/#why-adhive" className="text-[15px] font-semibold text-zinc-600 hover:text-orange-500 transition-colors tracking-wide">
-            Why adhive
-          </Link>
-          <Link href="/contact" className="text-[15px] font-semibold text-zinc-600 hover:text-orange-500 transition-colors tracking-wide">
-            Contact Us
-          </Link>
+          <NavLink href="/">Home</NavLink>
+          <NavLink href="/#what-is-adhive">About adhive</NavLink>
+          <NavLink href="/#how-it-works">How it Works</NavLink>
+          <NavLink href="/#why-adhive">Why adhive</NavLink>
+          <NavLink href="/contact">Contact Us</NavLink>
         </div>
 
         {/* Desktop CTA */}

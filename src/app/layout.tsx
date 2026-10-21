@@ -29,10 +29,11 @@ export default function RootLayout({
     <html lang="en" className={`scroll-smooth ${inter.variable} ${outfit.variable}`}>
       <body className="antialiased font-sans flex flex-col min-h-screen">
         <ScrollProgress />
-        {/* Top Banner */}
-        <div className="bg-zinc-900 text-white text-center py-2 px-4 text-sm font-medium z-[60] relative flex items-center justify-center gap-2">
-          <span className="bg-orange-500 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">Coming Soon</span>
-          <span>The smarter way to reach your local audience. Launching soon on Android & iOS.</span>
+        {/* Top Banner — compact on mobile so it stays single-line */}
+        <div className="bg-zinc-900 text-white text-center py-2 px-3 sm:px-4 text-[11px] sm:text-sm font-medium z-[60] relative flex items-center justify-center gap-2 flex-wrap leading-tight">
+          <span className="bg-orange-500 text-white text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded uppercase tracking-wider shrink-0">Coming Soon</span>
+          <span className="hidden sm:inline">The smarter way to reach your local audience. Launching soon on Android &amp; iOS.</span>
+          <span className="sm:hidden">Launching soon on Android &amp; iOS.</span>
         </div>
         
         {children}

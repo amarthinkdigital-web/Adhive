@@ -653,11 +653,11 @@ export default function Home() {
       <Navbar />
 
       {/* ══ HERO ══ */}
-      <section className="relative min-h-[90vh] flex items-center overflow-x-clip overflow-hidden bg-[#fafafa] border-b border-[#e4e4e7] pt-32 sm:pt-28 lg:pt-20">
+      <section className="relative min-h-[90vh] flex items-start lg:items-center overflow-x-clip overflow-hidden bg-[#fafafa] border-b border-[#e4e4e7] pt-36 sm:pt-32 lg:pt-20">
         <div className="absolute top-[-80px] left-[-120px] w-[560px] h-[560px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(249,115,22,0.12) 0%, transparent 70%)", filter: "blur(40px)" }} />
         <div className="absolute bottom-[-60px] right-[-100px] w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(251,146,60,0.1) 0%, transparent 70%)", filter: "blur(50px)" }} />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-4 pb-12 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-0 lg:gap-28 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-2 pb-12 lg:pt-4 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-0 lg:gap-28 lg:items-center">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="flex flex-col items-start max-w-xl pl-0 sm:pl-6 mt-0 lg:-mt-16 pb-8 sm:pb-10 lg:pb-0">
             <motion.div variants={wordAnim} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-200 bg-orange-50 text-xs font-semibold text-orange-600 mb-4 shadow-sm">
               <Sparkles className="w-3.5 h-3.5" />

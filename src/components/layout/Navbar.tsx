@@ -36,11 +36,11 @@ export function Navbar() {
         scrolled ? "top-3 sm:top-4" : "top-5 sm:top-8"
       }`}
     >
-      {/* Pill bar */}
+      {/* Pill bar — always white bg on mobile, glass on desktop when not scrolled */}
       <div className={`flex items-center justify-between transition-all duration-300 rounded-full px-4 sm:px-6 ${
         scrolled
-          ? "bg-white/90 backdrop-blur-xl border border-zinc-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.06)] py-2.5 sm:py-3"
-          : "bg-white/60 backdrop-blur-md border border-white/30 shadow-sm py-3 sm:py-4"
+          ? "bg-white/95 backdrop-blur-xl border border-zinc-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.08)] py-2.5 sm:py-3"
+          : "bg-white md:bg-white/60 border border-zinc-200/50 md:border-white/30 shadow-md md:shadow-sm py-3 sm:py-4"
       }`}>
 
         {/* Logo */}

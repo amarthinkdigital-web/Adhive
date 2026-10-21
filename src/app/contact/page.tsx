@@ -23,7 +23,7 @@ export default function ContactPage() {
       <Navbar />
 
       {/* ── Hero / Header ── */}
-      <section className="relative pt-30 sm:pt-30 pb-8 sm:pb-10 overflow-hidden bg-gradient-to-b from-orange-50/70 via-white to-white border-b border-zinc-100">
+      <section className="relative pt-[130px] sm:pt-[140px] pb-8 sm:pb-10 overflow-hidden bg-gradient-to-b from-orange-50/70 via-white to-white border-b border-zinc-100">
         {/* Decorative background glow */}
         <div
           className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] pointer-events-none"

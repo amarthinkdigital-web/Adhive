@@ -33,7 +33,7 @@ export function Navbar() {
   return (
     <nav
       className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-300 w-full max-w-7xl px-4 md:px-6 ${
-        scrolled ? "top-3 sm:top-4" : "top-5 sm:top-8"
+        scrolled ? "top-[40px] sm:top-[44px]" : "top-[42px] sm:top-[48px]"
       }`}
     >
       {/* Pill bar — always white bg on mobile, glass on desktop when not scrolled */}

@@ -653,7 +653,7 @@ export default function Home() {
       <Navbar />
 
       {/* ══ HERO ══ */}
-      <section className="relative min-h-[90vh] flex items-start lg:items-center overflow-x-clip overflow-hidden bg-[#fafafa] border-b border-[#e4e4e7] pt-36 sm:pt-32 lg:pt-20">
+      <section className="relative min-h-[90vh] flex items-start lg:items-center overflow-x-clip overflow-hidden bg-[#fafafa] border-b border-[#e4e4e7] pt-[130px] sm:pt-[140px] lg:pt-28">
         <div className="absolute top-[-80px] left-[-120px] w-[560px] h-[560px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(249,115,22,0.12) 0%, transparent 70%)", filter: "blur(40px)" }} />
         <div className="absolute bottom-[-60px] right-[-100px] w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(251,146,60,0.1) 0%, transparent 70%)", filter: "blur(50px)" }} />
 

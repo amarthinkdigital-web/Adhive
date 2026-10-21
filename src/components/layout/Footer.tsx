@@ -84,7 +84,7 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="flex flex-col items-center">
+          {/* <div className="flex flex-col items-center">
             <h4 className="text-white font-semibold mb-6">Legal</h4>
             <ul className="space-y-3">
               <li>
@@ -100,7 +100,7 @@ export function Footer() {
                 <FooterLink href="/community-guidelines">Community Guidelines</FooterLink>
               </li>
             </ul>
-          </div>
+          </div> */}
 
         </div>
 

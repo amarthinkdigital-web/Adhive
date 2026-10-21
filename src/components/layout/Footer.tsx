@@ -105,18 +105,18 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-center pt-8 border-t border-zinc-800/50 gap-6">
-          <div className="flex flex-wrap gap-4">
-            <button className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-lg text-sm text-zinc-400 cursor-not-allowed hover:bg-zinc-800 transition-colors">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full md:w-auto">
+            <button className="flex items-center justify-center gap-2 bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-lg text-sm text-zinc-400 cursor-not-allowed hover:bg-zinc-800 transition-colors">
               <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-5 opacity-50" />
               <span>Coming Soon</span>
             </button>
-            <button className="flex items-center gap-2 bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-lg text-sm text-zinc-400 cursor-not-allowed hover:bg-zinc-800 transition-colors">
+            <button className="flex items-center justify-center gap-2 bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-lg text-sm text-zinc-400 cursor-not-allowed hover:bg-zinc-800 transition-colors">
               <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-5 opacity-50" />
               <span>Coming Soon</span>
             </button>
           </div>
-          <p className="text-xs text-zinc-500 text-center">
-            © 2026 adHive. All rights reserved.
+          <p className="text-xs text-zinc-500 text-center px-4">
+            © 2026 Adhive Technocrats LLP. All rights reserved.
           </p>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { Mail, Globe } from "lucide-react";
+import { Mail } from "lucide-react";
 
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
@@ -20,8 +20,8 @@ export function Footer() {
 
   return (
     <footer className="bg-zinc-950 text-zinc-300 py-16 border-t border-zinc-900">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12 items-start text-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mb-12 items-start text-center">
           
           <div className="flex flex-col items-center">
             <Link href="/" className="inline-block mb-6">
@@ -32,18 +32,33 @@ export function Footer() {
               <br />
               Without Burning Your Wallet.
             </p>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 bg-orange-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-orange-600 transition-all shadow-md shadow-orange-500/20 mb-6"
-            >
-              Join the Community
-            </Link>
             <div className="flex items-center gap-4 text-zinc-500">
               <a href="mailto:support@adhive.io" className="hover:text-orange-500 transition-colors" aria-label="Email support@adhive.io">
                 <Mail className="w-5 h-5" />
               </a>
-              <a href="#" className="hover:text-orange-500 transition-colors" aria-label="Website">
-                <Globe className="w-5 h-5" />
+              <a
+                href="https://www.instagram.com/adhiveglobal?obrf=MjhjeHpwZGhqcWRr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-pink-500 transition-colors"
+                aria-label="Instagram"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </a>
+              <a
+                href="https://www.facebook.com/share/1CmP3SDBau/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-500 transition-colors"
+                aria-label="Facebook"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
               </a>
             </div>
           </div>

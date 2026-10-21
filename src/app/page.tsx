@@ -657,8 +657,8 @@ export default function Home() {
         <div className="absolute top-[-80px] left-[-120px] w-[560px] h-[560px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(249,115,22,0.12) 0%, transparent 70%)", filter: "blur(40px)" }} />
         <div className="absolute bottom-[-60px] right-[-100px] w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(251,146,60,0.1) 0%, transparent 70%)", filter: "blur(50px)" }} />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-4 pb-12 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-6 lg:gap-28 items-center">
-          <motion.div initial="hidden" animate="visible" variants={stagger} className="flex flex-col items-start max-w-xl pl-0 sm:pl-6 mt-0 lg:-mt-16">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-4 pb-12 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-0 lg:gap-28 items-center">
+          <motion.div initial="hidden" animate="visible" variants={stagger} className="flex flex-col items-start max-w-xl pl-0 sm:pl-6 mt-0 lg:-mt-16 pb-8 sm:pb-10 lg:pb-0">
             <motion.div variants={wordAnim} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-200 bg-orange-50 text-xs font-semibold text-orange-600 mb-4 shadow-sm">
               <Sparkles className="w-3.5 h-3.5" />
               Launching Soon on Android & iOS
@@ -689,16 +689,16 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative flex w-full items-end justify-center gap-3 sm:gap-4 lg:block lg:h-[520px] overflow-x-clip"
+            className="relative flex w-full items-end justify-center gap-3 sm:gap-4 lg:block lg:h-[520px] overflow-x-clip min-h-[200px] sm:min-h-[260px] lg:min-h-0"
             style={{ perspective: "1000px" }}
           >
             <motion.div animate={{ y: [-10, 10, -10] }} transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="relative z-20 w-[44%] max-w-[160px] sm:w-[46%] sm:max-w-[230px] shrink-0 overflow-hidden rounded-2xl border border-white/60 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] lg:absolute lg:-left-4 lg:-top-4 lg:w-[360px] lg:max-w-none lg:shadow-[0_30px_60px_rgba(0,0,0,0.2)]"
+              className="relative z-20 w-[44%] max-w-[155px] sm:w-[46%] sm:max-w-[230px] shrink-0 overflow-hidden rounded-2xl border border-white/60 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] lg:absolute lg:-left-4 lg:-top-4 lg:w-[360px] lg:max-w-none lg:shadow-[0_30px_60px_rgba(0,0,0,0.2)]"
             >
               <WelcomeScreenSVG />
             </motion.div>
             <motion.div animate={{ y: [10, -10, 10] }} transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1 }}
-              className="relative z-10 w-[44%] max-w-[160px] sm:w-[46%] sm:max-w-[230px] shrink-0 overflow-hidden rounded-2xl border border-white/60 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] lg:absolute lg:right-0 lg:top-10 lg:w-[360px] lg:max-w-none"
+              className="relative z-10 w-[44%] max-w-[155px] sm:w-[46%] sm:max-w-[230px] shrink-0 overflow-hidden rounded-2xl border border-white/60 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] lg:absolute lg:right-0 lg:top-10 lg:w-[360px] lg:max-w-none"
             >
               <ShareEarnSVG />
             </motion.div>
@@ -740,7 +740,7 @@ export default function Home() {
           </motion.p>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="flex justify-center">
             <a
-              href="https://www.instagram.com/adhive.in"
+              href="https://www.instagram.com/adhiveglobal?obrf=MjhjeHpwZGhqcWRr"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Follow adHive on Instagram"

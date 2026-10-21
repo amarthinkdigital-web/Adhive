@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
@@ -19,6 +20,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +39,16 @@ export function Navbar() {
       <div className={`flex items-center justify-between transition-all duration-300 rounded-full px-6 ${
         scrolled ? "bg-white/85 backdrop-blur-xl border border-zinc-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.04)] py-3" : "bg-transparent py-4"
       }`}>
-        <Link href="/" className="flex items-center z-10">
+        <Link
+          href="/"
+          className="flex items-center z-10"
+          onClick={(e) => {
+            if (pathname === "/") {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+        >
           <img src="/images/adhivelogo.png" alt="adHive Logo" className="h-8 w-auto object-contain" />
         </Link>
 

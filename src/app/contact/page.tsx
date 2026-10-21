@@ -57,7 +57,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-zinc-900 mb-1">General Enquiries & Support</h3>
-                  <a href="mailto:support@adhive.io" className="text-zinc-600 hover:text-orange-500">support@adhive.io</a>
+                  <a href="mailto:contact@adhiveglobal.com" className="text-zinc-600 hover:text-orange-500">contact@adhiveglobal.com</a>
                 </div>
               </div>
 
@@ -67,7 +67,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-zinc-900 mb-1">Business Enquiries</h3>
-                  <a href="mailto:business@adhive.io" className="text-zinc-600 hover:text-orange-500">business@adhive.io</a>
+                  <a href="mailto:contact@adhiveglobal.com" className="text-zinc-600 hover:text-orange-500">contact@adhiveglobal.com</a>
                 </div>
               </div>
 
@@ -77,7 +77,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-zinc-900 mb-1">Partnerships</h3>
-                  <a href="mailto:partnerships@adhive.io" className="text-zinc-600 hover:text-orange-500">partnerships@adhive.io</a>
+                  <a href="mailto:contact@adhiveglobal.com" className="text-zinc-600 hover:text-orange-500">contact@adhiveglobal.com</a>
                 </div>
               </div>
 
@@ -122,7 +122,7 @@ export default function ContactPage() {
                   <Mail className="w-5 h-5 text-zinc-400 shrink-0 mt-0.5" />
                   <div>
                     <p className="text-sm font-medium text-zinc-500 mb-1">Email</p>
-                    <p className="text-zinc-900">support@adhive.io</p>
+                    <a href="mailto:contact@adhiveglobal.com" className="text-zinc-900 hover:text-orange-500">contact@adhiveglobal.com</a>
                   </div>
                 </div>
               </div>

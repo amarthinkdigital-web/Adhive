@@ -63,12 +63,15 @@ export function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-4 z-10">
-          <Link
-            href="/contact"
-            className="bg-orange-500 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-orange-600 transition-all shadow-md shadow-orange-500/20"
+          <a
+            href="https://www.instagram.com/your_instagram_handle"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-9 h-9 flex items-center justify-center rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white hover:scale-105 transition-transform"
+            aria-label="Instagram"
           >
-            Join the Community
-          </Link>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -117,13 +120,16 @@ export function Navbar() {
             >
               Contact Us
             </Link>
-            <Link
-              href="/contact"
-              className="mt-4 bg-orange-500 text-white text-center px-5 py-3 rounded-xl text-base font-semibold"
+            <a
+              href="https://www.instagram.com/your_instagram_handle"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 flex items-center justify-center gap-2 bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white text-center px-5 py-3 rounded-xl text-base font-semibold"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Join the Community
-            </Link>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
           </div>
         )}
       </div>

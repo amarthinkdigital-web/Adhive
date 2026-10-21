@@ -649,17 +649,17 @@ export default function Home() {
 
   return (
     <MotionConfig reducedMotion="user">
-    <main className="min-h-screen bg-white" style={{ scrollBehavior: "smooth" }}>
+    <main className="min-h-screen bg-white overflow-x-hidden" style={{ scrollBehavior: "smooth" }}>
       <Navbar />
 
       {/* ══ HERO ══ */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#fafafa] border-b border-[#e4e4e7] pt-28 lg:pt-20">
+      <section className="relative min-h-[90vh] flex items-center overflow-x-clip overflow-hidden bg-[#fafafa] border-b border-[#e4e4e7] pt-32 sm:pt-28 lg:pt-20">
         <div className="absolute top-[-80px] left-[-120px] w-[560px] h-[560px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(249,115,22,0.12) 0%, transparent 70%)", filter: "blur(40px)" }} />
         <div className="absolute bottom-[-60px] right-[-100px] w-[480px] h-[480px] rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(251,146,60,0.1) 0%, transparent 70%)", filter: "blur(50px)" }} />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-6 pb-12 grid lg:grid-cols-[1.1fr_1fr] gap-12 lg:gap-28 items-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-4 pb-12 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-6 lg:gap-28 items-center">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="flex flex-col items-start max-w-xl pl-0 sm:pl-6 mt-0 lg:-mt-16">
-            <motion.div variants={wordAnim} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-orange-200 bg-orange-50 text-xs font-semibold text-orange-600 mb-5 shadow-sm">
+            <motion.div variants={wordAnim} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-200 bg-orange-50 text-xs font-semibold text-orange-600 mb-4 shadow-sm">
               <Sparkles className="w-3.5 h-3.5" />
               Launching Soon on Android & iOS
             </motion.div>
@@ -667,7 +667,7 @@ export default function Home() {
               variants={stagger}
               initial="hidden"
               animate="visible"
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-zinc-900 mb-5"
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-zinc-900 mb-4"
             >
               <motion.span variants={wordAnim} className="block">Hyperlocal Marketing.</motion.span>
               <motion.span variants={wordAnim} className="text-shimmer animate-shimmer block">
@@ -689,16 +689,16 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative flex w-full items-end justify-center gap-3 sm:gap-6 lg:block lg:h-[520px]"
+            className="relative flex w-full items-end justify-center gap-3 sm:gap-4 lg:block lg:h-[520px] overflow-x-clip"
             style={{ perspective: "1000px" }}
           >
             <motion.div animate={{ y: [-10, 10, -10] }} transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="relative z-20 w-[46%] max-w-[230px] shrink-0 overflow-hidden rounded-2xl border border-white/60 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] lg:absolute lg:-left-4 lg:-top-4 lg:w-[360px] lg:max-w-none lg:shadow-[0_30px_60px_rgba(0,0,0,0.2)]"
+              className="relative z-20 w-[44%] max-w-[160px] sm:w-[46%] sm:max-w-[230px] shrink-0 overflow-hidden rounded-2xl border border-white/60 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] lg:absolute lg:-left-4 lg:-top-4 lg:w-[360px] lg:max-w-none lg:shadow-[0_30px_60px_rgba(0,0,0,0.2)]"
             >
               <WelcomeScreenSVG />
             </motion.div>
             <motion.div animate={{ y: [10, -10, 10] }} transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1 }}
-              className="relative z-10 w-[46%] max-w-[230px] shrink-0 overflow-hidden rounded-2xl border border-white/60 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] lg:absolute lg:right-0 lg:top-10 lg:w-[360px] lg:max-w-none"
+              className="relative z-10 w-[44%] max-w-[160px] sm:w-[46%] sm:max-w-[230px] shrink-0 overflow-hidden rounded-2xl border border-white/60 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] lg:absolute lg:right-0 lg:top-10 lg:w-[360px] lg:max-w-none"
             >
               <ShareEarnSVG />
             </motion.div>
@@ -732,17 +732,27 @@ export default function Home() {
       </section>
 
       {/* ══ INTRO / CTA ══ */}
-      <section className="py-16 lg:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="pt-16 sm:pt-20 lg:pt-28 pb-12 lg:pb-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-            className="text-xl md:text-2xl text-zinc-600 mb-10 leading-relaxed font-medium">
+            className="text-base sm:text-xl md:text-2xl text-zinc-600 mb-8 leading-relaxed font-medium">
             adHive helps businesses promote their products and services through real people in their local community — while giving social media users a simple way to earn by sharing promotional content.
           </motion.p>
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="flex justify-center">
-            <Link href="/contact" className="inline-flex items-center gap-2 bg-orange-500 text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-orange-600 transition-all shadow-[0_8px_32px_rgba(249,115,22,0.30)] group">
-              Coming Soon | Join the Community
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            <a
+              href="https://www.instagram.com/adhive.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow adHive on Instagram"
+              className="inline-flex items-center gap-3 bg-gradient-to-tr from-[#f09433] via-[#e6683c] via-[#dc2743] via-[#cc2366] to-[#bc1888] text-white px-7 sm:px-10 py-3.5 sm:py-4 rounded-full text-base sm:text-lg font-bold hover:opacity-90 hover:scale-105 transition-all shadow-[0_8px_32px_rgba(220,39,67,0.30)] group"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 shrink-0">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+              </svg>
+              Follow Us on Instagram
+            </a>
           </motion.div>
         </div>
       </section>
@@ -758,12 +768,12 @@ export default function Home() {
         {/* Animated cool orb bottom-right */}
         <motion.div aria-hidden className="absolute -bottom-16 -right-16 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(249,115,22,0.14) 0%, transparent 70%)", filter: "blur(50px)" }} animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.9, 0.5] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }} />
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-24 items-center">
 
             {/* Left — mobile app illustration */}
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-              <div className="w-full max-w-[330px] mx-auto flex items-center justify-center">
+              <div className="w-full max-w-[260px] sm:max-w-[300px] md:max-w-[330px] mx-auto flex items-center justify-center overflow-x-clip">
                 <WhatIsAdhiveSVG />
               </div>
             </motion.div>
@@ -800,14 +810,14 @@ export default function Home() {
                   { icon: Users, color: "text-blue-400", bg: "bg-blue-500/10 border-blue-500/20", title: "For Customers", desc: "Discover local businesses through community members." }
                 ].map((item, i) => (
                   <motion.div key={i} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 * i, duration: 0.5 }}
-                    className={`flex items-center gap-4 p-5 rounded-2xl border ${item.bg} group hover:scale-[1.02] transition-transform cursor-default`}
+                    className={`flex items-center gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl border ${item.bg} group hover:scale-[1.01] sm:hover:scale-[1.02] transition-transform cursor-default`}
                   >
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${item.bg} group-hover:scale-110 transition-transform`}>
-                      <item.icon className={`w-6 h-6 ${item.color}`} />
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shrink-0 ${item.bg} group-hover:scale-110 transition-transform`}>
+                      <item.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${item.color}`} />
                     </div>
                     <div>
-                      <h3 className="text-white font-bold text-lg">{item.title}</h3>
-                      <p className="text-zinc-400 text-sm">{item.desc}</p>
+                      <h3 className="text-white font-bold text-base sm:text-lg">{item.title}</h3>
+                      <p className="text-zinc-400 text-xs sm:text-sm">{item.desc}</p>
                     </div>
                   </motion.div>
                 ))}
@@ -819,11 +829,11 @@ export default function Home() {
       </section>
 
       {/* ══ HOW IT WORKS ══ */}
-      <section id="how-it-works" className="py-20 lg:py-28 bg-white relative overflow-hidden">
+      <section id="how-it-works" className="py-16 sm:py-20 lg:py-28 bg-white relative overflow-hidden overflow-x-clip">
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 30% 50%, rgba(249,115,22,0.05) 0%, transparent 55%)" }} />
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center mb-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
               <motion.span variants={wordAnim} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 text-orange-600 text-sm font-semibold mb-5 border border-orange-100">
                 <TrendingUp className="w-3.5 h-3.5" /> Simple Process
@@ -831,42 +841,44 @@ export default function Home() {
               <AnimatedHeading tag="h2" delay={0.1} className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-900 mb-4">How adHive Works</AnimatedHeading>
               <motion.p
                 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3, duration: 0.55 }}
-                className="text-xl text-zinc-500 max-w-2xl mx-auto"
+                className="text-lg sm:text-xl text-zinc-500 max-w-2xl mx-auto"
               >A seamless workflow designed for businesses to reach locals, and for locals to earn.</motion.p>
               <GlowLine />
             </motion.div>
           </div>
 
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-12 lg:gap-16">
+          <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
             {/* For Businesses */}
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-              <div className="mb-8">
-                <HowItWorksSVG type="business" />
-              </div>
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 bg-orange-100 rounded-2xl flex items-center justify-center">
-                  <Briefcase className="w-7 h-7 text-orange-600" />
+              <div className="mb-6 sm:mb-8 w-full flex justify-center">
+                <div className="w-full max-w-[280px] sm:max-w-[320px]">
+                  <HowItWorksSVG type="business" />
                 </div>
-                <h3 className="text-3xl font-bold text-zinc-900">For Businesses</h3>
               </div>
-              <div className="space-y-5">
+              <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-orange-100 rounded-2xl flex items-center justify-center shrink-0">
+                  <Briefcase className="w-6 h-6 sm:w-7 sm:h-7 text-orange-600" />
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-zinc-900">For Businesses</h3>
+              </div>
+              <div className="space-y-4 sm:space-y-5">
                 {[
                   { n: "01", title: "Create Campaign", desc: "Define your promotional campaign, target location, audience requirements and content.", icon: Target },
                   { n: "02", title: "Set Budget & Slots", desc: "Choose the number of promotional slots and allocate your campaign budget.", icon: DollarSign },
                   { n: "03", title: "Monitor & Validate", desc: "Track participation in real-time and validate completed promotional activities with evidence.", icon: ShieldCheck }
                 ].map((s, i) => (
                   <motion.div key={i} initial={{ opacity: 0, x: -15 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}
-                    className="flex gap-5 group"
+                    className="flex gap-4 sm:gap-5 group"
                   >
                     <div className="flex flex-col items-center">
-                      <div className="w-10 h-10 rounded-full bg-orange-500 text-white flex items-center justify-center text-sm font-black shrink-0 group-hover:scale-110 transition-transform shadow-[0_4px_14px_rgba(249,115,22,0.35)]">
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-orange-500 text-white flex items-center justify-center text-sm font-black shrink-0 group-hover:scale-110 transition-transform shadow-[0_4px_14px_rgba(249,115,22,0.35)]">
                         {s.n}
                       </div>
-                      {i < 2 && <div className="flex-1 w-px bg-gradient-to-b from-orange-300 to-transparent mt-2 min-h-[32px]" />}
+                      {i < 2 && <div className="flex-1 w-px bg-gradient-to-b from-orange-300 to-transparent mt-2 min-h-[24px] sm:min-h-[32px]" />}
                     </div>
-                    <div className="pb-4">
-                      <h4 className="text-lg font-bold text-zinc-900 mb-1 flex items-center gap-2">
-                        <s.icon className="w-4 h-4 text-orange-500" />
+                    <div className="pb-3 sm:pb-4">
+                      <h4 className="text-base sm:text-lg font-bold text-zinc-900 mb-1 flex items-center gap-2">
+                        <s.icon className="w-4 h-4 text-orange-500 shrink-0" />
                         {s.title}
                       </h4>
                       <p className="text-zinc-500 leading-relaxed text-sm">{s.desc}</p>
@@ -878,33 +890,35 @@ export default function Home() {
 
             {/* For Sharers */}
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.15 }}>
-              <div className="mb-8">
-                <HowItWorksSVG type="sharer" />
-              </div>
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 bg-zinc-100 rounded-2xl flex items-center justify-center">
-                  <Share2 className="w-7 h-7 text-zinc-700" />
+              <div className="mb-6 sm:mb-8 w-full flex justify-center">
+                <div className="w-full max-w-[280px] sm:max-w-[320px]">
+                  <HowItWorksSVG type="sharer" />
                 </div>
-                <h3 className="text-3xl font-bold text-zinc-900">For Sharers</h3>
               </div>
-              <div className="space-y-5">
+              <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 bg-zinc-100 rounded-2xl flex items-center justify-center shrink-0">
+                  <Share2 className="w-6 h-6 sm:w-7 sm:h-7 text-zinc-700" />
+                </div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-zinc-900">For Sharers</h3>
+              </div>
+              <div className="space-y-4 sm:space-y-5">
                 {[
                   { n: "01", title: "Discover Campaigns", desc: "Find available campaigns in your local area and review the specific requirements.", icon: MapPin },
                   { n: "02", title: "Accept & Post", desc: "Accept the campaign opportunity and share the promotional content on your Instagram.", icon: Share2 },
                   { n: "03", title: "Earn Rewards", desc: "Complete all requirements successfully, get validated and receive your earnings.", icon: DollarSign }
                 ].map((s, i) => (
                   <motion.div key={i} initial={{ opacity: 0, x: 15 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}
-                    className="flex gap-5 group"
+                    className="flex gap-4 sm:gap-5 group"
                   >
                     <div className="flex flex-col items-center">
-                      <div className="w-10 h-10 rounded-full bg-zinc-900 text-white flex items-center justify-center text-sm font-black shrink-0 group-hover:scale-110 transition-transform shadow-[0_4px_14px_rgba(24,24,27,0.25)]">
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-zinc-900 text-white flex items-center justify-center text-sm font-black shrink-0 group-hover:scale-110 transition-transform shadow-[0_4px_14px_rgba(24,24,27,0.25)]">
                         {s.n}
                       </div>
-                      {i < 2 && <div className="flex-1 w-px bg-gradient-to-b from-zinc-300 to-transparent mt-2 min-h-[32px]" />}
+                      {i < 2 && <div className="flex-1 w-px bg-gradient-to-b from-zinc-300 to-transparent mt-2 min-h-[24px] sm:min-h-[32px]" />}
                     </div>
-                    <div className="pb-4">
-                      <h4 className="text-lg font-bold text-zinc-900 mb-1 flex items-center gap-2">
-                        <s.icon className="w-4 h-4 text-zinc-600" />
+                    <div className="pb-3 sm:pb-4">
+                      <h4 className="text-base sm:text-lg font-bold text-zinc-900 mb-1 flex items-center gap-2">
+                        <s.icon className="w-4 h-4 text-zinc-600 shrink-0" />
                         {s.title}
                       </h4>
                       <p className="text-zinc-500 leading-relaxed text-sm">{s.desc}</p>
@@ -926,7 +940,7 @@ export default function Home() {
         <motion.div aria-hidden className="absolute top-[8%] -left-16 w-72 h-72 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(253,186,116,0.22) 0%, transparent 70%)", filter: "blur(46px)" }} animate={{ y: [0, -26, 0], x: [0, 18, 0] }} transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }} />
         <motion.div aria-hidden className="absolute bottom-[6%] -right-20 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(251,146,60,0.18) 0%, transparent 70%)", filter: "blur(50px)" }} animate={{ y: [0, 24, 0], x: [0, -16, 0] }} transition={{ duration: 17, repeat: Infinity, ease: "easeInOut", delay: 1.4 }} />
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-16">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
               <motion.span variants={wordAnim} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 text-orange-400 text-sm font-semibold mb-5 border border-orange-500/20">
@@ -978,11 +992,11 @@ export default function Home() {
       {/* ══ FOR BUSINESSES (Section 7) ══ */}
       <section className="py-16 lg:py-24 bg-white relative overflow-hidden border-t border-zinc-100">
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 85% 50%, rgba(249,115,22,0.06) 0%, transparent 55%)" }} />
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Left — business categories grid */}
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-              className="order-2 grid grid-cols-2 gap-4 lg:order-1"
+              className="order-2 grid grid-cols-2 gap-3 sm:gap-4 lg:order-1"
             >
               {[
                 { icon: "🏪", label: "Restaurants & Cafés" },
@@ -1041,10 +1055,10 @@ export default function Home() {
               <p className="text-xl text-zinc-600 mb-10 leading-relaxed">
                 Whether you&apos;re a restaurant, café, salon, gym, retail store, real-estate business, local service provider, coaching institute, event organizer, startup or D2C brand, adHive helps you create campaigns designed around where your customers are.
               </p>
-              <div className="flex items-center gap-4">
-                <Link href="/contact" className="inline-flex items-center gap-2 bg-orange-500 text-white px-8 py-3.5 rounded-full font-bold hover:bg-orange-600 transition-all shadow-[0_8px_24px_rgba(249,115,22,0.25)] group">
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+                <Link href="/contact" className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold hover:bg-orange-600 transition-all shadow-[0_8px_24px_rgba(249,115,22,0.25)] group">
                   Create Your Campaign
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform shrink-0" />
                 </Link>
                 <span className="text-sm text-zinc-400 font-medium">Coming Soon</span>
               </div>
@@ -1060,8 +1074,8 @@ export default function Home() {
         <div className="absolute inset-0 pointer-events-none opacity-[0.5]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)", backgroundSize: "56px 56px", maskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)", WebkitMaskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)" }} />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-2/3 bg-gradient-to-r from-transparent via-orange-500/50 to-transparent" />
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
             {/* Left — Sharer Dashboard mockup + CTA */}
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
@@ -1069,18 +1083,17 @@ export default function Home() {
             >
               <div className="relative">
                 <div className="absolute -inset-6 bg-orange-500/20 blur-3xl rounded-full" />
-                <div className="relative w-[400px] max-w-full">
+                <div className="relative w-full max-w-[340px] sm:w-[400px] sm:max-w-full">
                   <SharerEarningsSVG />
                 </div>
               </div>
 
-              <p className="text-lg font-bold text-orange-400 mt-8 mb-6 text-center">Turn Your Social Reach Into an Opportunity.</p>
-              <div className="flex items-center gap-4">
-                <Link href="/contact" className="inline-flex items-center gap-2 bg-orange-500 text-white px-8 py-3.5 rounded-full font-bold hover:bg-orange-600 transition-all shadow-[0_8px_24px_rgba(249,115,22,0.3)] group">
+              <p className="text-base sm:text-lg font-bold text-orange-400 mt-6 mb-5 text-center">Turn Your Social Reach Into an Opportunity.</p>
+              <div className="flex items-center gap-3">
+                <Link href="/contact" className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold hover:bg-orange-600 transition-all shadow-[0_8px_24px_rgba(249,115,22,0.3)] group">
                   Start Earning
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <span className="text-sm text-zinc-600 font-medium">Coming Soon</span>
               </div>
             </motion.div>
 
@@ -1140,7 +1153,7 @@ export default function Home() {
       <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 20% 60%, rgba(249,115,22,0.05) 0%, transparent 50%)" }} />
 
-        <div className="max-w-4xl mx-auto px-6 relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="text-center">
             <motion.span
               initial={{ opacity: 0, scale: 0.85 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.45 }}
@@ -1175,7 +1188,7 @@ export default function Home() {
       {/* ══ COMING SOON + APP (Section 11 & 12) ══ */}
       <section className="py-16 lg:py-24 bg-white border-t border-zinc-100 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 50% 50%, rgba(249,115,22,0.05) 0%, transparent 60%)" }} />
-        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
             <motion.div variants={wordAnim} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 text-orange-600 text-sm font-bold mb-8 border border-orange-100">
               <Sparkles className="w-4 h-4" /> adHive Is Coming Soon
@@ -1217,7 +1230,7 @@ export default function Home() {
       {/* ══ FAQ ══ */}
       <section className="py-20 lg:py-28 bg-zinc-950 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 50% 0%, rgba(249,115,22,0.08) 0%, transparent 50%)" }} />
-        <div className="max-w-3xl mx-auto px-6 relative z-10">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-14">
             <AnimatedHeading tag="h2" className="text-3xl sm:text-4xl font-extrabold text-white mb-4">Frequently Asked Questions</AnimatedHeading>
             <motion.p

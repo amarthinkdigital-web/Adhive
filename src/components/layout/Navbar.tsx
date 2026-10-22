@@ -1,14 +1,23 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
-function NavLink({ href, children }: { href: string; children: React.ReactNode }) {
+function NavLink({
+  href,
+  children,
+  onClick,
+}: {
+  href: string;
+  children: React.ReactNode;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+}) {
   return (
     <Link
       href={href}
+      onClick={onClick}
       className="group relative text-[15px] font-semibold text-zinc-600 hover:text-orange-500 transition-colors tracking-wide"
     >
       {children}
@@ -21,6 +30,8 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+  const scrollTopOnRouteChange = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,6 +40,43 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close the mobile dropdown on every route change
+  const [lastPathname, setLastPathname] = useState(pathname);
+  if (lastPathname !== pathname) {
+    setLastPathname(pathname);
+    setMobileMenuOpen(false);
+  }
+
+  // When the logo sends us to "/" from another page, land on the very top
+  useEffect(() => {
+    if (!scrollTopOnRouteChange.current) return;
+    scrollTopOnRouteChange.current = false;
+    const id = requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    });
+    return () => cancelAnimationFrame(id);
+  }, [pathname]);
+
+  const goToHomeTop = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>) => {
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+      e.preventDefault();
+      setMobileMenuOpen(false);
+
+      if (pathname === "/") {
+        if (window.location.hash) {
+          router.replace("/", { scroll: false });
+        }
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      } else {
+        scrollTopOnRouteChange.current = true;
+        router.push("/", { scroll: false });
+      }
+    },
+    [pathname, router]
+  );
 
   return (
     <nav
@@ -47,19 +95,15 @@ export function Navbar() {
         <Link
           href="/"
           className="flex items-center z-10 shrink-0"
-          onClick={(e) => {
-            if (pathname === "/") {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }
-          }}
+          onClick={goToHomeTop}
+          aria-label="adHive Home"
         >
           <img src="/images/adhivelogo.png" alt="adHive Logo" className="h-7 sm:h-8 w-auto object-contain" />
         </Link>
 
         {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center gap-8 lg:gap-10">
-          <NavLink href="/">Home</NavLink>
+          <NavLink href="/" onClick={goToHomeTop}>Home</NavLink>
           <NavLink href="/#what-is-adhive">About adHive</NavLink>
           <NavLink href="/#how-it-works">How it Works</NavLink>
           <NavLink href="/#why-adhive">Why adHive</NavLink>
@@ -113,7 +157,7 @@ export function Navbar() {
             <Link
               href="/"
               className="text-[15px] font-semibold text-zinc-800 py-3 border-b border-zinc-100 hover:text-orange-500 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={goToHomeTop}
             >
               Home
             </Link>

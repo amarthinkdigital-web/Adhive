@@ -115,8 +115,8 @@ export function Footer() {
 
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-center pt-8 border-t border-zinc-800/50 gap-6">
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full md:w-auto">
+        <div className="flex flex-col lg:flex-row items-center justify-between pt-8 border-t border-zinc-800/50 gap-4 lg:gap-6">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full lg:w-auto">
             <button className="flex items-center justify-center gap-2 bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-lg text-sm text-zinc-400 cursor-not-allowed hover:bg-zinc-800 transition-colors">
               <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-5 opacity-50" />
               <span>Coming Soon</span>
@@ -126,7 +126,7 @@ export function Footer() {
               <span>Coming Soon</span>
             </button>
           </div>
-          <p className="text-xs text-zinc-500 text-center px-4">
+          <p className="text-sm text-zinc-400 font-medium text-center lg:text-right w-full lg:w-auto py-1">
             © 2026 Adhive Technocrats LLP. All rights reserved.
           </p>
         </div>

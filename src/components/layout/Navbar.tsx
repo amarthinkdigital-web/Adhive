@@ -51,7 +51,8 @@ export function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
   const scrollTopOnRouteChange = useRef(false);
-  const [hash, setHash] = useState("");
+  // Single source of truth: which nav href is currently active
+  const [activeLink, setActiveLink] = useState<string>("/");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,26 +63,67 @@ export function Navbar() {
   }, []);
 
   useEffect(() => {
-    const updateHash = () => setHash(window.location.hash);
-    updateHash();
-    window.addEventListener("hashchange", updateHash);
-    return () => window.removeEventListener("hashchange", updateHash);
+    if (pathname !== "/") {
+      setActiveLink(pathname);
+      return;
+    }
+
+    const SECTIONS = ["what-is-adhive", "how-it-works", "why-adhive"] as const;
+
+    const pickActive = () => {
+      // Find which section occupies the most visible area in the middle band
+      let best: string | null = null;
+      let bestRatio = 0;
+
+      for (const id of SECTIONS) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const rect = el.getBoundingClientRect();
+        const vh = window.innerHeight;
+        // overlap of element with the centre 30% of the viewport
+        const top = Math.max(rect.top, vh * 0.3);
+        const bottom = Math.min(rect.bottom, vh * 0.7);
+        const overlap = Math.max(0, bottom - top);
+        if (overlap > bestRatio) {
+          bestRatio = overlap;
+          best = id;
+        }
+      }
+
+      if (best) {
+        setActiveLink(`/#${best}`);
+      } else if (window.scrollY < 80) {
+        setActiveLink("/");
+      } else {
+        // Keep last section highlight until another takes over
+        setActiveLink((prev) => prev);
+      }
+    };
+
+    // Also react to hash changes
+    const onHashChange = () => {
+      if (window.location.hash) {
+        setActiveLink(`/${window.location.hash}`);
+      }
+    };
+
+    pickActive();
+    window.addEventListener("scroll", pickActive, { passive: true });
+    window.addEventListener("hashchange", onHashChange);
+    return () => {
+      window.removeEventListener("scroll", pickActive);
+      window.removeEventListener("hashchange", onHashChange);
+    };
   }, [pathname]);
 
-  const isActive = (href: string) => {
-    if (href.startsWith("/#")) return pathname === "/" && hash === href.slice(1);
-    if (href === "/") return pathname === "/" && !hash;
-    return pathname === href;
-  };
+  const isActive = (href: string) => activeLink === href;
 
-  // Close the mobile dropdown on every route change
   const [lastPathname, setLastPathname] = useState(pathname);
   if (lastPathname !== pathname) {
     setLastPathname(pathname);
     setMobileMenuOpen(false);
   }
 
-  // When the logo sends us to "/" from another page, land on the very top
   useEffect(() => {
     if (!scrollTopOnRouteChange.current) return;
     scrollTopOnRouteChange.current = false;
@@ -94,10 +136,9 @@ export function Navbar() {
   const goToHomeTop = useCallback(
     (e: React.MouseEvent<HTMLAnchorElement>) => {
       if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-
       e.preventDefault();
       setMobileMenuOpen(false);
-
+      setActiveLink("/");
       if (pathname === "/") {
         if (window.location.hash) {
           router.replace("/", { scroll: false });
@@ -117,14 +158,11 @@ export function Navbar() {
         scrolled ? "top-[40px] sm:top-[44px]" : "top-[42px] sm:top-[48px]"
       }`}
     >
-      {/* Pill bar — always white bg on mobile, glass on desktop when not scrolled */}
       <div className={`flex items-center justify-between transition-all duration-300 rounded-full px-4 sm:px-6 ${
         scrolled
           ? "bg-white/95 backdrop-blur-xl border border-zinc-200/60 shadow-[0_8px_30px_rgb(0,0,0,0.08)] py-2.5 sm:py-3"
           : "bg-white md:bg-white/60 border border-zinc-200/50 md:border-white/30 shadow-md md:shadow-sm py-3 sm:py-4"
       }`}>
-
-        {/* Logo */}
         <Link
           href="/"
           className="flex items-center z-10 shrink-0"
@@ -134,7 +172,6 @@ export function Navbar() {
           <img src="/images/adhivelogo.png" alt="adHive Logo" className="h-7 sm:h-8 w-auto object-contain" />
         </Link>
 
-        {/* Desktop Nav Links */}
         <div className="hidden md:flex items-center gap-1 lg:gap-2">
           <NavLink href="/" onClick={goToHomeTop} active={isActive("/")}>Home</NavLink>
           <NavLink href="/#what-is-adhive" active={isActive("/#what-is-adhive")}>About adHive</NavLink>
@@ -143,9 +180,7 @@ export function Navbar() {
           <NavLink href="/contact" active={isActive("/contact")}>Contact Us</NavLink>
         </div>
 
-        {/* Desktop Social Icons */}
         <div className="hidden md:flex items-center gap-2 lg:gap-3 z-10">
-          {/* Instagram */}
           <a
             href="https://www.instagram.com/adhiveglobal?obrf=MjhjeHpwZGhqcWRr"
             target="_blank"
@@ -159,7 +194,6 @@ export function Navbar() {
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
             </svg>
           </a>
-          {/* Facebook */}
           <a
             href="https://www.facebook.com/share/1CmP3SDBau/"
             target="_blank"
@@ -171,7 +205,6 @@ export function Navbar() {
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
             </svg>
           </a>
-          {/* X (Twitter) */}
           <a
             href="https://x.com/adhiveglobal"
             target="_blank"
@@ -185,7 +218,6 @@ export function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <button
           className="md:hidden z-20 p-2 -mr-1 text-zinc-700 hover:text-orange-500 transition-colors"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -195,7 +227,6 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Dropdown Menu — positioned BELOW the pill, no overlap with logo */}
       {mobileMenuOpen && (
         <div className="mt-2 bg-white rounded-2xl border border-zinc-100 shadow-2xl overflow-hidden md:hidden">
           <div className="flex flex-col px-3 pt-2 pb-4">
@@ -209,7 +240,16 @@ export function Navbar() {
                   className={`flex items-center justify-between rounded-xl px-3 py-3 text-[15px] font-semibold transition-colors ${
                     active ? "bg-orange-50 text-orange-600" : "text-zinc-800 hover:bg-zinc-50 hover:text-orange-500"
                   }`}
-                  onClick={item.href === "/" ? goToHomeTop : () => setMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    if (item.href === "/") {
+                      goToHomeTop(e);
+                    } else {
+                      setMobileMenuOpen(false);
+                      if (item.href.startsWith("/#")) {
+                        setActiveLink(item.href);
+                      }
+                    }
+                  }}
                 >
                   <span>{item.label}</span>
                   <span
@@ -221,7 +261,6 @@ export function Navbar() {
               );
             })}
 
-            {/* Social Buttons */}
             <div className="pt-4 flex flex-col gap-2.5">
               <a
                 href="https://www.instagram.com/adhiveglobal?obrf=MjhjeHpwZGhqcWRr"

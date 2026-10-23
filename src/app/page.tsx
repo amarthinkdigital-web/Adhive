@@ -669,7 +669,7 @@ export default function Home() {
               animate="visible"
               className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-zinc-900 mb-4"
             >
-              <motion.span variants={wordAnim} className="block">Hyperlocal Marketing.</motion.span>
+              <motion.span variants={wordAnim} className="relative -top-1 block">Hyperlocal Marketing.</motion.span>
               <motion.span variants={wordAnim} className="text-shimmer animate-shimmer block">
                 Without Burn
                 <span className="relative inline-block align-baseline">
@@ -677,7 +677,7 @@ export default function Home() {
                   <Flame
                     fill="currentColor"
                     aria-hidden="true"
-                    className="absolute left-1/2 -translate-x-1/2 -top-[0.05em] w-[0.5em] h-[0.5em] text-orange-500 drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]"
+                    className="absolute left-1/2 -translate-x-1/2 -top-[0.1em] w-[0.5em] h-[0.5em] text-orange-500 drop-shadow-[0_0_8px_rgba(249,115,22,0.6)]"
                   />
                 </span>
                 ng Your Wallet.

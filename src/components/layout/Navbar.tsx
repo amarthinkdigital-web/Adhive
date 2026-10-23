@@ -9,22 +9,41 @@ function NavLink({
   href,
   children,
   onClick,
+  active = false,
 }: {
   href: string;
   children: React.ReactNode;
   onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+  active?: boolean;
 }) {
   return (
     <Link
       href={href}
       onClick={onClick}
-      className="group relative text-[15px] font-semibold text-zinc-600 hover:text-orange-500 transition-colors tracking-wide"
+      aria-current={active ? "page" : undefined}
+      className={`group relative inline-flex items-center rounded-full px-3 lg:px-4 py-1.5 lg:py-2 text-sm lg:text-[15px] font-medium tracking-wide transition-all duration-300 ${
+        active
+          ? "text-orange-600 bg-orange-50/80"
+          : "text-zinc-700 hover:text-orange-600 hover:bg-orange-50/40"
+      }`}
     >
-      {children}
-      <span className="absolute -bottom-1 left-0 h-[2px] w-0 rounded-full bg-orange-500 transition-all duration-300 group-hover:w-full" />
+      <span className="relative z-10">{children}</span>
+      <span
+        className={`absolute bottom-0.5 left-1/2 h-[2px] -translate-x-1/2 rounded-full bg-orange-500 transition-all duration-300 ${
+          active ? "w-5 opacity-100" : "w-0 opacity-0 group-hover:w-5 group-hover:opacity-100"
+        }`}
+      />
     </Link>
   );
 }
+
+const MOBILE_LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/#what-is-adhive", label: "About adHive" },
+  { href: "/#how-it-works", label: "How it Works" },
+  { href: "/#why-adhive", label: "Why adHive" },
+  { href: "/contact", label: "Contact Us" },
+];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -32,6 +51,7 @@ export function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
   const scrollTopOnRouteChange = useRef(false);
+  const [hash, setHash] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,6 +60,19 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const updateHash = () => setHash(window.location.hash);
+    updateHash();
+    window.addEventListener("hashchange", updateHash);
+    return () => window.removeEventListener("hashchange", updateHash);
+  }, [pathname]);
+
+  const isActive = (href: string) => {
+    if (href.startsWith("/#")) return pathname === "/" && hash === href.slice(1);
+    if (href === "/") return pathname === "/" && !hash;
+    return pathname === href;
+  };
 
   // Close the mobile dropdown on every route change
   const [lastPathname, setLastPathname] = useState(pathname);
@@ -102,22 +135,22 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav Links */}
-        <div className="hidden md:flex items-center gap-8 lg:gap-10">
-          <NavLink href="/" onClick={goToHomeTop}>Home</NavLink>
-          <NavLink href="/#what-is-adhive">About adHive</NavLink>
-          <NavLink href="/#how-it-works">How it Works</NavLink>
-          <NavLink href="/#why-adhive">Why adHive</NavLink>
-          <NavLink href="/contact">Contact Us</NavLink>
+        <div className="hidden md:flex items-center gap-1 lg:gap-2">
+          <NavLink href="/" onClick={goToHomeTop} active={isActive("/")}>Home</NavLink>
+          <NavLink href="/#what-is-adhive" active={isActive("/#what-is-adhive")}>About adHive</NavLink>
+          <NavLink href="/#how-it-works" active={isActive("/#how-it-works")}>How it Works</NavLink>
+          <NavLink href="/#why-adhive" active={isActive("/#why-adhive")}>Why adHive</NavLink>
+          <NavLink href="/contact" active={isActive("/contact")}>Contact Us</NavLink>
         </div>
 
         {/* Desktop Social Icons */}
-        <div className="hidden md:flex items-center gap-3 z-10">
+        <div className="hidden md:flex items-center gap-2 lg:gap-3 z-10">
           {/* Instagram */}
           <a
             href="https://www.instagram.com/adhiveglobal?obrf=MjhjeHpwZGhqcWRr"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-9 h-9 flex items-center justify-center rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white hover:scale-110 transition-transform shadow-sm"
+            className="w-8 h-8 lg:w-9 lg:h-9 flex items-center justify-center rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white hover:scale-110 transition-transform shadow-sm"
             aria-label="Instagram"
           >
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
@@ -131,11 +164,23 @@ export function Navbar() {
             href="https://www.facebook.com/share/1CmP3SDBau/"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-9 h-9 flex items-center justify-center rounded-full bg-[#1877F2] text-white hover:scale-110 transition-transform shadow-sm"
+            className="w-8 h-8 lg:w-9 lg:h-9 flex items-center justify-center rounded-full bg-[#1877F2] text-white hover:scale-110 transition-transform shadow-sm"
             aria-label="Facebook"
           >
             <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
               <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          {/* X (Twitter) */}
+          <a
+            href="https://x.com/adhiveglobal"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-8 h-8 lg:w-9 lg:h-9 flex items-center justify-center rounded-full bg-zinc-900 text-white hover:scale-110 hover:bg-black transition-all shadow-sm"
+            aria-label="X (Twitter)"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 lg:w-4 lg:h-4">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
             </svg>
           </a>
         </div>
@@ -153,42 +198,28 @@ export function Navbar() {
       {/* Mobile Dropdown Menu — positioned BELOW the pill, no overlap with logo */}
       {mobileMenuOpen && (
         <div className="mt-2 bg-white rounded-2xl border border-zinc-100 shadow-2xl overflow-hidden md:hidden">
-          <div className="flex flex-col px-5 pt-2 pb-4">
-            <Link
-              href="/"
-              className="text-[15px] font-semibold text-zinc-800 py-3 border-b border-zinc-100 hover:text-orange-500 transition-colors"
-              onClick={goToHomeTop}
-            >
-              Home
-            </Link>
-            <Link
-              href="/#what-is-adhive"
-              className="text-[15px] font-semibold text-zinc-800 py-3 border-b border-zinc-100 hover:text-orange-500 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              About adHive
-            </Link>
-            <Link
-              href="/#how-it-works"
-              className="text-[15px] font-semibold text-zinc-800 py-3 border-b border-zinc-100 hover:text-orange-500 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              How it Works
-            </Link>
-            <Link
-              href="/#why-adhive"
-              className="text-[15px] font-semibold text-zinc-800 py-3 border-b border-zinc-100 hover:text-orange-500 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Why adHive
-            </Link>
-            <Link
-              href="/contact"
-              className="text-[15px] font-semibold text-zinc-800 py-3 border-b border-zinc-100 hover:text-orange-500 transition-colors"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Contact Us
-            </Link>
+          <div className="flex flex-col px-3 pt-2 pb-4">
+            {MOBILE_LINKS.map((item) => {
+              const active = isActive(item.href);
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={active ? "page" : undefined}
+                  className={`flex items-center justify-between rounded-xl px-3 py-3 text-[15px] font-semibold transition-colors ${
+                    active ? "bg-orange-50 text-orange-600" : "text-zinc-800 hover:bg-zinc-50 hover:text-orange-500"
+                  }`}
+                  onClick={item.href === "/" ? goToHomeTop : () => setMobileMenuOpen(false)}
+                >
+                  <span>{item.label}</span>
+                  <span
+                    className={`h-1.5 w-1.5 rounded-full bg-orange-500 transition-opacity ${
+                      active ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                </Link>
+              );
+            })}
 
             {/* Social Buttons */}
             <div className="pt-4 flex flex-col gap-2.5">
@@ -217,6 +248,18 @@ export function Navbar() {
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
                 </svg>
                 Follow on Facebook
+              </a>
+              <a
+                href="https://x.com/adhiveglobal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-zinc-900 text-white px-5 py-3 rounded-xl text-[15px] font-semibold hover:bg-black transition-colors"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 shrink-0">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+                Follow on X
               </a>
             </div>
           </div>

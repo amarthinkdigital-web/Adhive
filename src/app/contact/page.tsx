@@ -59,7 +59,7 @@ export default function ContactPage() {
 
           {/* Get in Touch heading */}
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 mb-4 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-zinc-900 mb-4 sm:mb-8 text-center">
               Get in Touch
             </h2>
           </Reveal>

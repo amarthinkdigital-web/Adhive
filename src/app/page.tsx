@@ -193,7 +193,7 @@ function ShareEarnSVG() {
   );
 }
 
-/* For Sharers — Sharer Dashboard app screen (same phone shell as WelcomeScreenSVG) */
+/* For Sharer — Sharer Dashboard app screen (same phone shell as WelcomeScreenSVG) */
 function SharerEarningsSVG() {
   const activity = [
     { brand: "Zudio", sub: "Time left 4h 29m", amt: "₹500", amtColor: "#f97316", dot: "#f97316", live: true },
@@ -273,7 +273,7 @@ function SharerEarningsSVG() {
 function HowItWorksSVG({ type }: { type: "business" | "sharer" }) {
   const isBiz = type === "business";
   return (
-    <svg viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto max-h-48">
+    <svg viewBox="0 0 300 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
       {isBiz ? (
         <>
           {/* Campaign dashboard mockup */}
@@ -738,22 +738,6 @@ export default function Home() {
             className="text-base sm:text-xl md:text-2xl text-zinc-600 mb-8 leading-relaxed font-medium">
             adHive helps businesses promote their products and services through real people in their local community — while giving social media users a simple way to earn by sharing promotional content.
           </motion.p>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="flex justify-center">
-            <a
-              href="https://www.instagram.com/adhiveglobal?obrf=MjhjeHpwZGhqcWRr"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Follow adHive on Instagram"
-              className="inline-flex items-center gap-3 bg-gradient-to-tr from-[#f09433] via-[#e6683c] via-[#dc2743] via-[#cc2366] to-[#bc1888] text-white px-7 sm:px-10 py-3.5 sm:py-4 rounded-full text-base sm:text-lg font-bold hover:opacity-90 hover:scale-105 transition-all shadow-[0_8px_32px_rgba(220,39,67,0.30)] group"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 shrink-0">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-              </svg>
-              Follow Us on Instagram
-            </a>
-          </motion.div>
         </div>
       </section>
 
@@ -773,7 +757,7 @@ export default function Home() {
 
             {/* Left — mobile app illustration */}
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-              <div className="w-full max-w-[260px] sm:max-w-[300px] md:max-w-[330px] mx-auto flex items-center justify-center overflow-x-clip">
+              <div className="w-full max-w-[290px] sm:max-w-[340px] md:max-w-[380px] mx-auto flex items-center justify-center overflow-x-clip">
                 <WhatIsAdhiveSVG />
               </div>
             </motion.div>
@@ -806,7 +790,7 @@ export default function Home() {
               <div className="space-y-4">
                 {[
                   { icon: Briefcase, color: "text-orange-400", bg: "bg-orange-500/10 border-orange-500/20", title: "For Businesses", desc: "Businesses get precise local reach." },
-                  { icon: DollarSign, color: "text-emerald-400", bg: "bg-emerald-500/10 border-emerald-500/20", title: "For Sharers", desc: "People earn by sharing promotional content." },
+                  { icon: DollarSign, color: "text-emerald-400", bg: "bg-emerald-500/10 border-emerald-500/20", title: "For Sharer", desc: "People earn by sharing promotional content." },
                   { icon: Users, color: "text-blue-400", bg: "bg-blue-500/10 border-blue-500/20", title: "For Customers", desc: "Discover local businesses through community members." }
                 ].map((item, i) => (
                   <motion.div key={i} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 * i, duration: 0.5 }}
@@ -833,12 +817,14 @@ export default function Home() {
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 30% 50%, rgba(249,115,22,0.05) 0%, transparent 55%)" }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+          <div className="text-center mb-8 sm:mb-16 lg:mb-16">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-              <motion.span variants={wordAnim} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 text-orange-600 text-sm font-semibold mb-5 border border-orange-100">
-                <TrendingUp className="w-3.5 h-3.5" /> Simple Process
-              </motion.span>
-              <AnimatedHeading tag="h2" delay={0.1} className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-900 mb-4">How adHive Works</AnimatedHeading>
+              <div className="mx-auto w-fit text-left">
+                <motion.span variants={wordAnim} className="ml-6 md:ml-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 text-orange-600 text-sm font-semibold mb-6  border border-orange-100">
+                  <TrendingUp className="w-3.5 h-3.5" /> Simple Process
+                </motion.span>
+                <AnimatedHeading tag="h2" delay={0.1} className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-900 mb-4">How adHive Works</AnimatedHeading>
+              </div>
               <motion.p
                 initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3, duration: 0.55 }}
                 className="text-lg sm:text-xl text-zinc-500 max-w-2xl mx-auto"
@@ -851,7 +837,7 @@ export default function Home() {
             {/* For Businesses */}
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <div className="mb-6 sm:mb-8 w-full flex justify-center">
-                <div className="w-full max-w-[280px] sm:max-w-[320px]">
+                <div className="w-full max-w-[310px] sm:max-w-[360px] md:-translate-x-14 md:-translate-y-4">
                   <HowItWorksSVG type="business" />
                 </div>
               </div>
@@ -888,10 +874,10 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* For Sharers */}
+            {/* For Sharer */}
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.15 }}>
               <div className="mb-6 sm:mb-8 w-full flex justify-center">
-                <div className="w-full max-w-[280px] sm:max-w-[320px]">
+                <div className="w-full max-w-[310px] sm:max-w-[360px] md:translate-x-14 md:-translate-y-4">
                   <HowItWorksSVG type="sharer" />
                 </div>
               </div>
@@ -899,7 +885,7 @@ export default function Home() {
                 <div className="w-12 h-12 sm:w-14 sm:h-14 bg-zinc-100 rounded-2xl flex items-center justify-center shrink-0">
                   <Share2 className="w-6 h-6 sm:w-7 sm:h-7 text-zinc-700" />
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-zinc-900">For Sharers</h3>
+                <h3 className="text-2xl sm:text-3xl font-bold text-zinc-900">For Sharer</h3>
               </div>
               <div className="space-y-4 sm:space-y-5">
                 {[
@@ -964,7 +950,7 @@ export default function Home() {
               { icon: Target, title: "Audience-Based Campaigns", desc: "Define campaign requirements based on location and relevant audience characteristics.", accent: "from-purple-500/10 to-transparent" },
               { icon: DollarSign, title: "Cost-Conscious Marketing", desc: "Create campaigns based on your budget and the number of people you want to reach.", accent: "from-emerald-500/10 to-transparent" },
               { icon: ShieldCheck, title: "Evidence-Based Validation", desc: "Capture campaign participation and supporting evidence so businesses can track campaign completion.", accent: "from-yellow-500/10 to-transparent" },
-              { icon: TrendingUp, title: "Monetize Your Social Reach", desc: "Sharers can turn eligible social media activity into an earning opportunity.", accent: "from-rose-500/10 to-transparent" },
+              { icon: TrendingUp, title: "Monetize Your Social Reach", desc: "Sharer can turn eligible social media activity into an earning opportunity.", accent: "from-rose-500/10 to-transparent" },
               { icon: Smartphone, title: "Seamless & Secure", desc: "Simple campaign management, payments, validation and settlements in one platform.", accent: "from-pink-500/10 to-transparent" }
             ].map((f, i) => (
               <motion.div key={i}
@@ -993,6 +979,14 @@ export default function Home() {
       <section className="py-16 lg:py-24 bg-white relative overflow-hidden border-t border-zinc-100">
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 85% 50%, rgba(249,115,22,0.06) 0%, transparent 55%)" }} />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="flex justify-center mb-8 lg:mb-10">
+            <motion.span
+              initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 text-orange-600 text-sm font-semibold border border-orange-100"
+            >
+              <Briefcase className="w-3.5 h-3.5" /> For Businesses
+            </motion.span>
+          </div>
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             {/* Left — business categories grid */}
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
@@ -1025,12 +1019,6 @@ export default function Home() {
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.15 }}
               className="order-1 lg:order-2"
             >
-              <motion.span
-                initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }}
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 text-orange-600 text-sm font-semibold mb-6 border border-orange-100"
-              >
-                <Briefcase className="w-3.5 h-3.5" /> For Businesses
-              </motion.span>
               <AnimatedHeading tag="h2" delay={0.1} className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-900 mb-6 leading-tight">
                 Your Customers Are Already{" "}<ShimmerText>Around You.</ShimmerText>
               </AnimatedHeading>
@@ -1067,7 +1055,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ══ FOR SHARERS (Section 8) ══ */}
+      {/* ══ FOR SHARER (Section 8) ══ */}
       <section className="py-16 lg:py-24 bg-zinc-950 relative overflow-hidden">
         {/* Background accents */}
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 22% 48%, rgba(249,115,22,0.14) 0%, transparent 45%), radial-gradient(circle at 88% 82%, rgba(245,158,11,0.10) 0%, transparent 50%)" }} />
@@ -1103,7 +1091,7 @@ export default function Home() {
                 initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }}
                 className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 text-orange-400 text-sm font-semibold mb-6 border border-orange-500/20"
               >
-                <Share2 className="w-3.5 h-3.5" /> For Sharers
+                <Share2 className="w-3.5 h-3.5" /> For Sharer
               </motion.span>
               <AnimatedHeading tag="h2" delay={0.1} className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
                 Your Social Reach{" "}<ShimmerText>Has Value.</ShimmerText>
@@ -1242,9 +1230,9 @@ export default function Home() {
           <div className="space-y-3 bg-white rounded-3xl p-6 shadow-2xl">
             {[
               { q: "What is adhive?", a: "adhive is a hyperlocal advertising platform connecting businesses with people in their local community through social media sharing." },
-              { q: "Who can use adhive?", a: "Businesses can create promotional campaigns. Eligible individuals can participate as Sharers and earn by completing campaign requirements." },
-              { q: "How does hyperlocal targeting work?", a: "Businesses define a geographic area around their location. Eligible Sharers within the applicable campaign area may receive the opportunity to participate." },
-              { q: "How do Sharers earn?", a: "Sharers may earn when they accept and successfully complete eligible campaigns in accordance with campaign requirements and adhive's validation process." },
+              { q: "Who can use adhive?", a: "Businesses can create promotional campaigns. Eligible individuals can participate as Sharer and earn by completing campaign requirements." },
+              { q: "How does hyperlocal targeting work?", a: "Businesses define a geographic area around their location. Eligible Sharer within the applicable campaign area may receive the opportunity to participate." },
+              { q: "How do Sharer earn?", a: "Sharer may earn when they accept and successfully complete eligible campaigns in accordance with campaign requirements and adhive's validation process." },
               { q: "Is every campaign guaranteed to generate customers?", a: "No. adhive facilitates promotional reach and campaign participation but does not guarantee a particular number of views, customers, sales, leads or conversions." },
               { q: "How are campaigns validated?", a: "adhive may use campaign information, participation records, social-media evidence and other available information to determine whether campaign requirements have been completed." },
               { q: "How are payments handled?", a: "Payments are processed through supported payment providers and are subject to adhive's applicable payment, refund, cancellation and settlement terms." }

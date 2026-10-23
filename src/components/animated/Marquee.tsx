@@ -35,12 +35,12 @@ export function Marquee({
         <li
           key={i}
           className={cn(
-            "flex items-center gap-5 px-6 text-sm font-bold uppercase tracking-[0.18em] whitespace-nowrap sm:text-base",
+            "flex items-center gap-2 px-4 text-sm font-bold uppercase tracking-[0.18em] whitespace-nowrap sm:text-base",
             itemClassName
           )}
         >
-          <span>{text}</span>
           <Hex className="opacity-50" />
+          <span>{text}</span>
         </li>
       ))}
     </ul>

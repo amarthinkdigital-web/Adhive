@@ -19,7 +19,7 @@ export function Footer() {
   // Brief states © 2026 adHive, but we can use dynamic or hardcoded 2026. Let's use 2026.
 
   return (
-    <footer className="bg-zinc-950 text-zinc-300 py-16 border-t border-zinc-900">
+    <footer className="bg-zinc-950 text-zinc-300 pt-16 pb-6 border-t border-zinc-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mb-12 items-start text-center">
           
@@ -32,6 +32,7 @@ export function Footer() {
               <br />
               Without Burning Your Wallet.
             </p>
+            <h4 className="text-white font-semibold mb-4">Follow Us</h4>
             <div className="flex items-center gap-4 text-zinc-500">
               <a href="mailto:support@adhive.io" className="hover:text-orange-500 transition-colors" aria-label="Email support@adhive.io">
                 <Mail className="w-5 h-5" />
@@ -75,7 +76,7 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col items-center">
-            <h4 className="text-white font-semibold mb-6">Company</h4>
+            <h4 className="text-white font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3">
               <li>
                 <FooterLink href="/">Home</FooterLink>
@@ -115,7 +116,7 @@ export function Footer() {
 
         </div>
 
-        <div className="flex flex-col lg:flex-row items-center justify-between pt-8 border-t border-zinc-800/50 gap-4 lg:gap-6">
+        <div className="flex flex-col lg:flex-row items-center justify-between pt-12 border-t border-zinc-800/50 gap-4 lg:gap-6">
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full lg:w-auto">
             <button className="flex items-center justify-center gap-2 bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-lg text-sm text-zinc-400 cursor-not-allowed hover:bg-zinc-800 transition-colors">
               <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-5 opacity-50" />

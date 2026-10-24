@@ -819,8 +819,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center mb-8 sm:mb-16 lg:mb-16">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
-              <div className="mx-auto w-fit text-left">
-                <motion.span variants={wordAnim} className="ml-6 md:ml-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 text-orange-600 text-sm font-semibold mb-6  border border-orange-100">
+              <div className="flex flex-col items-center justify-center">
+                <motion.span variants={wordAnim} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 text-orange-600 text-sm font-semibold mb-6 border border-orange-100">
                   <TrendingUp className="w-3.5 h-3.5" /> Simple Process
                 </motion.span>
                 <AnimatedHeading tag="h2" delay={0.1} className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-zinc-900 mb-4">How adHive Works</AnimatedHeading>
@@ -837,7 +837,7 @@ export default function Home() {
             {/* For Businesses */}
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <div className="mb-6 sm:mb-8 w-full flex justify-center">
-                <div className="w-full max-w-[310px] sm:max-w-[360px] md:-translate-x-14 md:-translate-y-4">
+                <div className="w-full max-w-[260px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px]">
                   <HowItWorksSVG type="business" />
                 </div>
               </div>
@@ -877,7 +877,7 @@ export default function Home() {
             {/* For Sharer */}
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.15 }}>
               <div className="mb-6 sm:mb-8 w-full flex justify-center">
-                <div className="w-full max-w-[310px] sm:max-w-[360px] md:translate-x-14 md:-translate-y-4">
+                <div className="w-full max-w-[260px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px]">
                   <HowItWorksSVG type="sharer" />
                 </div>
               </div>

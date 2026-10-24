@@ -27,52 +27,11 @@ export function Footer() {
             <Link href="/" className="inline-block mb-6">
               <img src="/images/adhivelogo.png" alt="adHive Logo" className="h-10 w-auto object-contain brightness-0 invert" />
             </Link>
-            <p className="text-zinc-400 text-lg mb-6 max-w-sm">
+            <p className="text-zinc-400 text-lg mb-2 max-w-sm">
               Hyperlocal Marketing.
               <br />
               Without Burning Your Wallet.
             </p>
-            <h4 className="text-white font-semibold mb-4">Follow Us</h4>
-            <div className="flex items-center gap-4 text-zinc-500">
-              <a href="mailto:support@adhive.io" className="hover:text-orange-500 transition-colors" aria-label="Email support@adhive.io">
-                <Mail className="w-5 h-5" />
-              </a>
-              <a
-                href="https://www.instagram.com/adhiveglobal?obrf=MjhjeHpwZGhqcWRr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-pink-500 transition-colors"
-                aria-label="Instagram"
-              >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                </svg>
-              </a>
-              <a
-                href="https://www.facebook.com/share/1CmP3SDBau/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-blue-500 transition-colors"
-                aria-label="Facebook"
-              >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                </svg>
-              </a>
-              <a
-                href="https://x.com/adhiveglobal"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-white transition-colors"
-                aria-label="X (Twitter)"
-              >
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-              </a>
-            </div>
           </div>
 
           <div className="flex flex-col items-center">
@@ -117,15 +76,48 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col lg:flex-row items-center justify-between pt-12 border-t border-zinc-800/50 gap-4 lg:gap-6">
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 w-full lg:w-auto">
-            <button className="flex items-center justify-center gap-2 bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-lg text-sm text-zinc-400 cursor-not-allowed hover:bg-zinc-800 transition-colors">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play" className="h-5 opacity-50" />
-              <span>Coming Soon</span>
-            </button>
-            <button className="flex items-center justify-center gap-2 bg-zinc-900 border border-zinc-800 px-4 py-2 rounded-lg text-sm text-zinc-400 cursor-not-allowed hover:bg-zinc-800 transition-colors">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" alt="App Store" className="h-5 opacity-50" />
-              <span>Coming Soon</span>
-            </button>
+          <div className="flex items-center gap-4 text-zinc-400 w-full lg:w-auto justify-center lg:justify-start">
+            <span className="text-white font-semibold">Follow Us</span>
+            <div className="flex items-center gap-4 text-zinc-500">
+              <a href="mailto:support@adhive.io" className="hover:text-orange-500 transition-colors" aria-label="Email support@adhive.io">
+                <Mail className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/adhiveglobal?obrf=MjhjeHpwZGhqcWRr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-pink-500 transition-colors"
+                aria-label="Instagram"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+              </a>
+              <a
+                href="https://www.facebook.com/share/1CmP3SDBau/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-500 transition-colors"
+                aria-label="Facebook"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+              </a>
+              <a
+                href="https://x.com/adhiveglobal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition-colors"
+                aria-label="X (Twitter)"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+            </div>
           </div>
           <p className="text-sm text-zinc-400 font-medium text-center lg:text-right w-full lg:w-auto py-1">
             © 2026 Adhive Technocrats LLP. All rights reserved.

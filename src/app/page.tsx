@@ -659,7 +659,7 @@ export default function Home() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full pt-2 pb-12 lg:pt-4 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-0 lg:gap-28 lg:items-center">
           <motion.div initial="hidden" animate="visible" variants={stagger} className="flex flex-col items-start max-w-xl pl-0 sm:pl-6 mt-0 lg:-mt-16 pb-8 sm:pb-10 lg:pb-0">
-            <motion.div variants={wordAnim} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-200 bg-orange-50 text-xs font-semibold text-orange-600 mb-4 shadow-sm">
+            <motion.div variants={wordAnim} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-200 bg-orange-50 text-xs font-semibold text-orange-600 mb-6 shadow-sm">
               <Sparkles className="w-3.5 h-3.5" />
               Launching Soon on Android & iOS
             </motion.div>
@@ -667,7 +667,7 @@ export default function Home() {
               variants={stagger}
               initial="hidden"
               animate="visible"
-              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-zinc-900 mb-4"
+              className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight leading-[1.15] text-zinc-900 mb-6"
             >
               <motion.span variants={wordAnim} className="relative -top-1 block">Hyperlocal Marketing.</motion.span>
               <motion.span variants={wordAnim} className="text-shimmer animate-shimmer block">
@@ -732,7 +732,7 @@ export default function Home() {
       </section>
 
       {/* ══ INTRO / CTA ══ */}
-      <section className="pt-16 sm:pt-20 lg:pt-28 pb-12 lg:pb-20 bg-white">
+      <section className="pt-8 sm:pt-12 lg:pt-14 pb-12 lg:pb-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <motion.p initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
             className="text-base sm:text-xl md:text-2xl text-zinc-600 mb-8 leading-relaxed font-medium">
@@ -813,11 +813,11 @@ export default function Home() {
       </section>
 
       {/* ══ HOW IT WORKS ══ */}
-      <section id="how-it-works" className="py-16 sm:py-20 lg:py-28 bg-white relative overflow-hidden overflow-x-clip">
+      <section id="how-it-works" className="pt-8 sm:pt-12 lg:pt-14 pb-16 sm:pb-20 lg:pb-28 bg-white relative overflow-hidden overflow-x-clip">
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 30% 50%, rgba(249,115,22,0.05) 0%, transparent 55%)" }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="text-center mb-8 sm:mb-16 lg:mb-16">
+          <div className="text-center mb-5 sm:mb-10 lg:mb-10">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
               <div className="flex flex-col items-center justify-center">
                 <motion.span variants={wordAnim} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 text-orange-600 text-sm font-semibold mb-6 border border-orange-100">
@@ -837,7 +837,7 @@ export default function Home() {
             {/* For Businesses */}
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <div className="mb-6 sm:mb-8 w-full flex justify-center">
-                <div className="w-full max-w-[260px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px]">
+                <div className="w-full max-w-[300px] sm:max-w-[360px] md:max-w-[400px] lg:max-w-[440px]">
                   <HowItWorksSVG type="business" />
                 </div>
               </div>
@@ -877,7 +877,7 @@ export default function Home() {
             {/* For Sharer */}
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.15 }}>
               <div className="mb-6 sm:mb-8 w-full flex justify-center">
-                <div className="w-full max-w-[260px] sm:max-w-[320px] md:max-w-[360px] lg:max-w-[400px]">
+                <div className="w-full max-w-[300px] sm:max-w-[360px] md:max-w-[400px] lg:max-w-[440px]">
                   <HowItWorksSVG type="sharer" />
                 </div>
               </div>
@@ -918,7 +918,7 @@ export default function Home() {
       </section>
 
       {/* ══ WHY adhive ══ */}
-      <section id="why-adhive" className="py-20 lg:py-28 relative overflow-hidden bg-gradient-to-b from-zinc-950 via-zinc-900/90 to-zinc-950">
+      <section id="why-adhive" className="py-14 lg:py-10 relative overflow-hidden bg-gradient-to-b from-zinc-950 via-zinc-900/90 to-zinc-950">
         {/* Subtle radial orange accent */}
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 82% 8%, rgba(249,115,22,0.14) 0%, transparent 48%), radial-gradient(circle at 10% 92%, rgba(245,158,11,0.10) 0%, transparent 48%)" }} />
 
@@ -927,7 +927,7 @@ export default function Home() {
         <motion.div aria-hidden className="absolute bottom-[6%] -right-20 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(251,146,60,0.18) 0%, transparent 70%)", filter: "blur(50px)" }} animate={{ y: [0, 24, 0], x: [0, -16, 0] }} transition={{ duration: 17, repeat: Infinity, ease: "easeInOut", delay: 1.4 }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger}>
               <motion.span variants={wordAnim} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 text-orange-400 text-sm font-semibold mb-5 border border-orange-500/20">
                 <Star className="w-3.5 h-3.5" /> Our Advantage
@@ -976,7 +976,7 @@ export default function Home() {
       </section>
 
       {/* ══ FOR BUSINESSES (Section 7) ══ */}
-      <section className="py-16 lg:py-24 bg-white relative overflow-hidden border-t border-zinc-100">
+      <section className="py-12 lg:py-16 bg-white relative overflow-hidden border-t border-zinc-100">
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 85% 50%, rgba(249,115,22,0.06) 0%, transparent 55%)" }} />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
           <div className="flex justify-center mb-8 lg:mb-10">
@@ -1138,7 +1138,7 @@ export default function Home() {
       </section>
 
       {/* ══ VALIDATION / VALUE PROP ══ */}
-      <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
+      <section className="py-14 lg:py-20 bg-white relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 20% 60%, rgba(249,115,22,0.05) 0%, transparent 50%)" }} />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
@@ -1190,10 +1190,10 @@ export default function Home() {
             >Be Ready for the Hive.</motion.p>
             <motion.p
               initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.45 }}
-              className="text-zinc-400 mb-12"
+              className="text-zinc-400 mb-10"
             >Android & iOS coming soon.</motion.p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
               <div className="flex items-center gap-3 bg-zinc-950 text-white px-6 py-4 rounded-2xl w-full sm:w-auto justify-center">
                 <svg viewBox="0 0 24 24" className="w-7 h-7" fill="currentColor"><path d="M3.18 23.76c.28.15.59.24.93.24.5 0 .96-.18 1.33-.48L15.74 14l-3.32-3.32L3.18 23.76zm17.1-11.53-3.06-1.75-3.63 3.63 3.63 3.63 3.08-1.76c.87-.5.87-1.75-.02-2.25zM1.2.48C1.08.73 1 1.01 1 1.33v21.34c0 .32.08.6.2.85l.1.09 11.94-11.94v-.28L1.3.39 1.2.48zm13.54 11.43L5.44 2.6c-.37-.32-.84-.5-1.35-.5-.33 0-.65.09-.93.24l13.54 9.57z"/></svg>
                 <div className="text-left">
@@ -1210,13 +1210,13 @@ export default function Home() {
               </div>
             </div>
 
-            <p className="text-xs text-zinc-400">adHive will be available for download on Android and iOS. App availability may vary by region.</p>
+            <p className="text-md text-zinc-400 mt-4 leading-[1.8] ">adHive will be available for download on Android and iOS. App availability may vary by region.</p>
           </motion.div>
         </div>
       </section>
 
       {/* ══ FAQ ══ */}
-      <section className="py-20 lg:py-28 bg-zinc-950 relative overflow-hidden">
+      <section className="py-20 lg:py-12 bg-zinc-950 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at 50% 0%, rgba(249,115,22,0.08) 0%, transparent 50%)" }} />
         <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="text-center mb-14">

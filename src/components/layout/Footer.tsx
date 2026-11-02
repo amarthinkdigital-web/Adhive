@@ -67,9 +67,6 @@ export function Footer() {
               <li>
                 <FooterLink href="/refund">Refund &amp; Cancellation Policy</FooterLink>
               </li>
-              <li>
-                <FooterLink href="/community-guidelines">Community Guidelines</FooterLink>
-              </li>
             </ul>
           </div> 
 

@@ -133,7 +133,7 @@ export default function TermsPage() {
 
           <div>
             <h2 className="text-lg font-bold text-zinc-900 mt-8 mb-3">24. Grievance and Customer Support</h2>
-            <p className="text-base leading-relaxed">Support: support@adhive.io | Phone: +91 7498 207 487 | Address: Nashik, Maharashtra, India. adHive will make reasonable efforts to respond within applicable timelines.</p>
+            <p className="text-base leading-relaxed">Support: Support: contact@adhiveglobal.com  | Address: Nashik, Maharashtra, India. adHive will make reasonable efforts to respond within applicable timelines.</p>
           </div>
 
           <div>

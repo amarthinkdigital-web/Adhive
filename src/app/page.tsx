@@ -325,189 +325,121 @@ function HowItWorksSVG({ type }: { type: "business" | "sharer" }) {
   );
 }
 
-/* What is adhive — mobile app splash / start screen */
+/* Hero illustration — official Adhive logo with 3 white hexagonal dots and animated circular background */
 function WhatIsAdhiveSVG() {
   const reduced = !!useReducedMotion();
-  const uiFont = "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif";
 
   return (
-    <svg viewBox="0 0 360 452" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
+    <svg viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto">
       <defs>
-        <linearGradient id="ph-screen" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#ffffff" />
-          <stop offset="60%" stopColor="#fff7ed" />
-          <stop offset="100%" stopColor="#ffedd5" />
-        </linearGradient>
-        <radialGradient id="ph-glow" cx="0.5" cy="0.5" r="0.5">
-          <stop offset="0%" stopColor="#fb923c" stopOpacity="0.28" />
+        <radialGradient id="hero-glow" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0%" stopColor="#fb923c" stopOpacity="0.32" />
+          <stop offset="60%" stopColor="#f97316" stopOpacity="0.10" />
           <stop offset="100%" stopColor="#fb923c" stopOpacity="0" />
         </radialGradient>
-        <linearGradient id="card-grad" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#f97316" />
-          <stop offset="100%" stopColor="#f59e0b" />
+        <linearGradient id="adhive-logo-grad" x1="387.66" y1="-21.38" x2="386.04" y2="991.43" gradientUnits="userSpaceOnUse">
+          <stop offset="0.01" stopColor="#ffce00" />
+          <stop offset="0.36" stopColor="#fd9c01" />
+          <stop offset="0.61" stopColor="#fc7f03" />
         </linearGradient>
-        <linearGradient id="card-grad2" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#fb923c" stopOpacity="0.18" />
-          <stop offset="100%" stopColor="#fbbf24" stopOpacity="0.10" />
-        </linearGradient>
-        <linearGradient id="ring-grad" x1="0" y1="0" x2="1" y2="1">
+        <linearGradient id="hero-ring-grad" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stopColor="#f97316" />
           <stop offset="50%" stopColor="#fb923c" />
           <stop offset="100%" stopColor="#fbbf24" />
         </linearGradient>
-        <clipPath id="ph-screen-clip">
-          <rect x="54" y="16" width="252" height="400" rx="48" />
-        </clipPath>
-        <filter id="ph-shadow" x="-40%" y="-40%" width="180%" height="180%">
-          <feDropShadow dx="0" dy="22" stdDeviation="22" floodColor="#000000" floodOpacity="0.45" />
-        </filter>
-        <filter id="orange-glow" x="-50%" y="-50%" width="200%" height="200%">
-          <feDropShadow dx="0" dy="0" stdDeviation="8" floodColor="#f97316" floodOpacity="0.7" />
-        </filter>
-        <filter id="soft-glow" x="-30%" y="-30%" width="160%" height="160%">
-          <feDropShadow dx="0" dy="4" stdDeviation="6" floodColor="#f97316" floodOpacity="0.4" />
+        <filter id="hero-orange-glow" x="-50%" y="-50%" width="200%" height="200%">
+          <feDropShadow dx="0" dy="0" stdDeviation="16" floodColor="#f97316" floodOpacity="0.65" />
+          <feDropShadow dx="0" dy="16" stdDeviation="30" floodColor="#f97316" floodOpacity="0.3" />
         </filter>
       </defs>
 
       <motion.g
-        initial={reduced ? false : { opacity: 0, scale: 0.94 }}
+        initial={reduced ? false : { opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: reduced ? 0 : 0.7, ease: "easeOut" }}
-        style={{ transformOrigin: "180px 226px" }}
+        style={{ transformOrigin: "400px 400px" }}
       >
+        {/* Ambient radial glow */}
+        <circle cx="400" cy="400" r="340" fill="url(#hero-glow)" />
+
+        {/* Outer rotating dashed rings */}
+        <motion.circle
+          cx="400" cy="400" r="290"
+          stroke="url(#hero-ring-grad)" strokeWidth="2.5" fill="none" strokeDasharray="12 10" opacity="0.4"
+          animate={reduced ? undefined : { rotate: [0, 360] }}
+          transition={reduced ? undefined : { repeat: Infinity, duration: 28, ease: "linear" }}
+          style={{ transformOrigin: "400px 400px" }}
+        />
+        <motion.circle
+          cx="400" cy="400" r="345"
+          stroke="url(#hero-ring-grad)" strokeWidth="1.5" fill="none" strokeDasharray="6 16" opacity="0.22"
+          animate={reduced ? undefined : { rotate: [360, 0] }}
+          transition={reduced ? undefined : { repeat: Infinity, duration: 40, ease: "linear" }}
+          style={{ transformOrigin: "400px 400px" }}
+        />
+
+        {/* Floating ambient particles */}
+        {[
+          { cx: 110, cy: 260, r: 6, delay: 0 },
+          { cx: 140, cy: 570, r: 5, delay: 0.8 },
+          { cx: 690, cy: 290, r: 5.5, delay: 0.4 },
+          { cx: 670, cy: 560, r: 6.5, delay: 1.2 },
+          { cx: 240, cy: 720, r: 4.5, delay: 1.6 },
+          { cx: 580, cy: 710, r: 5, delay: 0.6 },
+        ].map((p, i) => (
+          <motion.circle key={i} cx={p.cx} cy={p.cy} r={p.r}
+            fill="#f97316" opacity="0.6"
+            animate={reduced ? undefined : { opacity: [0.3, 0.85, 0.3], scale: [0.8, 1.4, 0.8] }}
+            transition={reduced ? undefined : { repeat: Infinity, duration: 3 + i * 0.5, delay: p.delay, ease: "easeInOut" }}
+            style={{ transformOrigin: `${p.cx}px ${p.cy}px` }}
+          />
+        ))}
+
+        {/* Pulsing circular rings expanding outward from the logo */}
+        {[0, 1, 2].map((i) => (
+          <motion.circle
+            key={`pulse-${i}`}
+            cx="400" cy="400" r="165"
+            fill="none" stroke="#f97316" strokeWidth="2.5"
+            animate={reduced ? undefined : { r: [165, 285], opacity: [0.65, 0] }}
+            transition={reduced ? undefined : { repeat: Infinity, duration: 3, delay: i * 1, ease: "easeOut" }}
+          />
+        ))}
+
+        {/* Official Adhive Logo with float & breathing animation */}
         <motion.g
-          animate={reduced ? undefined : { y: [0, -8, 0] }}
-          transition={reduced ? undefined : { repeat: Infinity, duration: 6, ease: "easeInOut" }}
+          filter="url(#hero-orange-glow)"
+          animate={reduced ? undefined : { scale: [1, 1.04, 1], y: [0, -8, 0] }}
+          transition={reduced ? undefined : { repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
+          style={{ transformOrigin: "400px 400px" }}
         >
-          {/* Outer rotating dashed rings */}
-          <motion.circle cx="180" cy="216" r="150"
-            stroke="url(#ring-grad)" strokeWidth="1" fill="none" strokeDasharray="8 6" opacity="0.3"
-            animate={reduced ? undefined : { rotate: [0, 360] }}
-            transition={reduced ? undefined : { repeat: Infinity, duration: 30, ease: "linear" }}
-            style={{ transformOrigin: "180px 216px" }}
-          />
-          <motion.circle cx="180" cy="216" r="172"
-            stroke="url(#ring-grad)" strokeWidth="0.5" fill="none" strokeDasharray="4 12" opacity="0.15"
-            animate={reduced ? undefined : { rotate: [360, 0] }}
-            transition={reduced ? undefined : { repeat: Infinity, duration: 40, ease: "linear" }}
-            style={{ transformOrigin: "180px 216px" }}
-          />
-
-          {/* Floating ambient particles */}
-          {[
-            { cx: 28, cy: 118, r: 4, delay: 0 },
-            { cx: 40, cy: 282, r: 3, delay: 0.8 },
-            { cx: 322, cy: 138, r: 3.5, delay: 0.4 },
-            { cx: 336, cy: 308, r: 4, delay: 1.2 },
-            { cx: 68, cy: 398, r: 2.5, delay: 1.6 },
-            { cx: 302, cy: 392, r: 3, delay: 0.6 },
-          ].map((p, i) => (
-            <motion.circle key={i} cx={p.cx} cy={p.cy} r={p.r}
-              fill="#f97316" opacity="0.55"
-              animate={reduced ? undefined : { opacity: [0.3, 0.8, 0.3], scale: [0.8, 1.4, 0.8] }}
-              transition={reduced ? undefined : { repeat: Infinity, duration: 3 + i * 0.5, delay: p.delay, ease: "easeInOut" }}
-              style={{ transformOrigin: `${p.cx}px ${p.cy}px` }}
-            />
-          ))}
-
-          {/* Phone frame */}
-          <g filter="url(#ph-shadow)">
-            <rect x="54" y="16" width="252" height="400" rx="48" fill="url(#ph-screen)" />
-          </g>
-          {/* Orange border accent */}
-          <rect x="54" y="16" width="252" height="400" rx="48" fill="none" stroke="url(#ring-grad)" strokeWidth="1.5" opacity="0.45" />
-
-          <g clipPath="url(#ph-screen-clip)">
-            {/* Splash backdrop glow */}
-            <circle cx="180" cy="150" r="140" fill="url(#ph-glow)" />
-            <circle cx="180" cy="80" r="80" fill="#f97316" opacity="0.05" />
-
-            {/* Status bar */}
-            <text x="92" y="64" fontFamily={uiFont} fontSize="12" fontWeight="700" fill="#18181b">9:41</text>
-            <g fill="#18181b">
-              <rect x="244" y="58" width="3" height="4" rx="0.8" />
-              <rect x="248" y="55" width="3" height="7" rx="0.8" />
-              <rect x="252" y="52" width="3" height="10" rx="0.8" />
-              <rect x="256" y="49" width="3" height="13" rx="0.8" />
+          <g transform="translate(400, 400)">
+            <g transform="scale(0.36) translate(-386.94, -430.87)">
+              {/* Rounded hexagon gradient badge */}
+              <path
+                fill="url(#adhive-logo-grad)"
+                d="M722.38,177.74L438.42,13.8c-31.86-18.39-71.11-18.39-102.97,0L51.48,177.74C19.63,196.14,0,230.13,0,266.92v327.9c0,36.79,19.63,70.78,51.49,89.17l283.97,163.95c31.86,18.39,71.11,18.39,102.97,0l283.97-163.95c31.86-18.39,51.48-52.39,51.48-89.17v-327.9c0-36.79-19.63-70.78-51.49-89.17Z"
+              />
+              {/* Custom stylized 'a' letterform */}
+              <path
+                fill="#ffffff"
+                d="M402.84,695.73l-.73-35.57c-27.96,28.41-65.35,44.46-107.14,46.84-83.35,4.74-158.75-40.91-191.76-118.14-29-67.86-23.35-147.85,15.14-210.92,39.45-64.64,110.27-98.86,185.21-91.36,38.22,3.83,72.25,19.63,98.25,44.58l.85-29.96,124.8-.07v394.27s-124.63.32-124.63.32ZM310.34,591.89c55.55-2,94.88-49.97,89.89-102.58-4.91-51.78-52.34-90.21-105.09-83.49-31.23,3.98-56.61,23.9-69.39,48-15.79,29.78-15.19,61.75-.35,90.07,16.32,31.15,48.08,49.33,84.94,48.01Z"
+              />
+              {/* 3 White hexagonal dots on top-right */}
+              <path
+                fill="#ffffff"
+                d="M604.25,156.92l-41.42-23.91c-3.96-2.28-8.83-2.28-12.79,0l-41.42,23.91c-3.96,2.28-6.39,6.51-6.39,11.08v47.82c0,4.57,2.44,8.79,6.4,11.08l41.42,23.91c3.96,2.28,8.83,2.28,12.79,0l41.42-23.91c3.96-2.28,6.39-6.51,6.39-11.08v-47.82c0-4.57-2.44-8.79-6.4-11.08Z"
+              />
+              <path
+                fill="#ffffff"
+                d="M671.93,267.15l-41.42-23.91c-3.96-2.28-8.83-2.28-12.79,0l-41.42,23.91c-3.96,2.28-6.39,6.51-6.39,11.08v47.82c0,4.57,2.44,8.79,6.4,11.08l41.42,23.91c3.96,2.28,8.83,2.28,12.79,0l41.42-23.91c3.96-2.28,6.39-6.51,6.39-11.08v-47.82c0-4.57-2.44-8.79-6.4-11.08Z"
+              />
+              <path
+                fill="#ffffff"
+                d="M736.29,376.44l-41.42-23.91c-3.96-2.28-8.83-2.28-12.79,0l-41.42,23.91c-3.96,2.28-6.39,6.51-6.39,11.08v47.82c0,4.57,2.44,8.79,6.4,11.08l41.42,23.91c3.96,2.28,8.83,2.28,12.79,0l41.42-23.91c3.96-2.28,6.39-6.51,6.39-11.08v-47.82c0-4.57-2.44-8.79-6.4-11.08Z"
+              />
             </g>
-            <rect x="266" y="52" width="22" height="11" rx="3" stroke="#18181b" strokeWidth="1.2" fill="none" />
-            <rect x="288" y="55" width="2" height="5" rx="1" fill="#18181b" />
-            <rect x="268" y="54" width="15" height="7" rx="1.5" fill="#18181b" />
-
-            {/* Decorative honeycomb hexagons */}
-            {[
-              { d: "M96 108 l16 9.2 v18.4 l-16 9.2 l-16 -9.2 v-18.4 Z", delay: 0 },
-              { d: "M265 118 l14 8 v16 l-14 8 l-14 -8 v-16 Z", delay: 0.7 },
-              { d: "M72 178 l10 5.7 v11.6 l-10 5.7 l-10 -5.7 v-11.6 Z", delay: 1.4 },
-              { d: "M288 185 l10 5.7 v11.6 l-10 5.7 l-10 -5.7 v-11.6 Z", delay: 0.4 },
-            ].map((h, i) => (
-              <motion.path key={i} d={h.d}
-                stroke="#f97316" strokeWidth="1.2" fill="#f97316" fillOpacity="0.07" strokeOpacity="0.25"
-                animate={reduced ? undefined : { opacity: [0.4, 1, 0.4] }}
-                transition={reduced ? undefined : { repeat: Infinity, duration: 3 + i * 0.7, ease: "easeInOut", delay: h.delay }}
-              />
-            ))}
-
-            {/* Adhive hex badge — glowing logo center */}
-            <motion.g filter="url(#orange-glow)"
-              animate={reduced ? undefined : { scale: [1, 1.07, 1] }}
-              transition={reduced ? undefined : { repeat: Infinity, duration: 3.5, ease: "easeInOut" }}
-              style={{ transformOrigin: "180px 144px" }}
-            >
-              <path d="M180 104 L212 122 L212 162 L180 180 L148 162 L148 122 Z" fill="url(#card-grad)" />
-              <path d="M180 104 L212 122 L212 162 L180 180 L148 162 L148 122 Z" fill="none" stroke="rgba(255,255,255,0.35)" strokeWidth="1.5" />
-              <text x="180" y="156" textAnchor="middle" fontFamily={uiFont} fontSize="34" fontWeight="900" fill="#ffffff">a</text>
-            </motion.g>
-
-            {/* Pulsing orange rings from badge */}
-            {[0, 1].map(i => (
-              <motion.circle key={i} cx="180" cy="142" r="38" fill="none" stroke="#f97316" strokeWidth="1.5"
-                animate={reduced ? undefined : { r: [38, 82], opacity: [0.5, 0] }}
-                transition={reduced ? undefined : { repeat: Infinity, duration: 2.5, delay: i * 1.25, ease: "easeOut" }}
-              />
-            ))}
-
-            {/* Wordmark */}
-            <text x="180" y="214" textAnchor="middle" fontFamily={uiFont} fontSize="34" fontWeight="900" letterSpacing="-0.5" fill="#18181b">adHive</text>
-
-            {/* Tagline */}
-            <text x="180" y="234" textAnchor="middle" fontFamily={uiFont} fontSize="11" fontWeight="500" fill="#78716c">Hyperlocal ads, powered by people</text>
-
-            {/* Orange divider */}
-            <line x1="120" y1="248" x2="240" y2="248" stroke="url(#ring-grad)" strokeWidth="1" opacity="0.4" />
-
-            {/* Stat cards */}
-            <rect x="76" y="258" width="88" height="46" rx="13" fill="url(#card-grad2)" stroke="#f97316" strokeOpacity="0.3" strokeWidth="0.8" />
-            <text x="120" y="278" textAnchor="middle" fontFamily={uiFont} fontSize="17" fontWeight="800" fill="#f97316">500+</text>
-            <text x="120" y="295" textAnchor="middle" fontFamily={uiFont} fontSize="8.5" fontWeight="600" fill="#a8a29e">Businesses</text>
-
-            <rect x="196" y="258" width="88" height="46" rx="13" fill="url(#card-grad2)" stroke="#f97316" strokeOpacity="0.3" strokeWidth="0.8" />
-            <text x="240" y="278" textAnchor="middle" fontFamily={uiFont} fontSize="17" fontWeight="800" fill="#f97316">₹2.4K</text>
-            <text x="240" y="295" textAnchor="middle" fontFamily={uiFont} fontSize="8.5" fontWeight="600" fill="#a8a29e">Avg Earn</text>
-
-            {/* Orange gradient CTA button */}
-            <rect x="100" y="318" width="160" height="38" rx="19" fill="url(#card-grad)" filter="url(#soft-glow)" />
-            <text x="180" y="342" textAnchor="middle" fontFamily={uiFont} fontSize="13" fontWeight="800" fill="#ffffff">Get Started →</text>
-
-            {/* Animated page indicator dots */}
-            {[0, 1, 2].map((i) => (
-              <motion.circle
-                key={`dot-${i}`}
-                cx={168 + i * 12}
-                cy={370}
-                r="3.5"
-                fill={i === 0 ? "#f97316" : "#e4e4e7"}
-                animate={reduced ? undefined : { opacity: i === 0 ? [1, 0.4, 1] : [0.3, 0.7, 0.3] }}
-                transition={reduced ? undefined : { repeat: Infinity, duration: 1.4, delay: i * 0.2, ease: "easeInOut" }}
-              />
-            ))}
-
-            {/* Home indicator */}
-            <rect x="150" y="388" width="60" height="5" rx="2.5" fill="#18181b" opacity="0.75" />
           </g>
-
-          {/* Dynamic island */}
-          <rect x="146" y="40" width="68" height="18" rx="9" fill="#1c1917" />
         </motion.g>
       </motion.g>
     </svg>
@@ -689,27 +621,11 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative flex w-full items-end justify-center gap-6 sm:gap-8 min-h-[260px] sm:min-h-[320px] lg:min-h-0"
-            style={{ perspective: "1000px" }}
+            className="relative flex w-full items-center justify-center"
           >
-            <motion.div animate={{ y: [-10, 10, -10] }} transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="relative z-20 shrink-0 overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm"
-            >
-              <img
-                src="/images/WELCOME SCREEN.png"
-                alt="adHive welcome screen"
-                className="block h-[200px] sm:h-[280px] lg:h-[380px] w-auto"
-              />
-            </motion.div>
-            <motion.div animate={{ y: [10, -10, 10] }} transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1 }}
-              className="relative z-10 shrink-0 overflow-hidden rounded-2xl border border-black/10 bg-[#0c0c0e] shadow-sm"
-            >
-              <img
-                src="/images/splashscreen.jpeg"
-                alt="adHive splash screen"
-                className="block h-[200px] sm:h-[280px] lg:h-[380px] w-[105px] sm:w-[146px] lg:w-[199px] object-contain"
-              />
-            </motion.div>
+            <div className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[420px] lg:max-w-[460px] mx-auto flex items-center justify-center">
+              <WhatIsAdhiveSVG />
+            </div>
           </motion.div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none" style={{ background: "linear-gradient(to bottom, transparent, #fafafa)" }} />
@@ -760,62 +676,50 @@ export default function Home() {
         {/* Animated cool orb bottom-right */}
         <motion.div aria-hidden className="absolute -bottom-16 -right-16 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(249,115,22,0.14) 0%, transparent 70%)", filter: "blur(50px)" }} animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.9, 0.5] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }} />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-24 items-center">
-
-            {/* Left — mobile app illustration */}
-            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-              <div className="w-full max-w-[290px] sm:max-w-[340px] md:max-w-[380px] mx-auto flex items-center justify-center overflow-x-clip">
-                <WhatIsAdhiveSVG />
-              </div>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/15 text-orange-400 text-sm font-semibold mb-6 border border-orange-500/20"
+            >
+              <Smartphone className="w-3.5 h-3.5" />
+              Platform Overview
             </motion.div>
+            <AnimatedHeading tag="h2" delay={0.1} className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+              What is{" "}<ShimmerText>adHive?</ShimmerText>
+            </AnimatedHeading>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, delay: 0.2 }}
+              className="text-lg sm:text-xl text-zinc-300 mb-4 font-medium"
+            >
+              adHive is a people-powered, hyperlocal advertising platform.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, delay: 0.3 }}
+              className="text-zinc-500 text-base sm:text-lg leading-relaxed"
+            >
+              Traditional digital advertising puts your business in front of thousands who may never become customers. adHive takes a more local approach — reaching real people through real community members.
+            </motion.p>
+          </motion.div>
 
-            {/* Right — text + cards */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-              <motion.div
-                initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/15 text-orange-400 text-sm font-semibold mb-6 border border-orange-500/20"
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              { icon: Briefcase, color: "text-orange-400", bg: "bg-orange-500/10 border-orange-500/20", title: "For Businesses", desc: "Businesses get precise local reach." },
+              { icon: DollarSign, color: "text-emerald-400", bg: "bg-emerald-500/10 border-emerald-500/20", title: "For Sharer", desc: "People earn by sharing promotional content." },
+              { icon: Users, color: "text-blue-400", bg: "bg-blue-500/10 border-blue-500/20", title: "For Customers", desc: "Discover local businesses through community members." }
+            ].map((item, i) => (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 * i, duration: 0.5 }}
+                className={`flex flex-col items-start gap-4 p-6 sm:p-7 rounded-2xl border ${item.bg} group hover:scale-[1.02] transition-transform cursor-default`}
               >
-                <Smartphone className="w-3.5 h-3.5" />
-                Platform Overview
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${item.bg} group-hover:scale-110 transition-transform`}>
+                  <item.icon className={`w-6 h-6 ${item.color}`} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg mb-1">{item.title}</h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">{item.desc}</p>
+                </div>
               </motion.div>
-              <AnimatedHeading tag="h2" delay={0.1} className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
-                What is{" "}<ShimmerText>adHive?</ShimmerText>
-              </AnimatedHeading>
-              <motion.p
-                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, delay: 0.2 }}
-                className="text-xl text-zinc-300 mb-4 font-medium"
-              >
-                adHive is a people-powered, hyperlocal advertising platform.
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, delay: 0.3 }}
-                className="text-zinc-500 text-lg leading-relaxed mb-10"
-              >
-                Traditional digital advertising puts your business in front of thousands who may never become customers. adHive takes a more local approach — reaching real people through real community members.
-              </motion.p>
-
-              <div className="space-y-4">
-                {[
-                  { icon: Briefcase, color: "text-orange-400", bg: "bg-orange-500/10 border-orange-500/20", title: "For Businesses", desc: "Businesses get precise local reach." },
-                  { icon: DollarSign, color: "text-emerald-400", bg: "bg-emerald-500/10 border-emerald-500/20", title: "For Sharer", desc: "People earn by sharing promotional content." },
-                  { icon: Users, color: "text-blue-400", bg: "bg-blue-500/10 border-blue-500/20", title: "For Customers", desc: "Discover local businesses through community members." }
-                ].map((item, i) => (
-                  <motion.div key={i} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 * i, duration: 0.5 }}
-                    className={`flex items-center gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl border ${item.bg} group hover:scale-[1.01] sm:hover:scale-[1.02] transition-transform cursor-default`}
-                  >
-                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shrink-0 ${item.bg} group-hover:scale-110 transition-transform`}>
-                      <item.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${item.color}`} />
-                    </div>
-                    <div>
-                      <h3 className="text-white font-bold text-base sm:text-lg">{item.title}</h3>
-                      <p className="text-zinc-400 text-xs sm:text-sm">{item.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
+            ))}
           </div>
         </div>
       </section>
@@ -846,7 +750,13 @@ export default function Home() {
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <div className="mb-6 sm:mb-8 w-full flex justify-center">
                 <div className="w-full max-w-[300px] sm:max-w-[360px] md:max-w-[400px] lg:max-w-[440px]">
-                  <HowItWorksSVG type="business" />
+                  <div className="h-[340px] sm:h-[400px] flex items-center justify-center">
+                    <img
+                      src="/images/REQUESTER DASHBOARD.png"
+                      alt="For Businesses - Requester Dashboard"
+                      className="aspect-[393/666] h-[340px] sm:h-[400px] w-auto object-cover object-top rounded-2xl shadow-md border border-zinc-200"
+                    />
+                  </div>
                 </div>
               </div>
               <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
@@ -886,7 +796,13 @@ export default function Home() {
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.15 }}>
               <div className="mb-6 sm:mb-8 w-full flex justify-center">
                 <div className="w-full max-w-[300px] sm:max-w-[360px] md:max-w-[400px] lg:max-w-[440px]">
-                  <HowItWorksSVG type="sharer" />
+                  <div className="h-[340px] sm:h-[400px] flex items-center justify-center">
+                    <img
+                      src="/images/sharer.jpeg"
+                      alt="For Sharer"
+                      className="aspect-[393/666] h-[340px] sm:h-[400px] w-auto object-contain rounded-2xl shadow-md border border-zinc-200"
+                    />
+                  </div>
                 </div>
               </div>
               <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
@@ -1070,84 +986,73 @@ export default function Home() {
         <div className="absolute inset-0 pointer-events-none opacity-[0.5]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)", backgroundSize: "56px 56px", maskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)", WebkitMaskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)" }} />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-2/3 bg-gradient-to-r from-transparent via-orange-500/50 to-transparent" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-
-            {/* Left — Sharer Dashboard mockup + CTA */}
-            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}
-              className="relative flex flex-col items-center lg:-translate-y-10"
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+            <motion.span
+              initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 text-orange-400 text-sm font-semibold mb-6 border border-orange-500/20"
             >
-              <div className="relative">
-                <div className="absolute -inset-6 bg-orange-500/20 blur-3xl rounded-full" />
-                <div className="relative w-full max-w-[320px] sm:max-w-[360px] mx-auto">
-                  <motion.img
-                    src="/images/sharer.jpeg"
-                    alt="adHive Sharer Dashboard"
-                    animate={{ y: [0, -8, 0] }}
-                    transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                    className="h-[420px] w-auto mx-auto block rounded-[2.5rem] shadow-[0_30px_80px_rgba(0,0,0,0.5)] border border-white/10"
-                  />
-                </div>
-              </div>
-
-              <p className="text-base sm:text-lg font-bold text-orange-400 mt-6 mb-5 text-center">Turn Your Social Reach Into an Opportunity.</p>
-              <div className="flex items-center gap-3">
-                <Link href="/contact" className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold hover:bg-orange-600 transition-all shadow-[0_8px_24px_rgba(249,115,22,0.3)] group">
-                  Start Earning
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </div>
-            </motion.div>
-
-            {/* Right — sharer content */}
-            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.15 }}>
-              <motion.span
-                initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.4 }}
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 text-orange-400 text-sm font-semibold mb-6 border border-orange-500/20"
-              >
-                <Share2 className="w-3.5 h-3.5" /> For Sharer
-              </motion.span>
-              <AnimatedHeading tag="h2" delay={0.1} className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
-                Your Social Reach{" "}<ShimmerText>Has Value.</ShimmerText>
-              </AnimatedHeading>
-              <motion.p
-                initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-xl text-zinc-400 mb-4 leading-relaxed"
-              >
-                Have an active Instagram presence?
-              </motion.p>
-              <motion.p
-                initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }}
-                className="text-zinc-500 mb-8 leading-relaxed"
-              >
-                With adHive, eligible users can discover promotional opportunities from businesses looking to reach people in their area. Choose campaigns that interest you, complete the required activity and earn when the campaign requirements are successfully fulfilled and validated.
-              </motion.p>
-
-              <div className="grid gap-4">
-                {[
-                  { icon: MapPin, title: "Local Campaigns", desc: "Discover promotional campaigns available in your specific area.", c: "text-orange-400", bg: "bg-orange-500/10 border-orange-500/20" },
-                  { icon: Share2, title: "Share on Instagram", desc: "Accept and post the promotional content through your Instagram presence.", c: "text-pink-400", bg: "bg-pink-500/10 border-pink-500/20" },
-                  { icon: DollarSign, title: "Earn Rewards", desc: "Get paid after your campaign is successfully completed and validated.", c: "text-emerald-400", bg: "bg-emerald-500/10 border-emerald-500/20" }
-                ].map((item, i) => (
-                  <motion.div key={i}
-                    initial={{ opacity: 0, x: 15 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: i * 0.15 }}
-                    className={`flex items-center gap-5 p-5 rounded-2xl border ${item.bg} group hover:scale-[1.02] transition-transform`}
-                  >
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${item.bg}`}>
-                      <item.icon className={`w-6 h-6 ${item.c}`} />
-                    </div>
-                    <div>
-                      <h3 className="text-white font-bold text-base mb-0.5">{item.title}</h3>
-                      <p className="text-zinc-400 text-sm">{item.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+              <Share2 className="w-3.5 h-3.5" /> For Sharer
+            </motion.span>
+            <AnimatedHeading tag="h2" delay={0.1} className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+              Your Social Reach{" "}<ShimmerText>Has Value.</ShimmerText>
+            </AnimatedHeading>
+            <motion.p
+              initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-lg sm:text-xl text-zinc-300 mb-4 font-medium"
+            >
+              Have an active Instagram presence?
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-zinc-500 text-base sm:text-lg leading-relaxed"
+            >
+              With adHive, eligible users can discover promotional opportunities from businesses looking to reach people in their area. Choose campaigns that interest you, complete the required activity and earn when the campaign requirements are successfully fulfilled and validated.
+            </motion.p>
           </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 sm:mb-14">
+            {[
+              { icon: MapPin, title: "Local Campaigns", desc: "Discover promotional campaigns available in your specific area.", c: "text-orange-400", bg: "bg-orange-500/10 border-orange-500/20" },
+              { icon: Share2, title: "Share on Instagram", desc: "Accept and post the promotional content through your Instagram presence.", c: "text-pink-400", bg: "bg-pink-500/10 border-pink-500/20" },
+              { icon: DollarSign, title: "Earn Rewards", desc: "Get paid after your campaign is successfully completed and validated.", c: "text-emerald-400", bg: "bg-emerald-500/10 border-emerald-500/20" }
+            ].map((item, i) => (
+              <motion.div key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15 }}
+                className={`flex flex-col items-start gap-4 p-6 sm:p-7 rounded-2xl border ${item.bg} group hover:scale-[1.02] transition-transform`}
+              >
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${item.bg}`}>
+                  <item.icon className={`w-6 h-6 ${item.c}`} />
+                </div>
+                <div>
+                  <h3 className="text-white font-bold text-lg mb-1">{item.title}</h3>
+                  <p className="text-zinc-400 text-sm leading-relaxed">{item.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 text-center"
+          >
+            <p className="text-base sm:text-lg font-bold text-orange-400">
+              Turn Your Social Reach Into an Opportunity.
+            </p>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 bg-orange-500 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-bold hover:bg-orange-600 transition-all shadow-[0_8px_24px_rgba(249,115,22,0.3)] group"
+            >
+              Start Earning
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 

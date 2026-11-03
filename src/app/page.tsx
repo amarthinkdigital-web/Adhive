@@ -1071,7 +1071,7 @@ export default function Home() {
             >
               <div className="relative">
                 <div className="absolute -inset-6 bg-orange-500/20 blur-3xl rounded-full" />
-                <div className="relative w-full max-w-[340px] sm:w-[400px] sm:max-w-full">
+                <div className="relative w-full max-w-[320px] sm:max-w-[360px] mx-auto">
                   <motion.img
                     src="/images/sharer.jpeg"
                     alt="adHive Sharer Dashboard"

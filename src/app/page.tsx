@@ -145,7 +145,7 @@ function ShareEarnSVG() {
     { x: 200, y: 300, c: "#22c55e" },
   ];
   return (
-    <svg viewBox="0 0 360 420" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto block">
+    <svg viewBox="48 8 264 408" fill="none" xmlns="http://www.w3.org/2000/svg" className="block h-[200px] sm:h-[280px] lg:h-[380px] w-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)]">
       <rect x="56" y="16" width="248" height="392" rx="36" fill="#18181b" />
       <rect x="68" y="28" width="224" height="368" rx="28" fill="#ffffff" />
       <rect x="150" y="38" width="60" height="8" rx="4" fill="#3f3f46" />
@@ -689,18 +689,26 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative flex w-full items-end justify-center gap-3 sm:gap-4 lg:block lg:h-[520px] overflow-x-clip min-h-[200px] sm:min-h-[260px] lg:min-h-0"
+            className="relative flex w-full items-end justify-center gap-6 sm:gap-8 min-h-[260px] sm:min-h-[320px] lg:min-h-0"
             style={{ perspective: "1000px" }}
           >
             <motion.div animate={{ y: [-10, 10, -10] }} transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-              className="relative z-20 w-[44%] max-w-[155px] sm:w-[46%] sm:max-w-[230px] shrink-0 overflow-hidden rounded-2xl border border-white/60 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] lg:absolute lg:-left-4 lg:-top-4 lg:w-[360px] lg:max-w-none lg:shadow-[0_30px_60px_rgba(0,0,0,0.2)]"
+              className="relative z-20 shrink-0 overflow-hidden rounded-2xl border border-black/5 bg-white shadow-sm"
             >
-              <WelcomeScreenSVG />
+              <img
+                src="/images/WELCOME SCREEN.png"
+                alt="adHive welcome screen"
+                className="block h-[200px] sm:h-[280px] lg:h-[380px] w-auto"
+              />
             </motion.div>
             <motion.div animate={{ y: [10, -10, 10] }} transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1 }}
-              className="relative z-10 w-[44%] max-w-[155px] sm:w-[46%] sm:max-w-[230px] shrink-0 overflow-hidden rounded-2xl border border-white/60 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] lg:absolute lg:right-0 lg:top-10 lg:w-[360px] lg:max-w-none"
+              className="relative z-10 shrink-0 overflow-hidden rounded-2xl border border-black/10 bg-[#0c0c0e] shadow-sm"
             >
-              <ShareEarnSVG />
+              <img
+                src="/images/splashscreen.jpeg"
+                alt="adHive splash screen"
+                className="block h-[200px] sm:h-[280px] lg:h-[380px] w-[105px] sm:w-[146px] lg:w-[199px] object-contain"
+              />
             </motion.div>
           </motion.div>
         </div>

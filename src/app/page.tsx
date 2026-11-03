@@ -1072,7 +1072,13 @@ export default function Home() {
               <div className="relative">
                 <div className="absolute -inset-6 bg-orange-500/20 blur-3xl rounded-full" />
                 <div className="relative w-full max-w-[340px] sm:w-[400px] sm:max-w-full">
-                  <SharerEarningsSVG />
+                  <motion.img
+                    src="/images/sharer.jpeg"
+                    alt="adHive Sharer Dashboard"
+                    animate={{ y: [0, -8, 0] }}
+                    transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
+                    className="h-[420px] w-auto mx-auto block rounded-[2.5rem] shadow-[0_30px_80px_rgba(0,0,0,0.5)] border border-white/10"
+                  />
                 </div>
               </div>
 

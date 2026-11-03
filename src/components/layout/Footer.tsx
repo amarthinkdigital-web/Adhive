@@ -76,7 +76,7 @@ export function Footer() {
           <div className="flex items-center gap-4 text-zinc-400 w-full lg:w-auto justify-center lg:justify-start">
             <span className="text-white font-semibold">Follow Us</span>
             <div className="flex items-center gap-4 text-zinc-500">
-              <a href="mailto:support@adhive.io" className="hover:text-orange-500 transition-colors" aria-label="Email support@adhive.io">
+              <a href="contact@adhiveglobal.com" className="hover:text-orange-500 transition-colors" aria-label="Email contact@adhiveglobal.com">
                 <Mail className="w-5 h-5" />
               </a>
               <a

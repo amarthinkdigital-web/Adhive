@@ -676,50 +676,69 @@ export default function Home() {
         {/* Animated cool orb bottom-right */}
         <motion.div aria-hidden className="absolute -bottom-16 -right-16 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(249,115,22,0.14) 0%, transparent 70%)", filter: "blur(50px)" }} animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.9, 0.5] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }} />
 
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 relative z-10">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/15 text-orange-400 text-sm font-semibold mb-6 border border-orange-500/20"
-            >
-              <Smartphone className="w-3.5 h-3.5" />
-              Platform Overview
-            </motion.div>
-            <AnimatedHeading tag="h2" delay={0.1} className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
-              What is{" "}<ShimmerText>adHive?</ShimmerText>
-            </AnimatedHeading>
-            <motion.p
-              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, delay: 0.2 }}
-              className="text-lg sm:text-xl text-zinc-300 mb-4 font-medium"
-            >
-              adHive is a people-powered, hyperlocal advertising platform.
-            </motion.p>
-            <motion.p
-              initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, delay: 0.3 }}
-              className="text-zinc-500 text-base sm:text-lg leading-relaxed"
-            >
-              Traditional digital advertising puts your business in front of thousands who may never become customers. adHive takes a more local approach — reaching real people through real community members.
-            </motion.p>
-          </motion.div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-24 items-center">
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { icon: Briefcase, color: "text-orange-400", bg: "bg-orange-500/10 border-orange-500/20", title: "For Businesses", desc: "Businesses get precise local reach." },
-              { icon: DollarSign, color: "text-emerald-400", bg: "bg-emerald-500/10 border-emerald-500/20", title: "For Sharer", desc: "People earn by sharing promotional content." },
-              { icon: Users, color: "text-blue-400", bg: "bg-blue-500/10 border-blue-500/20", title: "For Customers", desc: "Discover local businesses through community members." }
-            ].map((item, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 * i, duration: 0.5 }}
-                className={`flex flex-col items-start gap-4 p-6 sm:p-7 rounded-2xl border ${item.bg} group hover:scale-[1.02] transition-transform cursor-default`}
+            {/* Left — welcome screen mobile app mockup */}
+            <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+              <div className="w-full max-w-[280px] sm:max-w-[320px] md:max-w-[360px] mx-auto flex items-center justify-center">
+                <div className="relative group">
+                  <div className="absolute -inset-4 bg-orange-500/20 blur-2xl rounded-3xl opacity-75 group-hover:opacity-100 transition-opacity" />
+                  <img
+                    src="/images/WELCOME SCREEN.png"
+                    alt="adHive Welcome Screen"
+                    className="relative block h-[380px] sm:h-[440px] md:h-[480px] w-auto object-contain rounded-2xl sm:rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.4)] border border-white/10"
+                  />
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right — text + cards */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+              <motion.div
+                initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/15 text-orange-400 text-sm font-semibold mb-6 border border-orange-500/20"
               >
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center shrink-0 ${item.bg} group-hover:scale-110 transition-transform`}>
-                  <item.icon className={`w-6 h-6 ${item.color}`} />
-                </div>
-                <div>
-                  <h3 className="text-white font-bold text-lg mb-1">{item.title}</h3>
-                  <p className="text-zinc-400 text-sm leading-relaxed">{item.desc}</p>
-                </div>
+                <Smartphone className="w-3.5 h-3.5" />
+                Platform Overview
               </motion.div>
-            ))}
+              <AnimatedHeading tag="h2" delay={0.1} className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
+                What is{" "}<ShimmerText>adHive?</ShimmerText>
+              </AnimatedHeading>
+              <motion.p
+                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, delay: 0.2 }}
+                className="text-lg sm:text-xl text-zinc-300 mb-4 font-medium"
+              >
+                adHive is a people-powered, hyperlocal advertising platform.
+              </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, delay: 0.3 }}
+                className="text-zinc-500 text-base sm:text-lg leading-relaxed mb-8"
+              >
+                Traditional digital advertising puts your business in front of thousands who may never become customers. adHive takes a more local approach — reaching real people through real community members.
+              </motion.p>
+
+              <div className="space-y-4">
+                {[
+                  { icon: Briefcase, color: "text-orange-400", bg: "bg-orange-500/10 border-orange-500/20", title: "For Businesses", desc: "Businesses get precise local reach." },
+                  { icon: DollarSign, color: "text-emerald-400", bg: "bg-emerald-500/10 border-emerald-500/20", title: "For Sharer", desc: "People earn by sharing promotional content." },
+                  { icon: Users, color: "text-blue-400", bg: "bg-blue-500/10 border-blue-500/20", title: "For Customers", desc: "Discover local businesses through community members." }
+                ].map((item, i) => (
+                  <motion.div key={i} initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 * i, duration: 0.5 }}
+                    className={`flex items-center gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl border ${item.bg} group hover:scale-[1.01] sm:hover:scale-[1.02] transition-transform cursor-default`}
+                  >
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shrink-0 ${item.bg} group-hover:scale-110 transition-transform`}>
+                      <item.icon className={`w-5 h-5 sm:w-6 sm:h-6 ${item.color}`} />
+                    </div>
+                    <div>
+                      <h3 className="text-white font-bold text-base sm:text-lg">{item.title}</h3>
+                      <p className="text-zinc-400 text-xs sm:text-sm">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
@@ -754,7 +773,7 @@ export default function Home() {
                     <img
                       src="/images/REQUESTER DASHBOARD.png"
                       alt="For Businesses - Requester Dashboard"
-                      className="aspect-[393/666] h-[340px] sm:h-[400px] w-auto object-cover object-top rounded-2xl shadow-md border border-zinc-200"
+                      className="aspect-[393/666] h-[340px] sm:h-[400px] w-auto object-fill rounded-2xl shadow-md border border-zinc-200"
                     />
                   </div>
                 </div>
@@ -800,7 +819,7 @@ export default function Home() {
                     <img
                       src="/images/sharer.jpeg"
                       alt="For Sharer"
-                      className="aspect-[393/666] h-[340px] sm:h-[400px] w-auto object-contain rounded-2xl shadow-md border border-zinc-200"
+                      className="h-[340px] sm:h-[400px] w-auto object-contain rounded-2xl shadow-md border border-zinc-200"
                     />
                   </div>
                 </div>

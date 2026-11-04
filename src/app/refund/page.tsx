@@ -1,7 +1,15 @@
 import React from "react";
+import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Reveal } from "@/components/animated/Reveal";
+
+export const metadata: Metadata = {
+  title: "Refund & Cancellation Policy",
+  description:
+    "Understand adHive's refund, cancellation and settlement practices for campaigns and transactions.",
+  alternates: { canonical: "/refund" },
+};
 
 export default function RefundPage() {
   return (

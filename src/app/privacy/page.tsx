@@ -1,7 +1,15 @@
 import React from "react";
+import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Reveal } from "@/components/animated/Reveal";
+
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Read how adHive collects, uses and protects personal information shared through our website and mobile application.",
+  alternates: { canonical: "/privacy" },
+};
 
 export default function PrivacyPage() {
   return (

@@ -1,7 +1,15 @@
 import React from "react";
+import type { Metadata } from "next";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { Reveal } from "@/components/animated/Reveal";
+
+export const metadata: Metadata = {
+  title: "Terms of Service",
+  description:
+    "The terms and conditions governing the use of the adHive hyperlocal marketing platform by businesses and Sharer.",
+  alternates: { canonical: "/terms" },
+};
 
 export default function TermsPage() {
   return (

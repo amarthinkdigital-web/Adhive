@@ -76,8 +76,11 @@ export function Footer() {
           <div className="flex items-center gap-4 text-zinc-400 w-full lg:w-auto justify-center lg:justify-start">
             <span className="text-white font-semibold">Follow Us</span>
             <div className="flex items-center gap-4 text-zinc-500">
-              <a href="contact@adhiveglobal.com" className="hover:text-orange-500 transition-colors" aria-label="Email contact@adhiveglobal.com">
+              <a href="mailto:contact@adhiveglobal.com" className="relative group hover:text-orange-500 transition-colors" aria-label="Email contact@adhiveglobal.com">
                 <Mail className="w-5 h-5" />
+                <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-zinc-800 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                  mail
+                </span>
               </a>
               <a
                 href="https://www.instagram.com/adhiveglobal?obrf=MjhjeHpwZGhqcWRr"

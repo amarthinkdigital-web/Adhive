@@ -666,7 +666,7 @@ export default function Home() {
       </section>
 
       {/* ══ WHAT IS adhive ══ */}
-      <section id="what-is-adhive" className="py-20 lg:py-28 relative overflow-hidden border-t border-zinc-800/60" style={{ background: "linear-gradient(135deg, #0c0a09 0%, #0f0d0b 30%, #121010 55%, #0a0c10 80%, #080a0f 100%)" }}>
+      <section id="what-is-adhive" className="pt-10 sm:pt-14 lg:pt-16 pb-20 lg:pb-28 relative overflow-hidden border-t border-zinc-800/60" style={{ background: "linear-gradient(135deg, #0c0a09 0%, #0f0d0b 30%, #121010 55%, #0a0c10 80%, #080a0f 100%)" }}>
         {/* Rich multi-layer background gradient */}
         <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "radial-gradient(ellipse 80% 60% at 70% 40%, rgba(249,115,22,0.13) 0%, transparent 55%), radial-gradient(ellipse 60% 50% at 15% 70%, rgba(245,158,11,0.09) 0%, transparent 50%), radial-gradient(ellipse 50% 40% at 85% 85%, rgba(251,146,60,0.07) 0%, transparent 45%)" }} />
         {/* Glowing mesh lines */}
@@ -677,6 +677,15 @@ export default function Home() {
         <motion.div aria-hidden className="absolute -bottom-16 -right-16 w-80 h-80 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(249,115,22,0.14) 0%, transparent 70%)", filter: "blur(50px)" }} animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.9, 0.5] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
+            className="flex justify-center mb-10"
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/15 text-orange-400 text-sm font-semibold border border-orange-500/20">
+              <Smartphone className="w-3.5 h-3.5" />
+              Platform Overview
+            </div>
+          </motion.div>
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 xl:gap-24 items-center">
 
             {/* Left — welcome screen mobile app mockup */}
@@ -695,13 +704,6 @@ export default function Home() {
 
             {/* Right — text + cards */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
-              <motion.div
-                initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/15 text-orange-400 text-sm font-semibold mb-6 border border-orange-500/20"
-              >
-                <Smartphone className="w-3.5 h-3.5" />
-                Platform Overview
-              </motion.div>
               <AnimatedHeading tag="h2" delay={0.1} className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mb-6 leading-tight">
                 What is{" "}<ShimmerText>adHive?</ShimmerText>
               </AnimatedHeading>
@@ -773,7 +775,7 @@ export default function Home() {
                     <img
                       src="/images/REQUESTER DASHBOARD.png"
                       alt="For Businesses - Requester Dashboard"
-                      className="aspect-[393/666] h-[340px] sm:h-[400px] w-auto object-fill rounded-2xl shadow-md border border-zinc-200"
+                      className="h-[340px] sm:h-[400px] w-auto object-contain rounded-2xl shadow-md border border-zinc-200"
                     />
                   </div>
                 </div>
